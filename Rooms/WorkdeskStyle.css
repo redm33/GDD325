@@ -1,0 +1,385 @@
+@charset "utf-8";
+/* CSS Document */
+
+#workdesk
+{
+	margin-top: 0px;
+	position: absolute;
+	background-image: url(Images/Workdesk.png);
+	width: 1000px;
+	height:600px;
+	z-index: 0;
+}
+
+#workingArea
+{	
+	margin-left: 250px;
+	margin-top: 100px;
+	position: absolute;	
+	width: 475px;
+	height: 320px;
+	//background-color: #000;
+	z-index: 1;
+}
+
+.workareaWrapper
+{
+	width: 80px;
+	height: 80px;
+	background-color: #000;
+	opacity: .05;
+	margin-top: -65px;
+	margin-left: -8px;
+	
+	
+}
+#workArea
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 30px;
+	margin-left: 20px;
+	position: absolute;
+	z-index: 2;
+	//background-image:url(../Inventory/EyedropperFinal.png);
+}
+#workArea2
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 30px;
+	margin-left: 120px;
+	position: absolute;	
+	z-index: 2;
+}
+
+
+#workArea3
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 30px;
+	margin-left: 220px;
+	position: absolute;	
+	z-index: 2;
+}
+
+#workArea4
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 30px;
+	margin-left: 320px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea5
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 30px;
+	margin-left: 420px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea6
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 120px;
+	margin-left: 20px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea7
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 120px;
+	margin-left: 120px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea8
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 120px;
+	margin-left: 220px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea9
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 120px;
+	margin-left: 320px;
+	position: absolute;
+	z-index: 2;
+}
+
+#workArea10
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 120px;
+	margin-left: 420px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea11
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 210px;
+	margin-left: 20px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea12
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 210px;
+	margin-left: 120px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea13
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 210px;
+	margin-left: 220px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea14
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 210px;
+	margin-left: 320px;
+	position: absolute;
+	z-index: 2;
+}
+#workArea15
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 210px;
+	margin-left: 420px;
+	position: absolute;
+	z-index: 2;
+}
+#chemFill1
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill2
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill3
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill4
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill5
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill6
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill7
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill8
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill9
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill10
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill11
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill12
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill13
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill14
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+#chemFill15
+{
+	width: 13px;
+	height: 0px;
+	margin-left: 25px;
+	margin-top: 55px;
+	background-color:#CF0;
+	opacity: .5;
+	//display: none;	
+}
+
+#testTubes
+{
+	margin-top: 40px;
+	margin-left: 800px;
+	position: absolute;	
+}
+
+#burner
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 200px;
+	margin-left: 200px;
+	background:#900;
+	position: absolute;	
+}
+
+#centrifuge
+{
+	width: 150px;
+	height: 150px;
+	margin-top: 100px;
+	margin-left: 80px;
+	background-image:url(Images/centrifuge.png);
+	position: absolute;	
+	z-index: 2;
+}
+
+#iceBath
+{
+	position: absolute;
+	margin-top: 250px;
+	margin-left: 40px;
+	background-image:url(Images/IceBath.png);
+	width: 150px;
+	height: 150px;	
+}
+
+#box
+{
+	width: 150px;
+	height: 167px;
+	margin-left: 790px;
+	margin-top: 230px;
+	background-image:url(Images/box.png);
+	position: absolute;
+	z-index: 1;
+}
+
+#messages
+{
+	position: absolute;
+	margin-top: 42px;
+	width: 375px;
+	color: #FFF;
+	margin-left: 425px;
+	z-index: 4;
+	text-align:center;
+}

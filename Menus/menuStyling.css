@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}}
+[unselectable=on] { -moz-user-select: none; -khtml-user-select: none; user-select: none; }
+#game
+{
+  width:1000px; 
+  height: 600px;
+  margin: auto;
+  display: block;	
+}
+
+#content
+{
+  background-image:url(Images/menuBackground.png); 
+  width:1000px; 
+  height: 600px;
+  margin: auto;
+  display: block;	
+  border:thick #000;	
+}
+
+@font-face 
+{
+  font-family: AuldMagick;
+  src: url("AuldMagick.ttf");
+}
+@font-face
+{
+  font-family: wolven;
+  src: url("wolven.ttf");	
+}
+
+@font-face
+{
+  font-family: almendra;
+  src: url("AlmendraSC-Regular.otf");	
+}
+
+#mainButtons
+{
+	position: absolute;
+	width: 250px;
+	margin-top: 330px;
+	margin-left: 380px;
+}
+#instructions
+{
+	font-family:almendra;
+	font-size: 22px;
+	letter-spacing: 1px;
+	line-height: 30px;
+	position: absolute;
+	margin-left: 120px;
+	z-index: 2;
+	margin-top: 100px;
+}
+
+#credits
+{
+	font-family:almendra;
+	font-size: 25px;
+	font-weight:bolder;
+	letter-spacing: 1px;
+	line-height: 30px;
+	position: absolute;
+	margin-left: 120px;
+	z-index: 2;
+	margin-top: 100px;
+}
+a{text-decoration: none; color: #000;}
+a:visited{text-decoration: none; color: #000;}
+
+#playIdle
+{
+	position: absolute;
+	font-family: almendra;
+	font-color: #000;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	background-image: url(../newButtons/buttonDraftLarge.png);
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	width: 250px;
+	height: 60px;
+}
+
+#playIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
+#playIdle:active{background-image: url(../newButtons/buttonDraftActionLarge.png);}
+
+#playIdle2
+{
+	margin-top: 520px;	
+	margin-left: 860px;
+	position: absolute;
+	font-family: almendra;
+	font-color: #000;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	background-image: url(../newButtons/buttonDraft.png);
+	width: 120px;
+	height: 60px;
+}
+
+#playIdle2:hover{background-image: url(../newButtons/buttonDraftHover.png);}
+#playIdle2:active{background-image: url(../newButtons/buttonDraftAction.png);}
+
+#creditsIdle
+{
+	margin-top: 80px;
+	position: absolute;
+	font-family: almendra;
+	font-color: #000;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	background-image: url(../newButtons/buttonDraftLarge.png);
+	width: 250px;
+	height: 60px;
+
+}
+#creditsIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
+#creditsIdle:active{background-image: url(../newButtons/buttonDraftActionLarge.png);}
+
+#instructionIdle
+{
+	margin-top: 160px;
+	position: absolute;
+	font-family: almendra;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	background-image: url(../newButtons/buttonDraftLarge.png);
+	width: 250px;
+	height: 60px;	
+}
+#instructionIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
+#instructionIdle:active{background-image: url(../newButtons/buttonDraftActionLarge.png);}
+
+#backToMainIdle1
+{
+	margin-left: 38px;
+	margin-top: 30px;	
+	position: absolute;
+	font-family: almendra;
+	font-color: #000;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	background-image: url(../newButtons/buttonDraft.png);
+	width: 120px;
+	height: 60px;
+}
+#backToMainIdle1:hover{background-image: url(../newButtons/buttonDraftHover.png);}
+#backToMainIdle1:active{background-image: url(../newButtons/buttonDraftAction.png);}
+
+#backToMainIdle2
+{
+	margin-left: 38px;
+	margin-top: 30px;	
+	position: absolute;
+	font-family: almendra;
+	font-color: #000;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
+	background-image: url(../newButtons/buttonDraft.png);
+	width: 120px;
+	height: 60px;
+}
+
+#backToMainIdle2:hover{background-image: url(../newButtons/buttonDraftHover.png);}
+#backToMainIdle2:active{background-image: url(../newButtons/buttonDraftAction.png);}
+#logo
+{
+	position: absolute;
+	margin-top: -330px;	
+	margin-left: -120px;
+}

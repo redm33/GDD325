@@ -1,0 +1,67 @@
+/* CSS Document */
+
+table
+{
+	width: 448px;
+	height: 384px;	
+	margin-left: 262px;
+	margin-top: 29px;
+	border-spacing: 0px 12px;
+	position: absolute;
+}
+
+#chemGameContent
+{
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 0px;	
+	background-image:url(Images/chemicalShelfUI.png);
+	width: 726px;
+	height: 498px;
+}
+
+#directions
+{
+	position: absolute;
+	margin-top: 269px;
+	margin-left: 70px;
+	color: #FFF;
+	width: 155px;
+	height: 200px;
+	font-size: 18px;
+		
+}
+
+#selectText{position: absolute;}
+
+#wanted
+{
+	position: absolute;
+	margin-top: 164px;
+	margin-left: 166px;
+	width: 64px;
+	height: 64px;	
+}
+
+#moves
+{
+	margin-top: 85px;
+	margin-left: 160px;
+	position: absolute;
+	height: 44px;
+	width: 64px;
+	font-size: 50px;
+	text-align: center;
+	color: #FFF;
+}
+#chemGameBack
+{
+	margin-top: 37px;
+	margin-left: 164px;
+	position: absolute;
+	width: 69px;
+	height: 35px;
+	text-align: center;
+	background-image:url(../UI/Images/UIButton.png);
+	line-height: 33px;
+}

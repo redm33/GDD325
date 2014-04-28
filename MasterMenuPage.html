@@ -1,0 +1,603 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ionic Confusion</title>
+<script type='text/javascript' >
+	var breakFlag = false;
+	var breakCounter = 0;
+</script>
+<<<<<<< HEAD
+
+<script type="text/javascript">
+	var x = 0;
+	var y = 0;
+	var chemArray = new Array("1MHCL.png","6MHCL.png", "6MHNO3.png", "6MNH3.png", "12MHCL.png", "15MNH3.png", "18MH2SO4.png",
+							  "AgNO3.png", "C2H2O4.png", "C2H4O2.png", "C2H5NS.png", "FeK4C6N6.png", "H2O.png", "H2O2.png",
+							  "HC2H3O2.png", "HgCl2.png", "K2CrO4.png", "KOH1MKNO3.png", "MgNO32.png", "Na2S2O4.png", "NaOH.png",
+							  "NH3.png", "NH4C2H3O2.png", "NH4CL.png", "NH4NO3.png", "NH42S.png", "SnCl2.png");
+	var ttArray = new Array("TestTubeEmpty.png", "TTLiqBlue.png", "TTLiqClear.png", "TTLiqClearNails.png", "TTLiqCloudy.png",
+							"TTLiqCloudyNails.png", "TTLiqRedBrwn.png", "TTLiqYellow.png", "TTPrecBlack.png",
+							"TTPrecBlackLiqClear.png", "TTPrecBlue.png", "TTPrecBlueLiqClear.png", "TTPrecGray.png",
+							"TTPrecGrayLiqClear.png", "TTPrecOrange.png", "TTPrecOrangeLiqClear.png", "TTPrecPink.png",
+							"TTPrecPinkLiqClear.png", "TTPrecRedBrwn.png", "TTPrecRedBrwnLiqClear.png", "TTPrecWhite.png",
+							"TTPrecWhiteLiqClear.png", "TTPrecWhiteLiqCloudy.png", "TTPrecWhiteLiqPurple.png", "TTPrecYellow.png",
+							"TTPrecYellowLiqClear.png");
+	function displayChemImg(image)
+	{
+		document.getElementById("Chems").src = "Inventory/" + image;
+		setTimeout("changeChemImg()", 750);
+	} 
+	
+	function changeChemImg()
+	{
+		x = (x == chemArray.length-1) ? 0 : x + 1;
+		displayChemImg(chemArray[x]);
+	}
+	
+	function displayTTImg(image)
+	{
+		document.getElementById("TestTubes").src = "Inventory/" + image;
+		console.log(document.getElementById("TestTubes").src);
+		setTimeout("changeTTImg()", 750);
+	} 
+	
+	function changeTTImg()
+	{
+		y = (y == ttArray.length-1) ? 0 : y + 1;
+		displayTTImg(ttArray[y]);
+	}
+	
+	function startTimer()
+	{
+		setTimeout("changeTTImg()", 750);
+		setTimeout("changeChemImg()", 750);
+	}
+	
+	startTimer();
+</script>
+
+=======
+>>>>>>> f33a61d176a65011a15dfae018a3deee769b34e4
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src = "AllAroundFunctions.js"></script>
+<script src = "Menus/menuJavascript.js"></script>
+<script src = "Menus/UIJavascript.js"></script>
+<script src = "turn.js"></script>
+<script src = "Journal/JournalEntries.js"></script>
+<script src = "MiniGames/chemicalGameJavascript.js"></script>
+<script src = "Rooms/WorkdeskControl.js"></script>
+<script src = "Rooms/ChemistryProcess.js"></script>
+<script src = "Rooms/ForgeControl.js"></script>
+<script src = "MiniGames/playMiniGame.js"></script>
+<script src = "Rooms/DoorwayControl.js"></script>
+<script src = "Inventory/objectLabels.js"></script>
+<script src = "Dialog/dialogControl.js"> </script>
+
+<link rel="stylesheet" href="Menus/menuStyling.css">
+<link rel = "stylesheet" href = "Menus/UIStyling.css">
+<link rel = "stylesheet" href = "Rooms/Turn.css">
+<link rel = "stylesheet" href = "MiniGames/chemicalGameStyle.css">
+<link rel = "stylesheet" href = "MiniGames/precipGameStyle.css">
+<link rel = "stylesheet" href = "MiniGames/rotationPuzzleGameStyle.css">
+<link rel = "stylesheet" href = "Rooms/WorkdeskStyle.css">
+<link rel = "stylesheet" href = "Rooms/ForgeStyle.css">
+<link rel = "stylesheet" href = "Rooms/DoorwayStyle.css">
+<link rel = "stylesheet" href = "Rooms/ChemShelf.css">
+<link rel = "stylesheet" href = "Journal/page.css">
+
+</head>
+<body>
+
+<div id = "game">
+
+<div id = "content">
+<img id = "logo" src = "Menus/Images/LogoFINAL.png" />
+
+<div id = "mainButtons">
+<a href = "#" onclick = "clicky('Menus/instructionsMenu.html','Menus/Images/instructionBackground.png')"><div id = "instructionIdle">Instructions</div></a>
+<a href = "#" onclick = "play()"><div id = "playIdle">Play</div></a>
+<a href = "#" onclick = "clicky('Menus/creditsMenu.html','Menus/Images/creditsBackground.png')"><div id = "creditsIdle">Credits</div></a>
+</div>	
+</div>
+
+
+<div id = "userInterface">
+
+    <div id = "messages" style = "display:none" onclick = "displayMessage()"> This is the messsage </div>
+    <div id = "inventory" onclick = "placeInInventory()">
+    
+    <div id = "itemOne" onclick = "selectItem('itemOne')"> </div>
+    <div id = "itemTwo" onclick = "selectItem('itemTwo')"> </div>
+    <div id = "itemThree" onclick = "selectItem('itemThree')"> </div>
+    <div id = "itemFour" onclick = "selectItem('itemFour')"> </div>
+    <div id = "itemFive" onclick = "selectItem('itemFive')"> </div>
+    <div id = "itemSix" onclick = "selectItem('itemSix')"> </div>
+    <div id = "itemSeven" onclick = "selectItem('itemSeven')"> </div>
+
+
+	</div>
+	<div id = "trash" onclick = "trash()"  onMouseOver="displayMessage('Trash')" onMouseOut="removeMessage()"></div>
+    <div id = "washing" onclick = "wash()" onMouseOver="displayMessage('Use this to wash test tubes, beaker and casserole.')" onMouseOut="removeMessage()"> </div>
+
+<div id = "journalButton" onclick = "showHideJournal()"></div>
+<div id = "menuButtons">
+<a href = "#" onclick = "clicky('Menus/mainMenu.html','Menus/Images/menuBackground.png')"><div id = "menuUIButton"> Menu </div></a>
+<a href = "#" onclick = "clicky('Menus/instructionsMenu.html','Menus/Images/instructionBackground.png')"><div id = "instructionsUIButton">Help</div></a>
+</div>
+
+</div>
+
+<div id = "journal">
+
+<div id="flipbook">
+	<div class="page" style = "background-image:url('Journal/Resources/journalCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Journal/Resources/frontInsideCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="index">
+        	<h3>Table of Contents: </h3>
+            <b>	   - Tools to Interact With </b><br/>
+            <b>    - Items That Can be Used </b><br/>
+            <b>    - The Process </b>
+        </div>
+    </div>
+    <div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="index">
+        	<h3>Tools to Interact With: </h3>
+            <table style="background: none; width: 352.5px; height: auto; font-size: 12px; margin-left: 0px; margin-top: 0px;">
+            	<tr>
+                	<td colspan="3">
+                        <b>Box of Unknown Solutions: </b><br/>
+                        Used to pick up the Unknown Solution for testing.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Rooms/Images/box.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Rooms/Images/centrifuge.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Centrifuge: </b><br/>
+                        Used to seperate precipitate from solutions in Test Tubes.
+            		</td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                	<td colspan="3">
+                        <b>Heating Rack: </b><br/>
+                        Used to heat up either the Casserole or the Beaker for the processes.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Rooms/Images/WaterBathStand.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Rooms/Images/IceBath.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Ice Bath: </b><br/>
+                        Used to cool down solutions in Test Tubes.
+            		</td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                	<td colspan="3">
+                        <b>Test Tube Rack: </b><br/>
+                        Used to pick up Test Tubes to use in the processes.
+            		</td>
+                	<td width="64">
+                    	<div style="width:64px"><img src="Rooms/Images/rackOfEmptyTubes150pxTEST.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr>
+                	<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+       		</table>
+        </div>
+    </div>
+    <div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="index">
+        	<table style="background: none; width: 352.5px; height: auto; font-size: 12px; margin-left: 0px; margin-top: 0px;">
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="UI/Images/trashIdle.png" style="width:64px"> </div>
+                    </td>
+                    <td colspan="3">
+                        <b>Trash: </b><br/>
+                        Used to throw away items not needed anymore or for the time being.
+            		</td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                	<td colspan="3">
+                        <b>Water Bucket: </b><br/>
+                        Used to clean items after using them so they can be reused.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="UI/Images/bucketIdle.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr>
+                	<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+       		</table>
+        </div>
+    </div>
+    <div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="index">
+        	<h3>Items That Can be Used: </h3>
+            <table style="background: none; width: 352.5px; height: auto; font-size: 12px; margin-left: 0px; margin-top: 0px;">
+            	<tr>
+                	<td colspan="3">
+                        <b>Beaker: </b><br/>
+                        Used to heat up Test Tubes in combination with the Heating Rack.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/BeakerEmpty.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/CasseroleCup.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Casserole: </b><br/>
+                        Used to heat up solutions for certain processes without the use of a Beaker.
+            		</td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                	<td colspan="3">
+                        <b>Chemicals: </b><br/>
+                        Used to mix with solutions to help solve what compounds are in the Unknown Solution.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/1MHCL.png" style="width:64px" id="Chems"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/EyedropperFinal.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Eyedropper: </b><br/>
+                        Used to add Chemicals and mixed solutions to Test Tubes and the Casserole.
+            		</td>
+      			</tr>
+                <tr>
+                	<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+       		</table>
+        </div>
+    </div>
+    <div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="index">
+            <table style="background: none; width: 352.5px; height: auto; font-size: 12px; margin-left: 0px; margin-top: 0px;">
+                <tr>
+                	<td colspan="3">
+                        <b>Mixing Rod: </b><br/>
+                        Used to mix Chemicals into the Unknown Solution and other solutions for the processes.
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/MixingRodVert.png" style="width:64px"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+            	<tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/Nails.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Nails: </b><br/>
+                        Used in the process of solving the components of the Unknown Solution.
+            		</td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                	<td colspan="3">
+                        <b>Test Tubes: </b><br/>
+                        Used to mix Chemicals in, hold solutions, and placed in the Centrifuge to receive precipitate. (Used in almost every step.)
+            		</td>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/TestTubeEmpty.png" style="width:64px" id="TestTubes"> </div>
+                    </td>
+      			</tr>
+                <tr height="6px"></tr>
+                <tr>
+                    <td width="64">
+                    	<div style="width:64px"><img src="Inventory/bottleUnlabeled.png" style="width:64px"> </div>
+                    </td>
+                	<td colspan="3">
+                        <b>Unknown Solution: </b><br/>
+                        The solution that is needed to be solved to complete the game.
+            		</td>
+      			</tr>
+                <tr>
+                	<td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+       		</table>
+        </div>
+    </div>
+    <div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+        <div class="para1">
+            All these steps must be followed in the order they appear.<br/> <br/>
+            
+            <b> Prepare the Unknown </b><br/>
+            <div class = "step pulse">Step 1 - Pour .50mL (10 drops) of unknown solution into casserole.</div>
+            <div class = "step">Step2 - Add .50mL (10 drops) of 6M HCL to casserole.</div>
+            <div class = "step">Step 3 - Heat solution over burner. Allow to cool.</div>
+            <div class = "step">Step 4- Add .60mL (12 drops) of 1M HCL to casserole</div>
+            <div class = "step">Step 5 - Mix the solution.</div>
+            <div class = "step">Step 6 - Add solution to a test tube for further testing.</div>
+            </br>
+            <div id = "pOne" onclick = "finishProcess('One');"> On Completion, Click Here to Progress. </div>
+        </div>
+        
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para2">
+        	<b> Seperate Group 2A from Group 2B </b> 
+            <div class = "step">Step 1 - Add .70mL (14 drops) of 1M C2H5NS to solution. </div> 
+            <div class = "step">Step 2 - Place test tube in beaker filled with H2O and heat over burner. </div> 
+            <div class = "step">Step 3 - Add .50mL (10 drops) of Hot H2O from beaker to solution. </div> 
+            <div class = "step">Step 4 - Add .70ml (14 drops) of 1M C2H5NS to solution.</div> 
+            <div class = "step">Step 5 - Add .10ml (2 drops) of 1M NH4C2H3O2 to solution. </div> 
+            <div class = "step">Step 6 - Mix the solution. </div> 
+            <div class = "step">Step 7 - Heat the solution in beaker which contains H2O.</div> 
+            <div class = "step">Step 8 - Add 1.5mL (30 drops) of .5M KOH-1 M KNO3 to the solution. </div> 
+            <div class = "step">Step 9 - Mix the solution.</div>           
+          	</br>
+    	</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para2">
+            <div class = "step">Step 10 - Centrifuge the solution. </div> 
+            <div class = "step">Step 11 - Decant the solution (Remove liquid from test tube and place in another test tube.)</div> <br/> 
+            
+            <div id = "pTwo" onclick = "finishProcess('Two');"> On Completion, Click Here to Progress. </div>
+     	</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para3">
+        	<b> Prepare Group 2A </b><br/>
+            <div class = "step">Step 1 - Add 1.0mL (20 drops) of .5M KOH-1 M KNO3 to the liquid solution. </div>  
+			<div class = "step">Step 2 - Place test tube in beaker filled with H2O and heat over burner.</div> 
+            <div class = "step">Step 3 - Mix the solution. </div>  
+			<div class = "step">Step 4 - Centrifuge the solution. </div> 
+			<div class = "step">Step 5 - Add 1.5mL (30 drops) of NH4C2H3O2 to solution. </div> 
+			<div class = "step">Step 6 - Heat in water bath. </div> 
+            <div class = "step">Step 7 - Mix the solution. </div>  
+            <div class = "step">Step 8 - Decant and save both solid and solution in separate test tubes. </div> <br/>
+
+			<div id = "pThree" onclick = "finishProcess('Three');"> On Completion, Click Here to Progress. </div>
+		</div>
+	</div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para4">
+        	<b> CONFIRMATION TEST FOR MERCURY (Hg2+) ION </b> <br/>
+            <div class = "step">Step 1 - Add 1.25mL (25 drops) of 6M HCL to precipitate. </div> 
+            <div class = "step">Step 2 - Add 0.25mL (5 drops) of 6M HNO3 to precipitate. </div> 
+			<div class = "step">Step 3 - Heat in water bath. </div> 
+			<div class = "step">Step 4 - Centrifuge the solution. </div> 
+            <div class = "step">Step 5 - Add 0.50 mL (20 drops) of 0.2M SNCl2 to the solution. </div> <br/>
+
+			<div id = "pFour" onclick = "finishProcess('Four');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para5">
+        	<b> CONFIRMATION TEST FOR LEAD (Pb2+) ION </b><br/>
+            <div class = "step">Step 1 - Add 0.35mL (7 drops) of 18M H2SO4. </div> 
+            <div class = "step">Step 2 - Heat in water bath. </div> 
+			<div class = "step">Step 3 - Add 1.0 (20 drops) of H2O to an empty test tube.</div> 
+            <div class = "step">Step 4 - Cool the H2O.</div>  
+			<div class = "step">Step 5 - Pour solution into the test tube of Cool H2O.</div>  
+			<div class = "step">Step 6 - Centrifuge. </div>
+            <div class = "step">Step 7 - Decant and save the solution for later. </div>  
+            <div class = "step">Step 8 - To the precipitate, add 0.05 mL (1 drop) of 6M C2H4O2.</div> 
+            <div class = "step">Step 9 - Then add 0.70mL (14 drops) of 1M NH4C2H3O2.</div> 
+            <div class = "step">Step 10 - Heat in water bath. </div> 
+			<div class = "step">Step 11 - Add 0.20 (4 drops) of 1M K2CRO4. </div> <br/>
+
+			<div id = "pFive" onclick = "finishProcess('Five');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para6">
+        	<b> CONFIRMATION TEST FOR BISMUTH (Bi3+) ION </b><br/>
+            Step 1 - Take the solution from Step 5 of the last Process.<br/>
+            <div class = "step">Step 2 - Add 0.05mL (1 drop) of 15M NH3. </div> 
+            <div class = "step">Step 3 - Stir. </div> 
+			<div class = "step">Step 4 - Repeat Step 2 & 3 until the solution turns clear.</div> 
+			<div class = "step">Step 5 - Add 0.25 mL (5 drops) 15M NH3 </div>  
+            <div class = "step">Step 6 - Stir.</div> 
+			<div class = "step">Step 7 - Centrifuge.</div> 
+            <div class = "step">Step 8 - If there is precipitate continue, otherwise proceed to the next process.
+            <br/>Step 7 - Decant the solution.</div> 
+            <div class = "step">Step 8 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div> 
+            <div class = "step">Step 9 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>  <br/>
+
+			<div id = "pSix" onclick = "finishProcess('Six');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para7">
+        	<b> CONFIRMATION TEST FOR COPPER (Cu2+) ION </b><br/>
+             <div class = "step">Step 1 - Take the solution from Step 5 of the last Process. <br/>
+             Step 2 - Add 0.50mL (10 drops) 6M  C2H4O2. </div> 
+			<div class = "step">Step 3 - Add 0.15mL (3 drops) of 0.2M FeK4C6N6. </div> <br/> 
+
+			<div id = "pSeven" onclick = "finishProcess('Seven');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para8">
+        	<b> CONFIRMATION TEST FOR CADMIUM (Cd2+) ION </b><br/>
+            <div class = "step">Step 1 - Add 0.50mL (10 drops) of the solution from the previous process to a new test tube. </div> 
+            Step 2 - If a precipitate formed in the previous test, go to Step 5.<br/>
+			<div class = "step">Step 3 - Add 0.20 mL (4 drops) of (NH4)2S. </div> 
+            <div class = "step">Step 4 - Stir solution and jump ahead to comfirmation.</div>   
+            <div class = "step">Step 5 - Add .20mL (4 drops) of Na2S2O4. </div> 
+            <div class = "step">Step 6 - Heat in water bath. </div> 
+            <div class = "step">Step 7 - Centrifuge.. </div>
+            <div class = "step">Step 8 - Decant. </div> 
+            <div class = "step">Step 9 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div>
+            <div class = "step">Step 10 - Stir. </div> <br/>
+
+			<div id = "pEight" onclick = "finishProcess('Eight');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para9">
+        	<b> Prepare Group 2B </b><br/>
+            <div class = "step">Step 1 - Add 0.20mL (4 drop) of 6M C2H4O2.</div>  
+            <div class = "step">Step 2 - Add 0.10mL (2 drops) of 1M C2H5NS. </div> 
+			<div class = "step">Step 3 - Stir.</div> 
+            <div class = "step">Step 4 - Heat in water bath.</div>  
+            <div class = "step">Step 5 - Centrifuge.</div>   
+            <div class = "step">Step 6 - Decant and discard the solution.</div> 
+            <div class = "step">Step 7 - Add 2.0mL (40 drops) of 2M NH4CL to the precipitate. </div> 
+            <div class = "step">Step 8 - Stir.</div> 
+            <div class = "step">Step 9 - Heat in water bath.</div>   
+            <div class = "step">Step 10 - Decant and discard the solution.</div>  
+            <div class = "step">Step 11 - Add 0.35mL (7 drops) H2O to the precipitate.</div>  
+            <div class = "step">Step 12 - Add 1.0 mL (20 drops) of 12M HCL. </div> 
+            <div class = "step">Step 13 - Heat in water bath.</div>   
+            <div class = "step">Step 14 - Stir.</div> 
+
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para9">
+            <div class = "step">Step 15 - Centrifuge. </div>
+            <div class = "step">Step 16 - Decant solution and precipitate into separate test tubes. </div>
+            <div class = "step">Step 17 - To precipitate, add 1.4mL (28 drops) of 6M HCL.</div>  
+            <div class = "step">Step 18 - Centrifuge. </div>
+            <div class = "step">Step 19 - Decand and add solution to solution from Step 16. </div> <br/>
+
+			<div id = "pNine" onclick = "finishProcess('Nine');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para10">
+        	<b> CONFIRMATION TEST FOR ARSENIC (As) IONS </b><br/>
+			<div class = "step">Step 1 - Add 0.30mL (6 drops) of H2O to the precipitate from the previous process. </div> 
+            <div class = "step"> Step 2 - Add 0.50mL (10 drops) of 1M NH4C2H3O2. </div> 
+			<div class = "step">Step 3 - Heat in water bath. </div>
+            <div class = "step">Step 4 - Centrifuge. </div>  
+            <div class = "step">Step 5 - Decant and discard the solution. </div>  
+            <div class = "step">Step 6 - Add 1.5mL (30 drops) of 6M NH3 to the precipitate.</div> 
+            <div class = "step">Step 7 - Stir until yellow has disolved.</div> 
+            <div class = "step">Step 8 - Centrifuge. </div> 
+            <div class = "step">Step 9 - Decant and discard the precipitate.</div> 
+            <div class = "step">Step 10 - Add 1.5mL (30 drops) of H2O2 to the solution. </div> 
+            <div class = "step">Step 11 - Stir. </div> 
+            <div class = "step">Step 11 - Heat in water bath. </div> 
+            <div class = "step">Step 13 - Add 0.50mL (10 drops) of 2M NH4NO3 to the solution.</div> 
+            <div class = "step">Step 14 - Stir.</div>   
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para10">
+           <div class = "step"> Step 15 - Add 0.50mL (10 drops) Mg(NO3)2. </div> 
+            <div class = "step">Step 16 - Put in ice cold bath. </div> 
+            <div class = "step">Step 17 - Centrifuge. </div>
+            <div class = "step">Step 18 - Decant and discard the solution. </div>  
+            <div class = "step">Step 19 - Add 0.50 mL (10 drops) of water to the precipitate. </div> 
+            <div class = "step">Step 20 - Add 0.05 mL (1 drop) of 6M NH3.</div>  
+            <div class = "step">Step 21 - Centrifuge. </div>
+            <div class = "step">Step 22 - Decant and discard the solution. </div>  
+            <div class = "step">Step 23 - Add 0.20 mL (4 drops) of 6M HC2H3O2 to the precipitate.</div>  
+            <div class = "step">Step 24 - Add 0.50 mL (10 drops) water.</div>  
+            <div class = "step">Step 25 - Add 0.50 ml (10 drops) of 0.2M AgNO3 and stir.</div>  
+            <div class = "step">Step 26 - Add .20mL (4 drops) of 6M NH3.</div>  <br/> 
+
+			<div id = "pTen" onclick = "finishProcess('Ten');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
+    	<div class="para11">
+        	<b> CONFIRMATION TEST FOR ANTIMONY (Sb3+) IONS </b><br/>
+            <div class = "step">Step 1 - Heat solution.</div>  
+            <div class = "step">Step 2 - Cool .50mL (10 drops) of cold H2O.</div> 
+            <div class = "step">Step 3 - Add cold H2O to the solution.</div>  
+            <div class = "step">Step 4 - Divide solution in half into 2 separate test tubes. Save 1 for later.</div>  
+            <div class = "step">Step 5 - Add 2.0mL (40 drops) of 1M C2H2O4.</div>
+            <div class = "step">Step 6 - Stir.</div>   
+            <div class = "step">Step 7 - Add 0.50ml (10 drops) of 1M C2H5NS.</div>  
+            <div class = "step">Step 8 - Heat in water bath.</div>  <br/> 
+
+			<div id = "pEleven" onclick = "finishProcess('Eleven');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
+    	<div class="para12">
+        	<b> CONFIRMATION TEST FOR TIN (Sn4+) IONS </b><br/>
+            <div class = "step">Step 1 - Take second test tube from Step 4 in Process 11.</div>  
+            <div class = "step">Step 2 - Add 2 small iron nails to the solution.</div>  
+            <div class = "step">Step 3 - Heat in water bath.</div>  
+            <div class = "step">Step 4 - Remove iron nails.</div>
+            <div class = "step">Step 5 - Pour solution into a new test tube.</div>    
+            <div class = "step">Step 6 - Add 1.0 mL (20 drops) of 0.10M HgCl2.</div>  
+            <div class = "step">Step 7 - Stir solution.</div>    <br/>
+
+			<div id = "pTwelve" onclick = "finishProcess('Twelve');"> On Completion, Click Here to Progress. </div>
+		</div>
+    </div>
+	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Journal/Resources/backInsideCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Journal/Resources/journalBackCoverRegSize.png')"></div>
+</div>
+
+</div>
+<audio loop id="audio1" src="Rooms/Sounds/medieval.mp3" controls preload="auto" style = "display: none;" volume = ".001" autobuffer></audio>
+
+<script type="text/javascript">
+	$("#flipbook").turn({
+		width: 785,
+		height: 480,
+		autoCenter: true
+	});
+	
+	 document.onkeypress=function(e){
+	  var evtobj=window.event? event : e
+	  var code=evtobj.charCode? evtobj.charCode : evtobj.keyCode
+	  var asciiStr=String.fromCharCode(code);
+	  if(asciiStr == 'r')
+	  	RisDown = true;
+	 }
+	document.onkeyup=function(e){
+	  var evtobj=window.event? event : e
+	  var code=evtobj.charCode? evtobj.charCode : evtobj.keyCode
+	  var asciiStr=String.fromCharCode(code);
+	  RisDown = false;
+	}
+</script>
+
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Review</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src = "../turn.js"></script>
+<link rel="stylesheet" href="menuStyling.css">
+
+<script>
+$('#contents').load('mainMenu.html');
+console.out("print");
+
+function clicky() 
+{
+	$('#contents').load('test.html');
+	//document.getElementById("one").src = "creditsMenu.html";
+}
+</script>
+
+<!--<iframe frameBorder="0" width = "1020px" height = "650px" src = "mainMenu.html" id = "one"></iframe>-->
+
+<div id = "content">
+	
+</div>
+
+<div id="flipbook">
+	<div class="hard" style = "background: #0F0;"> Turn.js </div>
+	<div class="hard" style = "background: #0F0;"></div>
+	<div style = "background: #FFF;"> Page 1 </div>
+	<div style = "background: #FFF;"> Page 2 </div>
+	<div style = "background: #FFF;"> Page 3 </div>
+	<div style = "background: #FFF;"> Page 4 </div>
+	<div class="hard" style = "background: #0F0"></div>
+	<div class="hard" style = "background: #0F0"></div>
+</div>
+<script type="text/javascript">
+	$("#flipbook").turn({
+		width: 400,
+		height: 300,
+		autoCenter: true
+	});
+</script>
+
+</body>
+</html>

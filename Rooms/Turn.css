@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+
+#left
+{
+	position: absolute;
+	height: 600px;
+	width: 50px;
+	z-index: 2;
+}
+
+#right
+{
+	height: 500px;
+	width: 50px;
+	position: absolute;
+	margin-left: 950px; 
+	z-index: 2;
+}
+
+#left:hover
+{
+	background-image:url(../UI/Images/ArrowLeft.png);
+}
+
+#right:hover
+{
+	background-image:url(../UI/Images/ArrowRight.png);
+}

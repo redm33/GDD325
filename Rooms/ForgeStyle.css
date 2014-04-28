@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+#alchemist
+{
+	//width: 189px;
+	//height: 450px;
+	//background-image:url(Images/AlchemistAnimIdle03.gif);
+	float: right;
+	z-index: 0;
+}
+
+#speechBubble
+{
+	background-image:url(Images/AlchemistSpeechBubble02.png);
+	width: 700px;
+	height: 308px;
+	position: absolute;
+	margin-left: 100px;	
+	display:none;
+}
+
+#speechText
+{
+	width: 570px;
+	height: 200px;
+	position: absolute;
+	margin-left: 60px;	
+	margin-top: 50px;
+	display: block;
+	font-family: nycs;
+}
+#leftArrow
+{
+	margin-left: -50px;
+	font-weight: bold;	
+}
+#leftArrow:hover{cursor:pointer;}
+#rightArrow
+{
+	margin-left: 300px;
+	font-weight: bold;	
+}
+#rightArrow:hover{cursor:pointer;}
+
+#questions
+{
+	margin-left: 50px;	
+}
+.questionHover:hover
+{
+	text-shadow:5px 5px 5px #FFF;	
+}
+
+#responses{font-weight: bold;}
+
+#beakerPlace
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 265px;
+	margin-left: 495px;
+	z-index: 2;
+	position: absolute;
+}
+
+#nailsStart
+{
+	width: 64px;
+	height: 64px;
+	background-image:url(../Inventory/NailsDown.png);	
+	z-index: 2;
+	position: absolute;
+	margin-top: 350px;
+	margin-left: 330px;
+}
+#nailsStart:hover
+{
+	background-image:url(../Inventory/nailsGlow.png);	
+	z-index: 2;
+	position: absolute;
+	margin-top: 353px;
+	margin-left: 330px;
+}
+
+#waterBath
+{
+	position: absolute;
+	margin-top: 258px;
+	margin-left: 400px;	
+	width: 150px;
+	height: 150px;
+	background-image: url(../Rooms/Images/WaterBathStand.png);
+}
+#waterBath:hover
+{
+	position: absolute;
+	margin-top: 252px;
+	margin-left: 395px;	
+	width: 160px;
+	height: 160px;
+	background-image: url(../Rooms/Images/WaterBathStandGlow.png);
+
+}
+
+#waterBathPlacement
+{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	margin-top: 230px;
+	margin-left: 475px;	
+	z-index: 3;
+}
+
+#alchemistWrapper
+{
+	width:189px;
+	height:450px;
+	float: right;
+	margin-right: 50px;
+	margin-top: 150px;
+	z-index: 0;
+}

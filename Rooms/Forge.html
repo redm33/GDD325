@@ -1,0 +1,45 @@
+
+<div id = "speechBubble">
+<div id = "speechText">
+
+<div id = "responses">
+    <div id = "open" style = "display: block;">This is the alchemists first statement</div> 
+    <div id = "first" style = "display: none;"> Ohh, I can't quite remember. I thought I kept it on a shelf by the doorway.</div> 
+    <div id = "two" style = "display: none;">Open your journal! I've outlined all the steps for you in there.</div>
+    <div id = "three" style = "display: none;">I keep all my chemicals on the chemical shelf.</div>
+    <div id = "four" style = "display: none;">Put the test tube in a beaker of water and place it on the stand by the forge. The forge will heat it automatically.</div>
+     <div id = "five" style = "display: none;"> Put the test tube in the tub of ice on the work desk. It should cool the test tube for you.</div> 
+    <div id = "six" style = "display: none;">Are you blind? The centrifuge is on the work desk!</div>
+    <div id = "seven" style = "display: none;">Golly wiz! Just put the bloomin' test tube in the centrifuge!</div>
+    <div id = "eight" style = "display: none;">Fine, fine. What do you think is in the solution?</div>
+    <div id = "nine" style = "display: none;">Wow! I’m impressed! You’ll be an alchemist in no time! Here, let me show you my secret project.</div>
+    <div id = "ten" style = "display: none;">Leave it to a novice to get the incorrect answer. Please try again. </div>
+</div>
+  <br/>  
+<div id = "questions">    
+    <div class = "questionHover" id = "firstQ" style = "display: block;"><a href = "#" onclick = "talking('first')"> 
+    Where do I find an eyedropper? </a></div>
+    <div class = "questionHover" id = "secQ" style = "display: block;"><a href = "#" onclick = "talking('two')">  
+    I'm so confused. Where do I start? </a></div>
+    <div class = "questionHover" id = "thirdQ" style = "display: block;"><a  href = "#" onclick = "talking('three')">
+    Where do I get a chemical? </a></div>
+    <div> <span  onclick = "switchQuestions(2)"id = "leftArrow"><</span><span  onclick = "switchQuestions(1)"id = "rightArrow">></span> </div>
+
+</div>
+<br/>
+</div>
+</div>
+<div id = "alchemistWrapper" onclick = "alchemistTalk()">
+<object width="189" height="450" id = "alchemist">
+  <param name="movie" value="Rooms/Images/AlchemistAnimFLASHTest.swf">
+  <param name="wmode" value="transparent" />
+  <embed wmode="transparent"src= "Rooms/Images/AlchemistAnimFLASHTest.swf" width="189" height="450"> </embed>
+</object>
+</div>
+<div id = "nailsStart" onclick = "itemClick('Nails.png', 'nailsStart')"> </div>
+<div id = "waterBathPlacement" onclick = "placeBeakerCass()"></div>
+<div id = "waterBath" onclick = "placeBeakerCass()"></div>
+<div id = "beakerPlace"> </div>
+<a href = "#" onclick = "clicky('Rooms/ChemShelf.html','Rooms/ChemShelf.png')"><div id = "left"> </div></a>
+<a href = "#" onclick = "clicky('Rooms/Workdesk.html','Rooms/Images/WorkdeskRoomBackground.png')"><div id = "right"> </div></a>
+

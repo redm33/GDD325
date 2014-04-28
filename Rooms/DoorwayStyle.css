@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+#picture
+{
+	width: 107;
+	height: 124;
+	position: absolute;
+	background-image:url(Images/DoorwayPicture01.png);	
+	margin-left: 460px;
+	margin-top: 155px;
+	z-index: 3;
+}
+
+#eyedropper
+{
+	width: 64px;
+	height: 28px;
+	position: absolute;
+	background-image:url(../Inventory/EyedropperFinalRotated.png);	
+	margin-left: 475px;
+	margin-top: 240px;
+	z-index: 2;
+}
+#eyedropper:hover
+{
+	width: 77px;
+	height: 34px;
+	position: absolute;
+	background-image:url(../Inventory/EyedropperFinalRotatedGlow.png);	
+	margin-left: 470px;
+	margin-top: 238px;
+	z-index: 2;
+}
+
+#picture:hover
+{
+	margin-top: 100px;	
+}
+
+#stirStick
+{
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	background-image:url(../Inventory/MixingRodHoriz.png);	
+	margin-left: 470px;
+	margin-top: 350px;
+	z-index: 2;
+}
+#stirStick:hover
+{
+	background-image:url(../Inventory/MixingRodHorizGlow.png);	
+}

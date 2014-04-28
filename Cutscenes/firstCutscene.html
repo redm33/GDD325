@@ -1,0 +1,25 @@
+<video autoplay id="video1" width="1000" height = "600">
+    <source src="Cutscenes/storyboardMovieWIP.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<script> 
+	var breakTime = 4;
+	var video = document.getElementById("video1");
+	var interval = window.setInterval( 
+	function(){
+		if(breakTime < video.currentTime)
+		{
+			window.clearInterval(interval);
+			window.setTimeout( function(){
+			video.pause();
+			$('#content').load("Rooms/Forge.html");
+			var inventory = document.getElementById("userInterface").style.display = "block";
+			backgroundMusic.play();
+			fire.play();
+			snore.play();
+			localStorage.setItem("LoadBack", "Forge");
+			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";}, 10);	
+		}
+
+	},1000);
+</script>

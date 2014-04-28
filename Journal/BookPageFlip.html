@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="page.css">
+<head>
+<script>
+function myFunction()
+{
+	var para = document.getElementsByClassName("para1");
+	for (var i = 0; i < para.length; i++)
+	{
+		if (para[i].style.visibility == "hidden")
+			para[i].style.visibility="visible";
+		else
+			para[i].style.visibility="hidden";
+	}
+	myFunction2();
+}
+
+function myFunction2()
+{
+	var para = document.getElementsByClassName("para2");
+	for (var i = 0; i < para.length; i++)
+	{
+		para[i].style.visibility="visible";
+	}
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Journal Test</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src = "../turn.js"></script>
+</head>
+
+<body>
+
+<div id="flipbook">
+	<div class="page" style = "background-image:url('Resources/journalCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/frontInsideCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/pageRightRegSize.png')">
+    <div class="para1">This is a test</br></div>
+    <div class="para2">This is not the test</div></div>
+	<div class="page" style = "background-image:url('Resources/pageLeftRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/pageRightRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/pageLeftRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/backInsideCoverRegSize.png')"></div>
+	<div class="page" style = "background-image:url('Resources/journalBackCoverRegSize.png')"></div>
+</div>
+<script type="text/javascript">
+	$("#flipbook").turn({
+		width: 1000,
+		height: 600,
+		autoCenter: true
+	});
+</script>
+<button onclick="myFunction()">Click me</button>
+
+
+</body>
+</html>

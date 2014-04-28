@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* CSS Document */
+#matchingGame
+{
+	width:785px;
+	height: 485px;
+	margin: auto;
+	background-color: #903;	
+}
+
+
+#theFound
+{
+	background-image: url(Desert.jpg);	
+	width: 100px;
+	height: 100px;
+	margin-top: 170px;
+	margin-left: 20px;
+	position: absolute;
+}
+
+
+#options
+{
+	float: right;
+	margin-top: 10px;
+	margin-right: 20px;	
+}
+
+.optionSpacing
+{
+	margin-top: 10px;	
+}
+#option1
+{
+	background-image: url(chemAqua.png);
+	width: 64px;
+	height: 64px;
+	margin-right: 10px;
+}
+
+#option2
+{
+	background-image: url(chemBlue.png);
+	width: 64px;
+	height: 64px;
+}
+
+#option3
+{
+	background-image: url(chemRed.png);
+	width: 64px;
+	height: 64px;
+	margin-right: 10px;
+}
+
+#option4
+{
+	background-image: url(chemPink.png);
+	width: 64px;
+	height: 64px;
+}
+
+#option5
+{
+	background-image: url(chemOrange.png);
+	width: 64px;
+	height: 64px;
+	margin-right: 10px;
+}
+
+#option6
+{
+	background-image: url(chemLime.png);
+	width: 64px;
+	height: 64px;
+}

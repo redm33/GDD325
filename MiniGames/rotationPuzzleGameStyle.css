@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+#rotateGame
+{
+	float: right;
+	width: 640px;
+	height: 512px;
+	z-index: 2;
+	
+}
+
+#rotateConvas
+{
+	z-index: 1000;	
+	position:relative;
+	left: 100px;
+}

@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+#gameTrigger
+{
+	background-image:url(Images/chemicalsForShelf.png);
+	margin-top: 247px;
+	margin-left: 320px;	
+	position: absolute;
+	width: 200px;
+	height: 133px;
+}
+#gameTrigger:hover{background-image:url(Images/chemicalsHover.png);}
+
+#beakerStart
+{
+	width: 64px;
+	height: 64px;
+	margin-top: 130px;
+	margin-left: 240px;
+	background-image:url(../Inventory/BeakerEmpty.png);
+	position: absolute;
+}
+
+#beakerStart:hover
+{
+	background-image:url(../Inventory/BeakerEmptyGlow.png);
+	width: 52px;
+	height: 71px;
+	margin-top: 127px;
+	margin-left: 246px;
+}
+
+#casseroleStart
+{
+	width: 64px;
+	height: 64px;
+	background-image:url(../Inventory/CasseroleCup.png);	
+	position: absolute;
+	margin-top: 235px;
+	margin-left: 680px;
+}
+#casseroleStart:hover
+{
+	width: 69px;
+	height: 41px;
+	background-image:url(../Inventory/CasseroleCupGlow.png);	
+	position: absolute;
+	margin-top: 263px;
+	margin-left: 679px;
+}

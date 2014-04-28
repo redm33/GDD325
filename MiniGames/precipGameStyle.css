@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+#precipGame
+{
+	position: absolute;
+	width: 1000px;
+	height: 600px;
+	z-index: 2;
+	background-image:url(Images/precipitateGame.png);
+	
+}
+canvas
+{
+	z-index: 1000;	
+	position:relative;
+	margin-left: 305px;
+}
+
+#collected
+{
+	margin-left: 534px;
+	margin-top: 3px;
+	color: white;
+	width: 200px;
+}
+
+#precipDirections
+{
+	margin-top: 80px;
+	position: absolute;
+	width: 120px;
+	margin-left: 115px;
+	height: 80px;
+	color: white;
+}
+#back
+{
+	margin-top: -20px;
+	margin-left: 300px;
+}

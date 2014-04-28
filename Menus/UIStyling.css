@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+#userInterface
+{
+	margin: auto;
+	width:1000px;
+	height: 154px;
+	margin-top: -138px;
+	//margin-left: 124px;
+	background-image:url(../UI/Images/UIFinal.png);
+	position: absolute;
+	display: none;
+	z-index: 10;
+}
+
+#testItem
+{
+	width: 64px;
+	height: 64px;
+	background:	url(../Inventory/TestTubeEmpty.png);
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 100px;
+	
+}
+
+#testItem2
+{
+	width: 64px;
+	height: 64px;
+	background:	url(../Inventory/EyedropperFinal.png);
+	position: absolute;
+	margin-top: 100px;
+	margin-left: 300px;
+	
+}
+
+#inventory
+{
+	margin-top: 37px;
+	margin-left: 336px;
+	position: absolute;	
+}
+#itemOne
+{
+	//background-image:url(../Inventory/BeakerLiqClear.png);
+	width:64px;
+	height:64px;
+	margin-left: 0px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemTwo
+{
+	//background:url(../Inventory/HgCl2.png);
+	width:64px;
+	height:64px;
+	margin-left: 82px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemThree
+{
+	//background:url(../Inventory/HgCl2.png);
+	width:64px;
+	height:64px;;
+	margin-left: 164px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemFour
+{
+	background:url(../Inventory/TTPrecWhiteLiqCloudy.png);
+	width:64px;
+	height:64px;
+	margin-left: 246px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemFive
+{
+	//background:url(../Inventory/Nails.png);
+	width:64px;
+	height:64px;;
+	margin-left: 328px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemSix
+{
+	//background:url(../Inventory/H2O.png);
+	width:64px;
+	height:64px;
+	margin-left: 410px;
+	margin-top:37px;
+	position: absolute;
+}
+
+#itemSeven
+{
+	//background:url(../Inventory/6MHCL.png);
+	width:64px;
+	height:64px;
+	margin-left: 492px;
+	margin-top:37px;
+	position: absolute;
+}
+
+
+#journalButton
+{
+	margin-top: 13px;
+	background-image:url(../UI/Images/journalIcon.png);
+	background-repeat:no-repeat;
+	position: absolute;	
+	//background:#0FF;
+	width: 120px;
+	height: 125px;
+	margin-left: 93px;
+}
+
+#menuButtons
+{
+	margin-top: 48px;
+	position: absolute;	
+	width: 80px;
+	height: 140px;
+	margin-left: 8px;
+	z-index: 4;
+}
+
+#menuUIButton
+{
+	width: 69px;
+	height: 35px;
+	text-align: center;
+	background-image:url(../UI/Images/UIButton.png);
+	line-height: 33px;
+
+}
+
+#instructionsUIButton
+{
+	width: 69px;
+	height: 35px;
+	margin-top: 18px;
+	text-align: center;
+	line-height: 33px;
+	background-image:url(../UI/Images/UIButton.png);
+
+}
+#menuUIButton:hover{background-image:url(../UI/Images/UIButtonHover.png);}
+#instructionsUIButton:hover{background-image:url(../UI/Images/UIButtonHover.png);}
+#menuUIButton:active{background-image:url(../UI/Images/UIButtonActive.png);}
+#instructionsUIButton:active{background-image:url(../UI/Images/UIButtonActive.png);}
+
+#journal
+{
+	position: absolute;	
+	margin-top: -600px;
+	display: none;
+	margin-left: 215px;
+	z-index: 5;
+}
+
+#trash
+{
+	width: 86px;
+	height: 41px;
+	background-image:url(../UI/Images/trashIdle.png);
+	position: absolute;
+	margin-left: 910px;
+	margin-top: 80px;
+	z-index: 11;
+}
+#trash:hover{background-image:url(../UI/Images/trashHover.png);}
+#washing
+{
+	width: 121px;
+	height: 90px;
+	background-image:url(../UI/Images/bucketIdle.png);
+	position: absolute;
+	margin-left: 208px;
+	margin-top: 50px;
+	z-index: 11;
+}
+#washing:hover{background-image:url(../UI/Images/bucketHover.png);}
+/* CSS Document */
+
+.step{text-decoration-blink: true;}

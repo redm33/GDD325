@@ -1,0 +1,36 @@
+<video autoplay id="video1" width="1000" height = "600">
+    <source src="Cutscenes/CutsceneCloseFINAL.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<script> 
+	var breakTime = 19;
+	var video = document.getElementById("video1");
+	backgroundMusic.pause();
+	fire.pause();
+	snore.pause();
+	document.getElementById('userInterface').style.display = "none";
+	var interval = window.setInterval( 
+	function(){
+		if(breakTime < video.currentTime)
+		{
+			window.clearInterval(interval);
+			window.setTimeout( function(){
+			video.pause();
+			document.getElementById('content').style.backgroundImage = "url('Menus/Images/menuBackground.png')";
+			$('#content').load("Menus/mainMenu.html");
+			localStorage.removeItem("mainMenu")
+			localStorage.removeItem("credits");
+			localStorage.removeItem("instructions");
+			localStorage.removeItem("UIContent");
+			localStorage.removeItem("journalOpen");
+			localStorage.removeItem("Forge");	
+			localStorage.removeItem("Workdesk");	
+			localStorage.removeItem("ChemShelf");	
+			localStorage.removeItem("Doorway");	
+			localStorage.removeItem("LoadPage");
+			
+			preLoadProcessOne();}, 10);	
+		}
+
+	},1000);
+</script>
