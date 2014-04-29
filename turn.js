@@ -877,6 +877,7 @@ turnMethods = {
 
 	_turnPage: function(page) {
 
+		
 		var current, next,
 			data = this.data(),
 			view = this.turn('view'),
@@ -1734,6 +1735,7 @@ flipMethods = {
 
 	turnPage: function(corner) {
 
+		refreshSteps();
 		var that = this,
 			data = this.data().f;
 
@@ -1825,7 +1827,7 @@ flipMethods = {
 	_eventEnd: function() {
 
 		var data = this.data().f;
-
+		
 		if (!data.disabled && data.point) {
 			var event = $.Event('released');
 			this.trigger(event, [data.point]);
