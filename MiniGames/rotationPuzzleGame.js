@@ -292,7 +292,7 @@ function selectPiece(e)
 		console.log("Game won");
 		document.getElementById("game").style.cursor = cursorImage;
 		breakFlag = false;
-		breakCounter = Math.floor(Math.random()*3+3);
+		breakCounter = Math.floor(Math.random()*3+2);
 		gameSetup();
 		document.getElementById("rotateGame").style.display = "none";
 		document.getElementById("rotateGame").innerHTML = "";
