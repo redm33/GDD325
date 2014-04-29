@@ -343,7 +343,7 @@ function setup(chem)
 			setup();
 		document.getElementById("wanted").style.backgroundImage = "url(MiniGames/chemicalBottlesHover/"+chem+".png)";
 		document.getElementById("moves").innerHTML = "3";
-		},100);
+		},1000);
 
 	}
 	else if(wantedChem != null)

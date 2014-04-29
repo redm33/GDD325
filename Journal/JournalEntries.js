@@ -2,7 +2,9 @@
 var steps = "";
 function refreshSteps()
 {
+	window.setTimeout(function(){
 	steps = document.getElementsByClassName("step");
+	},1000);
 }
 
 function AddEntry(name)
@@ -102,6 +104,9 @@ function updateStep()
 {
 	var remove = "";
 	var add = "";
+	var pulse = document.getElementsByClassName("pulse");
+	removeClass("pulse", pulse[0]);
+	
 	for(var k = 0; k < steps.length; k++)
 	{
 		if(steps[k].style.textDecoration != "line-through")
@@ -112,10 +117,7 @@ function updateStep()
 			break;
 		}
 	}
-	
-	removeClass("pulse", remove);
 	addClass("pulse", add);
-		
 }
 
 function addClass( classname, element ) {
