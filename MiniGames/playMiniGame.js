@@ -25,10 +25,7 @@ function playPrecipGame(color)
 {
 	$('#precipGame').load("MiniGames/precipGame.html");
 	document.getElementById("precipGame").style.display = "block";
-<<<<<<< HEAD
 
-=======
->>>>>>> f33a61d176a65011a15dfae018a3deee769b34e4
 	window.setTimeout(function(){
 	switch (color)
 	{

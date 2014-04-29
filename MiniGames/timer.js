@@ -29,11 +29,7 @@ function updateTime()
 		}
 		else
 		{
-<<<<<<< HEAD
 			window.setTimeout("gameSetup()",10);
-=======
-			window.setTimeout("loadHandler()",10);
->>>>>>> f33a61d176a65011a15dfae018a3deee769b34e4
 			window.setTimeout("timerSetup()",10);
 		}
 	}

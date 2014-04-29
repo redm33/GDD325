@@ -10,7 +10,6 @@ var endW;
 var rads;
 var currentPiece;
 
-<<<<<<< HEAD
 var pieces = [[]];
 var key = [[]];
 var key1 = [[]];
@@ -166,40 +165,6 @@ function gameSetup()
 	
 	img.addEventListener('load',loadHandler,false);
 }
-=======
-var pieces = 
-[
-  [0,0,0,0,0,0],
-  [0,0,0,0,0,0],
-  [0,0,0,0,0,0],
-  [0,0,0,0,0,0],
-  [0,0,0,0,0,0],
-  [0,0,0,0,0,0]
-];
-
-var key = 
-[
-  [0,4,4,4,4,4],
-  [0,0,0,0,4,4],
-  [4,4,4,0,4,4],
-  [4,0,0,0,4,4],
-  [4,0,4,4,4,4],
-  [4,0,0,0,0,0]
-];
-
-var key1 = 
-[
-  [2,4,4,4,4,4],
-  [0,2,2,0,4,4],
-  [4,4,4,2,4,4],
-  [4,0,2,0,4,4],
-  [4,2,4,4,4,4],
-  [4,0,2,2,2,0]
-];
-
-img.addEventListener('load',loadHandler,false);
-img.src = "MiniGames/TestBoard.png";
->>>>>>> f33a61d176a65011a15dfae018a3deee769b34e4
 
 function shuffle()
 {
@@ -327,11 +292,7 @@ function selectPiece(e)
 		document.getElementById("game").style.cursor = cursorImage;
 		breakFlag = false;
 		breakCounter = Math.floor(Math.random()*3+3);
-<<<<<<< HEAD
 		gameSetup();
-=======
-		loadHandler();
->>>>>>> f33a61d176a65011a15dfae018a3deee769b34e4
 		document.getElementById("rotateGame").style.display = "none";
 		document.getElementById("rotateGame").innerHTML = "";
 	}
