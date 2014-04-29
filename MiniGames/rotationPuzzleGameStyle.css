@@ -14,5 +14,7 @@
 {
 	z-index: 1000;	
 	position:relative;
-	left: 100px;
+	margin-left: 0px;
+	margin-right: 0px;
+	left: 100;
 }

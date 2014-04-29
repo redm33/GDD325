@@ -1177,6 +1177,10 @@ function finishProcess(theProcess)
 			document.getElementById("pSeven").innerHTML = "Fantastic! Flip the page to continue to the next process.";
 			AddEntry("p8");
 			processSeven = false;	
+			if(Cu2)
+				document.getElementById("ifCopper").style.display = "block";
+			else
+				document.getElementById("noCopper").style.display = "block";
 			processEight = true;
 			saveProcess();
 		}

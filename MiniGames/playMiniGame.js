@@ -2,11 +2,6 @@
 function playFindChem()
 {
 	$('#chemGame').load("MiniGames/chemicalGame.html");
-	window.setTimeout( function() {
-	var thissound=document.getElementById("audio1");
-	thissound.style.display = "none";
-	thissound.volume = ".05";
-  	thissound.play();} ,10);
 	
 	
 }
@@ -14,11 +9,7 @@ function playChemGame()
 {
 	theChem = document.getElementById("chemicalList").value;
 	window.setTimeout( function() {
-	setup(theChem);
-	var thissound=document.getElementById("audio1");
-	thissound.style.display = "none";
-	thissound.volume = ".05";
-  	thissound.play();} ,100);
+	setup(theChem);} ,100);
 }
 
 function playPrecipGame(color)

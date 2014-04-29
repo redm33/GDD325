@@ -253,6 +253,7 @@ function showHideJournal()
 	if(document.getElementById("journal").style.display == "")
 	{
 		document.getElementById("journal").style.display = "block";
+		refreshSteps();
 	}
 	else
 	{

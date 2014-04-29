@@ -328,7 +328,7 @@ function setup(chem)
 			}	
 		}
 		
-		newArray = shuffle(chemArray);
+		var newArray = shuffle(chemArray);
 		var index = 0;
 		for(var i = 0; i < idSlots.length; i++)
 		{

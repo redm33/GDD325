@@ -1,4 +1,10 @@
 // JavaScript Document
+var steps = "";
+function refreshSteps()
+{
+	steps = document.getElementsByClassName("step");
+}
+
 function AddEntry(name)
 {
 	if(name == "p2")
@@ -94,7 +100,6 @@ function AddEntry(name)
 
 function updateStep()
 {
-	var steps = document.getElementsByClassName("step");
 	var remove = "";
 	var add = "";
 	for(var k = 0; k < steps.length; k++)
@@ -107,6 +112,7 @@ function updateStep()
 			break;
 		}
 	}
+	
 	removeClass("pulse", remove);
 	addClass("pulse", add);
 		
