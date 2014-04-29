@@ -4,15 +4,16 @@
 #rotateGame
 {
 	float: right;
-	width: 640px;
-	height: 512px;
+	width: 1000px;
+	height: 600px;
 	z-index: 2;
 	
 }
 
 #rotateConvas
 {
-	z-index: 1000;	
-	position:relative;
-	left: 100px;
+	z-index: 3;	
+	position: absolute;
+	left: 16px;
+	top: -8px;
 }

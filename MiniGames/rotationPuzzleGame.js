@@ -2,6 +2,7 @@
 var canvas = document.querySelector("canvas");
 var drawingSurface = canvas.getContext("2d");
 var img = new Image();
+var backgroundImg = new Image();
 var mouse = {x:0,y:0};
 var startH;
 var startW;
@@ -48,7 +49,7 @@ function gameSetup()
 		  [4,2,4,4,4,4],
 		  [4,0,2,2,2,0] ];
 		
-		img.src = "MiniGames/TestBoard001.png";
+		img.src = "MiniGames/board001.png";
 	}
 	else if(path == 1)
 	{
@@ -76,7 +77,7 @@ function gameSetup()
 		  [0,2,0,4,4,4],
 		  [4,4,2,4,4,4] ];
 		
-		img.src = "MiniGames/TestBoard002.png";
+		img.src = "MiniGames/board002.png";
 	}
 	else if(path == 2)
 	{
@@ -104,7 +105,7 @@ function gameSetup()
 		  [4,4,2,4,4,4],
 		  [2,2,0,4,4,4] ];
 		
-		img.src = "MiniGames/TestBoard003.png";
+		img.src = "MiniGames/board003.png";
 	}
 	else if(path == 3)
 	{
@@ -132,7 +133,7 @@ function gameSetup()
 		  [4,4,4,4,2,4],
 		  [4,4,4,4,0,0] ];
 		
-		img.src = "MiniGames/TestBoard004.png";
+		img.src = "MiniGames/board004.png";
 	}
 	else if(path == 4)
 	{
@@ -160,9 +161,10 @@ function gameSetup()
 		  [2,0,4,2,4,4],
 		  [4,0,2,0,4,4] ];
 		
-		img.src = "MiniGames/TestBoard005.png";
+		img.src = "MiniGames/board005.png";
 	}
 	
+	backgroundImg.src = "MiniGames/centrifugeGame.png";
 	img.addEventListener('load',loadHandler,false);
 }
 
@@ -173,10 +175,13 @@ function shuffle()
 		for(var column = 0; column < pieces[row].length; column++) 
 		{
 			pieces[row][column] = Math.floor(Math.random()*4);
-			currentPiece = pieces[row][column];;
+			currentPiece = pieces[row][column];
 			
-			startW = row*64+64;
-			startH = column*64+64;
+			startW = row*64+32;
+			startH = column*64+32;
+			
+			offsetW = startW+400;
+			offsetH = startH+45;
 			
 			if(currentPiece == 0)
 				rads = 0;
@@ -187,12 +192,12 @@ function shuffle()
 			else if(currentPiece == 3)
 				rads = 1.57079633*3;
 			
-			drawingSurface.fillRect(startW, startH, 64, 64);
-			drawingSurface.translate(startW+32, startH+32);
+			drawingSurface.drawImage(backgroundImg, offsetW, offsetH, 64, 64, offsetW, offsetH, 64, 64);
+			drawingSurface.translate(offsetW+32, offsetH+32);
 			drawingSurface.rotate(rads);
 			drawingSurface.drawImage(img, startW, startH, 64, 64, -32, -32, 64, 64);
 			drawingSurface.rotate(-rads);
-			drawingSurface.translate(-startW-32, -startH-32);
+			drawingSurface.translate(-offsetW-32, -offsetH-32);
 		}
 	}
 }
@@ -200,19 +205,20 @@ function shuffle()
 function loadHandler()
 {
 	drawingSurface.fillStyle = "rgb(255,255,255)";
-    drawingSurface.fillRect (0,0,512,512);
-	drawingSurface.drawImage(img, 0, 0, 512, 512);
+    drawingSurface.clearRect (0,0,448,448);
+	drawingSurface.drawImage(backgroundImg, 0, 0, 1000, 600);
+	drawingSurface.drawImage(img, 400, 45, 448, 448);
 	shuffle();
 	timer();
-	document.onmousemove = coords;
+	//document.onmousemove = coords;
 	document.onmousedown = selectPiece;
 }
 
 function timer()
 {
-	drawingSurface.font = "32px Arial";
-	drawingSurface.drawImage(img, 192, 0, 128, 64, 192, 0, 128, 64);
-	drawingSurface.fillText(displayTime(), 216, 40);
+	drawingSurface.font = "44px Arial";
+	drawingSurface.drawImage(backgroundImg, 170, 147, 134, 72, 170, 126, 134, 62);
+	drawingSurface.fillText(displayTime(), 177.5, 170);
 }
 
 function coords(e)
@@ -224,31 +230,26 @@ function coords(e)
 	
 	startH = (Math.floor(mouse.y/64))*64;
 	startW = (Math.floor(mouse.x/64))*64;
-	
-	//console.log(mouse.x + ", " + mouse.y);
-	//console.log(startW + ", " + startH);
 }
 
 function selectPiece(e)
 {
 	if(e.layerX || e.layerX == 0){
-		mouse.x = e.pageX - canvas.offsetLeft;
-		mouse.y = e.pageY - canvas.offsetTop;
+		mouse.x = e.pageX - canvas.offsetLeft-432;
+		mouse.y = e.pageY - canvas.offsetTop-77;
 	};
 	
-	startH = (Math.floor(mouse.y/64))*64;
-	startW = (Math.floor(mouse.x/64))*64;
-	endH = startH+64;
-	endW = startW+64;
-	
-	//console.log(mouse.x + ", " + mouse.y);
-	//console.log(startW + ", " + startH);
+	startH = (Math.floor(mouse.y/64)+.5)*64;
+	startW = (Math.floor(mouse.x/64)+.5)*64;
+			
+	offsetW = startW+400;
+	offsetH = startH+45;
 	
 	for(var row = 0; row < pieces.length; row++) 
 	{	
 		for(var column = 0; column < pieces[row].length; column++) 
 		{ 
-			if((row*64+64) == startW && (column*64+64) == startH)
+			if((row*64+32) == startW && (column*64+32) == startH)
 			{
 				currentPiece = pieces[row][column];
 				
@@ -276,14 +277,14 @@ function selectPiece(e)
 		}
 	}
 	
-	if(startW >= 64 && startW < 448 && startH >= 64 && startH < 448)
+	if(startW >= 32 && startW < 416 && startH >= 32 && startH < 416)
 	{
-		drawingSurface.fillRect(startW, startH, 64, 64);
-		drawingSurface.translate(startW+32, startH+32);
+		drawingSurface.drawImage(backgroundImg, offsetW, offsetH, 64, 64, offsetW, offsetH, 64, 64);
+		drawingSurface.translate(offsetW+32, offsetH+32);
 		drawingSurface.rotate(rads);
 		drawingSurface.drawImage(img, startW, startH, 64, 64, -32, -32, 64, 64);
 		drawingSurface.rotate(-rads);
-		drawingSurface.translate(-startW-32, -startH-32);
+		drawingSurface.translate(-offsetW-32, -offsetH-32);
 	}
 	
 	if(checkWin() == true)
