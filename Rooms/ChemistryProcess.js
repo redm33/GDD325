@@ -120,9 +120,13 @@ function randomizeIons()
 		//Group 2A
 		Hg2 = ions2A[0];
 		Pb2 = ions2A[1];
-		Bi3 = ions2A[2];
-		Cu2 = ions2A[3];
-		Cd2 = ions2A[4];
+		//Bi3 = ions2A[2];
+		//Cu2 = ions2A[3];
+		//Cd2 = ions2A[4];
+		
+		Bi3 = true;
+		Cu2 = true;
+		Cd2 = true;
 		//Group 2B
 		Sb3 = ions2B[0];
 		Sn4 = ions2B[1];

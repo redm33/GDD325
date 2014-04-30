@@ -242,9 +242,7 @@ function placeInInventory()
 				}
 				entered = true;
 			}
-			
-		}
-		
+		}	
 	}	
 }
 

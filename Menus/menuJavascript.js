@@ -3,10 +3,6 @@ var chemSave = true;
 var workdeskSave = true;
 var doorwaySave = true;
 var RisDown = false;
-var steps = "";
-var stepsSize = "";
-
-
 
 var fire = new Audio("Rooms/Sounds/fire.wav");
 if (typeof fire.loop == 'boolean')
@@ -59,15 +55,6 @@ window.onload = function() {
 	localStorage.removeItem("Doorway");	
 	localStorage.removeItem("LoadPage");
 	
-	
-	steps = document.getElementsByClassName("step");
-	stepsSize = steps.length;
-	alert(stepsSize);
-	
-	while(steps[0].innerHTML != "Step 1 - Pour .50mL (10 drops) of unknown solution into casserole."){
-		steps = document.getElementsByClassName("step");
-	}
-	alert(steps[0].innerHTML);
 	/*
 	localStorage.setItem("UI", document.getElementById("userInterface").innerHTML);
 	$('#content').load("Rooms/Doorway.html");
@@ -323,6 +310,7 @@ function clicky(loc,background)
 			inventory.display = "block";
 			backgroundMusic.play();
 			localStorage.setItem("LoadPage","ChemShelf");
+
 	
 		}
 	}

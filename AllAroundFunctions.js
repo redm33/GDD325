@@ -17,18 +17,6 @@ function displayMessage(messageToBeShown)
 	var message = document.getElementById("messages");
 	message.innerHTML = messageToBeShown;
 	message.style.display = "block";
-	/*
-	if(message.style.display != "none" && !hover)
-	{
-		$("#messages").stop().animate({opacity: 1.0}, 1000);
-		$('#messages').fadeOut(1500);
-	}
-	else
-	{
-		message.style.display = "block";
-		$('#messages').fadeOut(1500);
-	}*/
-
 }
 function removeMessage()
 {

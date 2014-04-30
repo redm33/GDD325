@@ -877,7 +877,6 @@ turnMethods = {
 
 	_turnPage: function(page) {
 
-		
 		var current, next,
 			data = this.data(),
 			view = this.turn('view'),
@@ -1039,6 +1038,7 @@ turnMethods = {
 			turnMethods._removeMv.call(turn, opts.pageMv);
 			turn.turn('update');
 		}
+
 		
 	},
 	
