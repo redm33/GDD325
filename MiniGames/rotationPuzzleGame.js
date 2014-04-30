@@ -289,7 +289,6 @@ function selectPiece(e)
 	
 	if(checkCentWin() == true)
 	{
-		console.log("Game won");
 		document.getElementById("game").style.cursor = cursorImage;
 		breakFlag = false;
 		breakCounter = Math.floor(Math.random()*3+2);

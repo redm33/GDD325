@@ -441,68 +441,74 @@ function setCursorSetBackground(cursor, background, clickedDiv, diff)
 function interactCentrifuge()
 {
 	cursorImage = document.getElementById("game").style.cursor;
+	var correctItem = false;
 	for(var i=0; i<testTubes.length; i++)
 	{
 		if(i!=0)
 		{
 			if(testTubes[i] == stripCursorImage(cursorImage))
 			{			
-				if(breakCounter == 0)
-					breakFlag = true;
-						
-				if(breakFlag == true)
-				{
-					document.getElementById("rotateGame").style.display = "block";
-					playRotateGame();
-					document.getElementById("game").style.cursor = "";	
-				}
-				else
-				{	
-					var burner = document.getElementById("burner");
-					var index = testTubes.indexOf(stripCursorImage(cursorImage));
-					if(index != -1)
-					{
-						thePrecip = "TTPrecWhiteLiqClear.png";
-						if(processTwo) {thePrecip = "TTPrecWhiteLiqClear.png";
-						processStepTwo("", 0, false, false, true, false);};
-						if(processThree) {thePrecip = "TTLiqCloudy.png";
-						processStepThree("", 0, false, false, true, false, "");};
-						if(processFour) {thePrecip = "TTLiqCloudy.png";
-						processStepFour("", 0, false, true, "");};
-						if(processFive){thePrecip = "TTPrecWhiteLiqCloudy.png";
-						processStepFive("", 0, false, false, true, false, false, "");}
-						if(processSix){
-							if(Bi3 && !Cu2)
-								thePrecip = "TTPrecWhiteLiqClear.png";
-							else if(Cu2 && !Bi3)
-								thePrecip = "TTLiqBlue.png";
-							else if(Cu2 && Bi3)
-								thePrecip = "TTPrecWhiteLiqPurple.png";
-							else
-								thePrecip = "TTLiqClear.png";
-						processStepSix("", 0, false, true, false, "");}
-						if(processEight) {thePrecip = "TTPrecWhiteLiqClear.png"; 
-							processStepEight("", 0, false, false, true, false, "");}
-						if(processNine){thePrecip = "TTPrecWhiteLiqClear.png";
-							processStepNine("", 0, false, false, true, false, "");}
-						if(processTen){processStepTen("", 0, false, false, true, false, "");}
-						
-						displayMessage(actions["centrifuge"]);
-						document.getElementById("game").style.cursor = "";
-						lockCursor = true;
-						lockTurn = true;
-						window.setTimeout(function(){
-							document.getElementById("game").style.cursor = "url(Inventory/" + thePrecip + ") 32 32, auto";
-							lockCursor = false;
-							lockTurn = false;
-							removeMessage();
-							if(breakCounter <= 0)
-								breakCounter--;
-						}, 5000);
-					}
-				}
+				correctItem = true;
 			}
 		}
+	}
+	if(correctItem == true)
+	{
+		if(breakCounter == 0)
+			breakFlag = true;
+				
+		if(breakFlag == true)
+		{
+			document.getElementById("rotateGame").style.display = "block";
+			playRotateGame();
+			document.getElementById("game").style.cursor = "";	
+		}
+		else
+		{	
+			var burner = document.getElementById("burner");
+			var index = testTubes.indexOf(stripCursorImage(cursorImage));
+			if(index != -1)
+			{
+				thePrecip = "TTPrecWhiteLiqClear.png";
+				if(processTwo) {thePrecip = "TTPrecWhiteLiqClear.png";
+				processStepTwo("", 0, false, false, true, false);};
+				if(processThree) {thePrecip = "TTLiqCloudy.png";
+				processStepThree("", 0, false, false, true, false, "");};
+				if(processFour) {thePrecip = "TTLiqCloudy.png";
+				processStepFour("", 0, false, true, "");};
+				if(processFive){thePrecip = "TTPrecWhiteLiqCloudy.png";
+				processStepFive("", 0, false, false, true, false, false, "");}
+				if(processSix){
+					if(Bi3 && !Cu2)
+						thePrecip = "TTPrecWhiteLiqClear.png";
+					else if(Cu2 && !Bi3)
+						thePrecip = "TTLiqBlue.png";
+					else if(Cu2 && Bi3)
+						thePrecip = "TTPrecWhiteLiqPurple.png";
+					else
+						thePrecip = "TTLiqClear.png";
+				processStepSix("", 0, false, true, false, "");}
+				if(processEight) {thePrecip = "TTPrecWhiteLiqClear.png"; 
+					processStepEight("", 0, false, false, true, false, "");}
+				if(processNine){thePrecip = "TTPrecWhiteLiqClear.png";
+					processStepNine("", 0, false, false, true, false, "");}
+				if(processTen){processStepTen("", 0, false, false, true, false, "");}
+				
+				displayMessage(actions["centrifuge"]);
+				document.getElementById("game").style.cursor = "";
+				lockCursor = true;
+				lockTurn = true;						
+				if(breakCounter > 0)
+					breakCounter--;
+				window.setTimeout(function(){
+					document.getElementById("game").style.cursor = "url(Inventory/" + thePrecip + ") 32 32, auto";
+					lockCursor = false;
+					lockTurn = false;
+					removeMessage();
+				}, 5000);
+			}
+		}
+		correctItem = false;
 	}
 }
 
