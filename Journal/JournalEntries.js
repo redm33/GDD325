@@ -1,9 +1,7 @@
 // JavaScript Document
 var steps = "";
-function refreshSteps()
-{
-	steps = document.getElementsByClassName("step");
-}
+var stepsSize = "";
+
 
 function AddEntry(name)
 {
@@ -104,13 +102,11 @@ function updateStep()
 	var add = "";
 	var pulse = document.getElementsByClassName("pulse");
 	removeClass("pulse", pulse[0]);
-	
-	for(var k = 0; k < steps.length; k++)
+	for(var k = 0; k < stepsSize; k++)
 	{
 		if(steps[k].style.textDecoration != "line-through")
 		{
 			steps[k].style.textDecoration = "line-through";	
-			remove = steps[k];
 			add = steps[k+1];
 			break;
 		}

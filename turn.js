@@ -108,7 +108,7 @@ var has3d,
 
 	// Number of pages in the DOM, minimum value: 6
 
-	pagesInDOM = 6,
+	pagesInDOM = 30,
 	
 	pagePosition = {0: {top: 0, left: 0, right: 'auto', bottom: 'auto'},
 					1: {top: 0, right: 0, left: 'auto', bottom: 'auto'}},
@@ -1735,7 +1735,6 @@ flipMethods = {
 
 	turnPage: function(corner) {
 
-		refreshSteps();
 		var that = this,
 			data = this.data().f;
 

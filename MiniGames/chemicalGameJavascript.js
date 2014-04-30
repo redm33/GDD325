@@ -330,7 +330,6 @@ function setup(chem)
 		
 		var newArray = shuffle(chemArray);
 		var index = 0;
-		window.setTimeout(function(){
 		for(var i = 0; i < idSlots.length; i++)
 		{
 			for(var j = 0; j<idSlots[i].length; j++)
@@ -340,17 +339,10 @@ function setup(chem)
 			}
 		}
 		if(setupWin())
-			setup();
+			setup(chem);
 		document.getElementById("wanted").style.backgroundImage = "url(MiniGames/chemicalBottlesHover/"+chem+".png)";
 		document.getElementById("moves").innerHTML = "3";
-		},1000);
 
-	}
-	else if(wantedChem != null)
-	{
-		onePrompt = false;
-		alert("I'm sorry that chemical doesn't not exist.");
-		setup();
 	}
 	else
 	{
