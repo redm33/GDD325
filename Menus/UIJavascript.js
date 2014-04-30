@@ -251,13 +251,9 @@ function placeInInventory()
 function showHideJournal()
 {
 	if(document.getElementById("journal").style.display == "")
-	{
 		document.getElementById("journal").style.display = "block";
-	}
 	else
-	{
 		document.getElementById("journal").style.display = "";
-	}
 }
 
 function trash()

@@ -287,7 +287,7 @@ function selectPiece(e)
 		drawingSurface.translate(-offsetW-32, -offsetH-32);
 	}
 	
-	if(checkWin() == true)
+	if(checkCentWin() == true)
 	{
 		console.log("Game won");
 		document.getElementById("game").style.cursor = cursorImage;
@@ -301,7 +301,7 @@ function selectPiece(e)
 	document.onmousedown = selectPiece;
 }
 
-function checkWin()
+function checkCentWin()
 {
 	for(var row = 0; row < pieces.length; row++) 
 	{	
