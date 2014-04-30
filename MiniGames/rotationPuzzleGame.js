@@ -168,7 +168,7 @@ function gameSetup()
 	img.addEventListener('load',loadHandler,false);
 }
 
-function shuffle()
+function shuffleBoard()
 {
 	for(var row = 0; row < pieces.length; row++) 
 	{	
@@ -208,7 +208,7 @@ function loadHandler()
     drawingSurface.clearRect (0,0,448,448);
 	drawingSurface.drawImage(backgroundImg, 0, 0, 1000, 600);
 	drawingSurface.drawImage(img, 400, 45, 448, 448);
-	shuffle();
+	shuffleBoard();
 	timer();
 	//document.onmousemove = coords;
 	document.onmousedown = selectPiece;

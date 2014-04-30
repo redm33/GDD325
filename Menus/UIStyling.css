@@ -73,7 +73,7 @@
 
 #itemFour
 {
-	//background:url(../Inventory/TTLiqClear.png);
+	background:url(../Inventory/TTLiqClear.png);
 	width:64px;
 	height:64px;
 	margin-left: 246px;
@@ -83,7 +83,7 @@
 
 #itemFive
 {
-	//background:url(../Inventory/Nails.png);
+	background:url(../Inventory/TTPrecWhiteLiqClear.png);
 	width:64px;
 	height:64px;;
 	margin-left: 328px;
