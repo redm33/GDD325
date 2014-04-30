@@ -381,11 +381,13 @@
 			<div class = "step">Step 4 - Repeat Step 2 & 3 until the solution turns clear.</div> 
 			<div class = "step">Step 5 - Add 0.25 mL (5 drops) 15M NH3 </div>  
             <div class = "step">Step 6 - Stir.</div> 
-			<div class = "step">Step 7 - Centrifuge.</div> 
-            <div class = "step">Step 8 - If there is precipitate continue, otherwise proceed to the next process.
-            <br/>Step 7 - Decant the solution.</div> 
-            <div class = "step">Step 8 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div> 
-            <div class = "step">Step 9 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>  <br/>
+			<div class = "step">Step 7 - Centrifuge.</div>
+            <div id = "ifBis"> </div>
+            <script> 
+            	if(Bi3)
+					document.getElementById("ifBis").innerHTML = 'Step 8 - Decant the solution.</div><div class = "step">Step 9 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div><div class = "step">Step 10 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>';
+            </script>  
+            <br/>
 
 			<div id = "pSix" onclick = "finishProcess('Six');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -404,18 +406,14 @@
     	<div class="para8">
         	<b> CONFIRMATION TEST FOR CADMIUM (Cd2+) ION </b><br/>
             <div class = "step">Step 1 - Add 0.50mL (10 drops) of the solution from the previous process to a new test tube. </div> 
-            <div id = "noCopper" style = "display:none;">
-                <div class = "step">Step 3 - Add 0.20 mL (4 drops) of (NH4)2S. </div> 
-                <div class = "step">Step 4 - Stir.</div> 
-            </div>
-            <div id = "ifCopper" style = "display:none;">  
-                <div class = "step">Step 5 - Add .20mL (4 drops) of Na2S2O4. </div> 
-                <div class = "step">Step 6 - Heat in water bath. </div> 
-                <div class = "step">Step 7 - Centrifuge.. </div>
-                <div class = "step">Step 8 - Decant. </div> 
-                <div class = "step">Step 9 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div>
-                <div class = "step">Step 10 - Stir. </div>
-            </div> <br/>
+            <div id = "copperOrNoCopper"></div>
+            <script> 
+            	if(Cu2)
+					document.getElementById("copperOrNoCopper").innerHTML = '<div class = "step">Step 2 - Add 0.20 mL (4 drops) of (NH4)2S. </div><div class = "step">Step 3 - Stir.</div>';
+				else
+					document.getElementById("copperOrNoCopper").innerHTML = ' <div class = "step">Step 2 - Add .20mL (4 drops) of Na2S2O4. </div><div class = "step">Step 3 - Heat in water bath. </div> <div class = "step">Step 4 - Centrifuge.. </div><div class = "step">Step 5 - Decant. </div><div class = "step">Step 6 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div><div class = "step">Step 7 - Stir. </div>';
+            </script>               
+            <br/>
 
 			<div id = "pEight" onclick = "finishProcess('Eight');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -545,6 +543,13 @@
 	  var asciiStr=String.fromCharCode(code);
 	  RisDown = false;
 	  
+	document.onkeypress=function(e){
+	  var evtobj=window.event? event : e
+	  var code=evtobj.charCode? evtobj.charCode : evtobj.keyCode
+	  var asciiStr=String.fromCharCode(code);
+	  if(asciiStr == 'n')
+	  	updateStep();
+	 }
 	 
 	}
 	

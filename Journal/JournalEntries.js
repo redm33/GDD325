@@ -1,9 +1,6 @@
 // JavaScript Document
-var steps = "";
-function refreshSteps()
-{
-	steps = document.getElementsByClassName("step");
-}
+var stepsSize = 0;
+var steps = ""; 
 
 function AddEntry(name)
 {
@@ -100,22 +97,18 @@ function AddEntry(name)
 
 function updateStep()
 {
-	var remove = "";
 	var add = "";
 	var pulse = document.getElementsByClassName("pulse");
+	var thePulse = pulse[0];
+	pulse[0].style.textDecoration = "line-through";		
 	removeClass("pulse", pulse[0]);
-	var MaxSize = steps.length;
-	for(var k = 0; k < MaxSize; k++)
+
+	for(var k = 0; k < stepsSize; k++)
 	{
-		if(steps[k].style.textDecoration != "line-through")
-		{
-			steps[k].style.textDecoration = "line-through";	
-			remove = steps[k];
+		if(steps[k] == thePulse)
 			add = steps[k+1];
-			break;
-		}
 	}
-	addClass("pulse", add);		
+	addClass("pulse", add);	
 }
 
 function addClass( classname, element ) {

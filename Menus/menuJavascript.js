@@ -58,6 +58,7 @@ window.onload = function() {
 	
 	steps = document.getElementsByClassName("step");
 	stepsSize = steps.length;
+	alert(stepsSize);
 	/*
 	localStorage.setItem("UI", document.getElementById("userInterface").innerHTML);
 	$('#content').load("Rooms/Doorway.html");
