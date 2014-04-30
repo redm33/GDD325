@@ -297,6 +297,7 @@ function selectPiece(e)
 		document.getElementById("rotateGame").style.display = "none";
 		document.getElementById("rotateGame").innerHTML = "";
 		document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeIdle.png)";
+		lockTurn = false;
 	}
 	
 	document.onmousedown = selectPiece;

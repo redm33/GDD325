@@ -258,4 +258,5 @@ function backoutPrecip()
 	document.getElementById("precipGame").innerHTML = "";
 	document.getElementById("precipGame").style.display = "none";
 	document.getElementById("game").style.cursor = "url(Inventory/"+cursorPub + ") 64 64, auto";
+	lockTurn = false;
 }
