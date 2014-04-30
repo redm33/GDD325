@@ -478,6 +478,8 @@ function interactCentrifuge()
 								thePrecip = "TTLiqBlue.png";
 							else if(Cu2 && Bi3)
 								thePrecip = "TTPrecWhiteLiqPurple.png";
+							else
+								thePrecip = "TTLiqClear.png";
 						processStepSix("", 0, false, true, false, "");}
 						if(processEight) {thePrecip = "TTPrecWhiteLiqClear.png"; 
 							processStepEight("", 0, false, false, true, false, "");}

@@ -301,7 +301,7 @@ function setup(chem)
 		theChem = getFlatFileName(chem);
 		onePrompt = true;
 	}
-	var chemArray = new Array();
+	var chemGameArray = new Array();
 	if(theChem != "")
 	{
 		countMoves = 3;
@@ -317,20 +317,19 @@ function setup(chem)
 				div.style.height = "64px";
 				if(desiredChem < 10)
 				{
-					chemArray.push(theChem);
+					chemGameArray.push(theChem);
 					desiredChem++;
 				}
 				else
 				{
 					var randomInt = getRandomInt(0,chemsOnShelf.length-1);
-					chemArray.push(chemsOnShelfHover[randomInt]);
+					chemGameArray.push(chemsOnShelfHover[randomInt]);
 				}
 			}	
 		}
 		
-		var newArray = shuffle(chemArray);
+		var newArray = shuffle(chemGameArray);
 		var index = 0;
-		window.setTimeout(function(){
 		for(var i = 0; i < idSlots.length; i++)
 		{
 			for(var j = 0; j<idSlots[i].length; j++)
@@ -340,17 +339,10 @@ function setup(chem)
 			}
 		}
 		if(setupWin())
-			setup();
+			setup(chem);
 		document.getElementById("wanted").style.backgroundImage = "url(MiniGames/chemicalBottlesHover/"+chem+".png)";
 		document.getElementById("moves").innerHTML = "3";
-		},1000);
 
-	}
-	else if(wantedChem != null)
-	{
-		onePrompt = false;
-		alert("I'm sorry that chemical doesn't not exist.");
-		setup();
 	}
 	else
 	{
@@ -378,7 +370,7 @@ function decrementMoves()
 	{
 		if(!win)
 		{
-			setup();
+			setup(theChem);
 			alert("Try again...");
 		}
 		else

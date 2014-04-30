@@ -55,7 +55,9 @@ window.onload = function() {
 	localStorage.removeItem("ChemShelf");	
 	localStorage.removeItem("Doorway");	
 	localStorage.removeItem("LoadPage");
-
+	
+	steps = document.getElementsByClassName("step");
+	stepsSize = steps.length;
 	/*
 	localStorage.setItem("UI", document.getElementById("userInterface").innerHTML);
 	$('#content').load("Rooms/Doorway.html");

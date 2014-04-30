@@ -13,6 +13,8 @@ var Sb3 = false;
 var Sn4 = false;
 var As = false;
 
+var currentStep = 0;
+
 var ions2A = new Array(false, false, false, false, false)
 var ions2B = new Array(false, false, false);
 
@@ -1040,6 +1042,7 @@ function finishProcess(theProcess)
 			AddEntry("p2");
 			processOne = false;	
 			processTwo = true;
+			currentStep += 6;
 			saveProcess();
 		}
 	}
@@ -1064,6 +1067,7 @@ function finishProcess(theProcess)
 			AddEntry("p3");
 			processTwo = false;	
 			processThree = true;
+			currentStep += 11;
 			saveProcess();
 		}
 	}
@@ -1085,6 +1089,7 @@ function finishProcess(theProcess)
 			AddEntry("p4");
 			processThree = false;	
 			processFour = true;
+			currentStep += 8;
 			saveProcess();
 		}
 	}
@@ -1108,6 +1113,7 @@ function finishProcess(theProcess)
 			AddEntry("p5");
 			processFour = false;	
 			processFive = true;
+			currentStep += 5;
 			saveProcess();
 		}
 	}
@@ -1129,6 +1135,7 @@ function finishProcess(theProcess)
 			AddEntry("p6");
 			processFive = false;	
 			processSix = true;
+			currentStep += 11;
 			saveProcess();
 		}
 	}
@@ -1157,6 +1164,7 @@ function finishProcess(theProcess)
 			AddEntry("p7");
 			processSix = false;	
 			processSeven = true;
+			currentStep += 9;
 			saveProcess();
 		}
 	}
@@ -1177,11 +1185,8 @@ function finishProcess(theProcess)
 			document.getElementById("pSeven").innerHTML = "Fantastic! Flip the page to continue to the next process.";
 			AddEntry("p8");
 			processSeven = false;	
-			if(Cu2)
-				document.getElementById("ifCopper").style.display = "block";
-			else
-				document.getElementById("noCopper").style.display = "block";
 			processEight = true;
+			currentStep += 2;
 			saveProcess();
 		}
 	}
@@ -1216,6 +1221,10 @@ function finishProcess(theProcess)
 			AddEntry("p9");
 			processEight = false;	
 			processNine = true;
+			if(Cu2)
+				currentStep += 7;
+			else
+				currentStep += 3;			
 			saveProcess();
 		}
 	}
@@ -1237,6 +1246,7 @@ function finishProcess(theProcess)
 			AddEntry("p10");
 			processNine = false;	
 			processTen = true;
+			currentStep += 19;
 			saveProcess();
 		}
 	}
@@ -1258,6 +1268,7 @@ function finishProcess(theProcess)
 			AddEntry("p11");
 			processTen = false;	
 			processEleven = true;
+			currentStep += 26;
 			saveProcess();
 		}
 	}
@@ -1282,6 +1293,7 @@ function finishProcess(theProcess)
 			AddEntry("p12");
 			processEleven = false;	
 			processTwelve = true;
+			currentStep += 8;
 			saveProcess();
 		}
 	}
@@ -1303,6 +1315,7 @@ function finishProcess(theProcess)
 			processEleven = false;	
 			processTwelve = true;
 			checkIt = true;
+			currentStep += 7;
 			saveProcess();
 		}
 	}			
@@ -1326,6 +1339,13 @@ function revertContent(process, processClear)
 	document.getElementById("userInterface").innerHTML = localStorage.getItem("UI");
 	document.getElementById("content").innerHTML = localStorage.getItem("ProcessForge");
 	document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
+	
+	addClass("pulse", steps[currentStep]);	
+	for(var h = currentStep; h < stepsSize; h++)
+	{
+		steps[h].style.textDecoration = "none";	
+	}
+	
 
 			
 }
