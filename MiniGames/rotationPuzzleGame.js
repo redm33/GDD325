@@ -21,6 +21,7 @@ gameSetup();
 
 function gameSetup()
 {
+	document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/CentrifugeBroken.gif)";
 	path = Math.floor(Math.random()*5);
 	
 	if(path == 0)
@@ -295,6 +296,7 @@ function selectPiece(e)
 		gameSetup();
 		document.getElementById("rotateGame").style.display = "none";
 		document.getElementById("rotateGame").innerHTML = "";
+		document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeIdle.png)";
 	}
 	
 	document.onmousedown = selectPiece;

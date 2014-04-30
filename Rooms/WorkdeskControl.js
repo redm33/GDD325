@@ -500,11 +500,13 @@ function interactCentrifuge()
 				lockTurn = true;						
 				if(breakCounter > 0)
 					breakCounter--;
+				document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeRunning.gif)";
 				window.setTimeout(function(){
 					document.getElementById("game").style.cursor = "url(Inventory/" + thePrecip + ") 32 32, auto";
 					lockCursor = false;
 					lockTurn = false;
 					removeMessage();
+					document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeIdle.png)";
 				}, 5000);
 			}
 		}

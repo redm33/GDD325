@@ -13,7 +13,7 @@ var Sb3 = false;
 var Sn4 = false;
 var As = false;
 
-var currentStep = 0;
+var currentStep = 1;
 
 var ions2A = new Array(false, false, false, false, false)
 var ions2B = new Array(false, false, false);
@@ -120,13 +120,9 @@ function randomizeIons()
 		//Group 2A
 		Hg2 = ions2A[0];
 		Pb2 = ions2A[1];
-		//Bi3 = ions2A[2];
-		//Cu2 = ions2A[3];
-		//Cd2 = ions2A[4];
-		
-		Bi3 = true;
-		Cu2 = true;
-		Cd2 = true;
+		Bi3 = ions2A[2];
+		Cu2 = ions2A[3];
+		Cd2 = ions2A[4];
 		//Group 2B
 		Sb3 = ions2B[0];
 		Sn4 = ions2B[1];
@@ -1046,7 +1042,7 @@ function finishProcess(theProcess)
 			AddEntry("p2");
 			processOne = false;	
 			processTwo = true;
-			currentStep += 6;
+			currentStep = 7;
 			saveProcess();
 		}
 	}
@@ -1168,7 +1164,7 @@ function finishProcess(theProcess)
 			AddEntry("p7");
 			processSix = false;	
 			processSeven = true;
-			currentStep += 9;
+			currentStep += 10;
 			saveProcess();
 		}
 	}
@@ -1225,10 +1221,7 @@ function finishProcess(theProcess)
 			AddEntry("p9");
 			processEight = false;	
 			processNine = true;
-			if(Cu2)
-				currentStep += 7;
-			else
-				currentStep += 3;			
+			currentStep += 7;
 			saveProcess();
 		}
 	}
@@ -1344,11 +1337,15 @@ function revertContent(process, processClear)
 	document.getElementById("content").innerHTML = localStorage.getItem("ProcessForge");
 	document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
 	
-	addClass("pulse", steps[currentStep]);	
-	for(var h = currentStep; h < stepsSize; h++)
+	removeClass("pulse", document.getElementsByClassName("pulse")[0]);
+	addClass("pulse", document.getElementById(allSteps[currentStep]));	
+	for(var h = currentStep; h < allSteps.length-1; h++)
 	{
-		steps[h].style.textDecoration = "none";	
+		if(currentStep != 0)
+			document.getElementById(allSteps[h]).style.textDecoration = "none";	
 	}
+	startSearch = currentStep;
+	
 	
 
 			

@@ -109,11 +109,9 @@ function updateStep()
 		{
 			startSearch++;
 			if(startSearch == 48 && !Bi3){
-				startSearch = 50;
-				alert("Bi3 On");}
+				startSearch = 50;}
 			if(startSearch == 55 && !Cu2){
-				startSearch = 59;
-				alert("Cu2 Off");}
+				startSearch = 59;}
 			
 			add = document.getElementById(allSteps[startSearch]);
 		}

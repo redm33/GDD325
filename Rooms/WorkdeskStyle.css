@@ -343,11 +343,11 @@
 
 #centrifuge
 {
-	width: 150px;
-	height: 150px;
-	margin-top: 100px;
-	margin-left: 80px;
-	background-image:url(Images/centrifuge.png);
+	width: 165px;
+	height: 175px;
+	margin-top: 50px;
+	margin-left: 50px;
+	background-image:url(Images/centrifugeIdle.png);
 	position: absolute;	
 	z-index: 2;
 }

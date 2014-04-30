@@ -542,14 +542,6 @@
 	  var code=evtobj.charCode? evtobj.charCode : evtobj.keyCode
 	  var asciiStr=String.fromCharCode(code);
 	  RisDown = false;
-	  
-	document.onkeypress=function(e){
-	  var evtobj=window.event? event : e
-	  var code=evtobj.charCode? evtobj.charCode : evtobj.keyCode
-	  var asciiStr=String.fromCharCode(code);
-	  if(asciiStr == 'n')
-	  	updateStep();
-	 }
 	 
 	}
 	
