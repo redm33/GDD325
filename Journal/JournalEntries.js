@@ -1,6 +1,4 @@
 // JavaScript Document
-var stepsSize = 0;
-var steps = ""; 
 
 function AddEntry(name)
 {
@@ -102,11 +100,13 @@ function updateStep()
 	var thePulse = pulse[0];
 	pulse[0].style.textDecoration = "line-through";		
 	removeClass("pulse", pulse[0]);
-
 	for(var k = 0; k < stepsSize; k++)
 	{
 		if(steps[k] == thePulse)
+		{
 			add = steps[k+1];
+			alert(k+1);
+		}
 	}
 	addClass("pulse", add);	
 }
@@ -130,3 +130,4 @@ function removeClass( classname, element ) {
     cn = cn.replace( rxp, '' );
     element.className = cn;
 }
+
