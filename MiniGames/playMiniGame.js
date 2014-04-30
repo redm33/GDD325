@@ -2,14 +2,14 @@
 function playFindChem()
 {
 	$('#chemGame').load("MiniGames/chemicalGame.html");
-	
-	
+	lockTurn = true;	
 }
 function playChemGame()
 {
 	theChem = document.getElementById("chemicalList").value;
 	window.setTimeout( function() {
-	setup(theChem);} ,100);
+	setup(theChem);
+	lockTurn = true} ,100);
 }
 
 function playPrecipGame(color)
@@ -55,11 +55,13 @@ function playPrecipGame(color)
 	//window.setTimeout(function(){
 	//percip.src = "MiniGames/chemRed.png";},1);
 	document.getElementById("game").style.cursor = "";
+	lockTurn = true;
 }
 
 function playRotateGame()
 {
 	$('#rotateGame').load("MiniGames/rotationPuzzleGame.html");
+	lockTurn = true;
 }
 
 

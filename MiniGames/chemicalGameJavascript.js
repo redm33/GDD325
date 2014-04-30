@@ -354,6 +354,7 @@ function backOut()
 {
 	document.getElementById("chemGame").innerHTML = "";
 	onePrompt = false;
+	lockTurn = false;
 }
 
 function retrieveChemical(chemImage)
