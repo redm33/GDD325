@@ -7,6 +7,16 @@
 	src: url("../Menus/NothingYouCouldSay.ttf");
 }
 
+#TTubes
+{
+	z-index:auto
+}
+
+#Chems
+{
+	z-index:auto
+}
+
 .page
 {
     background-size: 393px 480px;

@@ -104,8 +104,8 @@ function updateStep()
 	var add = "";
 	var pulse = document.getElementsByClassName("pulse");
 	removeClass("pulse", pulse[0]);
-	
-	for(var k = 0; k < steps.length; k++)
+	var MaxSize = steps.length;
+	for(var k = 0; k < MaxSize; k++)
 	{
 		if(steps[k].style.textDecoration != "line-through")
 		{
