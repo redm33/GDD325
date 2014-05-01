@@ -46,11 +46,13 @@ var workareaHover14 = "";
 var workareaHover15 = "";
 
 var droplet = new Audio("Rooms/Sounds/droplet.wav");
+var switchSound = new Audio("Rooms/Sounds/pickUpShort.wav");
+switchSound.volume = ".1";
+
+
 
 function placeItemOnDesk(divId)
 {
-	var switchSound = new Audio("Rooms/Sounds/pickUpShort.wav");
-	switchSound.volume = ".1";
 	switchSound.play();
 	workarea = document.getElementById(divId);
 	backgroundStyle = workarea.currentStyle || window.getComputedStyle(workarea, false),
@@ -469,6 +471,8 @@ function interactCentrifuge()
 			var index = testTubes.indexOf(stripCursorImage(cursorImage));
 			if(index != -1)
 			{
+				var spinningCent = new Audio("Rooms/Sounds/centrifuge.wav");
+				spinningCent.play();
 				thePrecip = "TTPrecWhiteLiqClear.png";
 				if(processTwo) {thePrecip = "TTPrecWhiteLiqClear.png";
 				processStepTwo("", 0, false, false, true, false);};
@@ -501,6 +505,7 @@ function interactCentrifuge()
 				if(breakCounter > 0)
 					breakCounter--;
 				document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeRunning.gif)";
+				
 				window.setTimeout(function(){
 					document.getElementById("game").style.cursor = "url(Inventory/" + thePrecip + ") 32 32, auto";
 					lockCursor = false;
@@ -532,6 +537,8 @@ function interactIceBath()
 		icebath.style.backgroundImage = "url('Rooms/Images/IceBathTT.png')";
 		lockCursor = true;
 		lockTurn = true;
+		var icing = new Audio("Rooms/Sounds/iceBathShort.wav");
+		icing.play();
 		window.setTimeout(function(){
 			document.getElementById("game").style.cursor = "url(Inventory/TTLiqClear.png) 32 32, auto";
 			icebath.style.backgroundImage = "url(Rooms/Images/IceBath.png)";

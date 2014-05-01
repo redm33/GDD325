@@ -112,7 +112,6 @@ function addItem(image)
 		}
 	}
 	
-	
 	if(!entered)
 	{
 		alert("your inventory is full!");	

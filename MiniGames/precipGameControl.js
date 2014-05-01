@@ -186,6 +186,8 @@ function playGame()
 		if(collisionSide === "top" && basket.vy <= 0)
 		{
 		  particles[i].part.visible = false;
+		  var catchPrecip = new Audio("Rooms/Sounds/precipCatch.wav");
+		  catchPrecip.play();
 		  if(precipCollected > 0)
 		  	precipCollected--;
 		}

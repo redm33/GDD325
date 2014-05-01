@@ -57,22 +57,36 @@
 	letter-spacing: 1px;
 	line-height: 30px;
 	position: absolute;
-	margin-left: 120px;
+	margin-left: 70px;
 	z-index: 2;
 	margin-top: 100px;
+	width: 900px;
 }
 
 #credits
 {
 	font-family:almendra;
-	font-size: 25px;
+	font-size: 32px;
 	font-weight:bolder;
 	letter-spacing: 1px;
 	line-height: 30px;
 	position: absolute;
-	margin-left: 120px;
+	margin-left: 140px;
 	z-index: 2;
-	margin-top: 100px;
+	margin-top: 220px;
+}
+
+#artists
+{
+	position: absolute;
+	margin-left: 50px;
+	width: 300px;	
+}
+#programmers
+{
+	position: absolute;
+	margin-left: 400px;
+	width: 400px;
 }
 a{text-decoration: none; color: #000;}
 a:visited{text-decoration: none; color: #000;}

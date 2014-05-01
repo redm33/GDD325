@@ -103,7 +103,7 @@ function switchChem(divId)
 			}
 			theSelected.style.backgroundImage= thePressedBackground;
 			thePressed.style.backgroundImage = chemsOnShelfHover[backgroundIndex];
-			var switchSound = new Audio("Rooms/Sounds/chemsOnShelfwitch.wav");
+			var switchSound = new Audio("Rooms/Sounds/chemicalSwitch.wav");
 			switchSound.play();
 			window.setTimeout( function() {
 			decrementMoves();}, 10);
@@ -169,6 +169,8 @@ function setupWin()
 			else{count = 0;}	
 		}
 	}
+	var shuffleChems = new Audio("Rooms/Sounds/glassShuffleShort.wav");
+	shuffleChems.play();
 }
 function checkWin()
 {
@@ -338,6 +340,7 @@ function setup(chem)
 				index++;
 			}
 		}
+		
 		if(setupWin())
 			setup(chem);
 		document.getElementById("wanted").style.backgroundImage = "url(MiniGames/chemicalBottlesHover/"+chem+".png)";
@@ -375,7 +378,11 @@ function decrementMoves()
 			alert("Try again...");
 		}
 		else
+		{
 			backOut();
+			switchSound.play();
+
+		}
 	}
 }
 
