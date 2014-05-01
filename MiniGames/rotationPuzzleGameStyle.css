@@ -10,6 +10,17 @@
 	
 }
 
+#rotateDirections
+{
+	z-index: 4;
+	font-size:16px;
+	position: absolute;
+	left: 433px;
+	top: 315px;
+	width: 184px;
+	color: white;
+}
+
 #rotateConvas
 {
 	z-index: 3;	
