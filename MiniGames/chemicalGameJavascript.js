@@ -129,7 +129,11 @@ function switchChem(divId)
 		for(var i = 0; i < chemsOnShelf.length; i++)
 		{
 			if(backgroundFile == chemsOnShelfHover[i])
+			{
 				document.getElementById(divId).style.backgroundImage = chemsOnShelf[i];
+
+			}
+
 		}
 	}
 	
@@ -258,6 +262,7 @@ function getFile(divId)
 	var background = document.getElementById(divId).style.backgroundImage;
 	var newBackground = background.replace("\"", "");
 	var newBackground = newBackground.replace("\"", "");
+	var newBackground = newBackground.replace("http://localhost/GDD325/", "");
 	return newBackground;
 }
 

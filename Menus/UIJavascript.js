@@ -68,8 +68,7 @@ function itemClick(image, divId)
 function itemGrab(divId)
 {	
 	selectedItem = document.getElementById(divId);
-	backgroundStyle = selectedItem.currentStyle || window.getComputedStyle(selectedItem, false),
-	currentBackground = backgroundStyle.backgroundImage;
+	currentBackground = getInventoryBackgroundFile(divId)
 	cursorImage = document.getElementById("game").style.cursor;
 	fileName = getInventoryBackgroundFile(divId);
 	
@@ -139,16 +138,15 @@ function selectItem(divId)
 	var switchSound = new Audio("Rooms/Sounds/pickUpShort.wav");
 	switchSound.volume = ".1";
 	switchSound.play();
-	var currentBackground = getInventoryBackgroundFile(divId);
-	//selectedItem = document.getElementById(divId);
-	//backgroundStyle = selectedItem.currentStyle || window.getComputedStyle(selectedItem, false),
-	//currentBackground = backgroundStyle.backgroundImage;
+	selectedItem = document.getElementById(divId);
+	backgroundStyle = selectedItem.currentStyle || window.getComputedStyle(selectedItem, false),
+	currentBackground = backgroundStyle.backgroundImage;
 	cursorImage = document.getElementById("game").style.cursor;
 	
 	if(currentBackground != "none" && cursorImage == "" && !lockCursor)
 	{
 				
-		//currentBackgroundString = String(currentBackground);
+		currentBackgroundString = String(currentBackground);
 		var firstSlash = 0;
 		var found = false;
 		for(var i = currentBackgroundString.length-1; i > 0; i--)
@@ -166,12 +164,14 @@ function selectItem(divId)
 		{
 			fileName += currentBackgroundString[i];
 		}
+		if(fileName[fileName.length-1] == 'n')
+			fileName = fileName + 'g';
+			
 		if(fileName != "CasseroleCupHot.png"){selectedItem.style.background = "transparent"};
 		var chemOff = chemicals.indexOf(getInventoryBackgroundFile(divId));
 		if(chemOff != -1)
 				chemHover("", divId, true);
 		window.setTimeout(function() {	
-		alert(fileName);
 		for(var i = 0; i < droppers.length; i++)
 		{
 			if(fileName == droppers[i])

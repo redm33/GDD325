@@ -110,8 +110,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 	
 	var workarea = document.getElementById(workareaDiv);
 	var selection = document.getElementById(chemDiv);
-	backgroundStyle = workarea.currentStyle || window.getComputedStyle(workarea, false),
-	currentBackground = backgroundStyle.backgroundImage;
+	currentBackground = getInventoryBackgroundFile(workareaDiv);
 	backgroundStyle =selection.currentStyle || window.getComputedStyle(selection, false),
 	selectionBackground = backgroundStyle.backgroundImage;
 	cursorImage = document.getElementById("game").style.cursor;

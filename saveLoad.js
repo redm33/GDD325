@@ -34,7 +34,7 @@ function saveGame()
 	}
 	
 	
-	
+	alert(document.getElementById("userInterface").innerHTML);
 	$.jStorage.set("UI", document.getElementById("userInterface").innerHTML);
 	
 	setCookie("Hg2", Hg2, 365);
@@ -211,6 +211,7 @@ function loadGame()
 	window.setTimeout( function(){
 	$('#content').load(localStorage.getItem("Forge"));
 	document.getElementById("userInterface").style.display = "block";
+	document.getElementById("userInterface").innerHTML = localStorage.getItem("UIContent");
 	document.getElementById('content').innerHTML = localStorage.getItem("Forge");
 	document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
 	if(localStorage.getItem("journalOpen"))

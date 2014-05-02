@@ -1,5 +1,9 @@
 // JavaScript Document
-
+if(window.localStorage!==undefined){
+    //Do something
+}else{
+    alert('Your browser is outdated!');
+}
 function getNameOfFile(image)
 {	
 	var fileName = "";
@@ -9,7 +13,6 @@ function getNameOfFile(image)
 		fileName +=image[i];
 	}
 	
-	//alert("getNameOfFile"+fileName);
 	return fileName;
 	
 }
@@ -57,12 +60,11 @@ function getInventoryBackgroundFile(divId)
 			fileName += background[i];
 		}	
 		
-		if(fileName[fileName.length-1] != 'g'){
-			alert("getInventoryBackgroundFile" + fileName);
+		if(fileName[fileName.length-1] == 'n'){
 			return fileName + 'g';
 			
 		}
-		alert("getInventoryBackgroundFile" + fileName);	
+		
 		return fileName;	
 }
 
@@ -80,7 +82,6 @@ function getFileName(file)
 	{		
 		justName += file[i];
 	}
-	//alert("getFileName"+justName);
 
 	return justName;
 }
@@ -104,6 +105,8 @@ function stripCursorImage(image)
 	{
 		newImage += image[i];	
 	}
+	if(newImage[newImage.length -1] == 'n')
+		newImage = newImage + 'g';
 	return newImage;
 }
 

@@ -93,28 +93,8 @@ function clicky(loc,background)
 		fire.pause();
 		snore.pause();
 		selectedItem = document.getElementById("content");
-		backgroundStyle = selectedItem.currentStyle || window.getComputedStyle(selectedItem, false),
-		currentBackground = backgroundStyle.backgroundImage;
-		currentBackgroundString = String(currentBackground);
+		fileName = getInventoryBackgroundFile("content");
 		var inventory = document.getElementById("userInterface").style;
-		
-		var firstSlash = 0;
-		var found = false;
-		for(var i = currentBackgroundString.length-1; i > 0; i--)
-		{
-			if(currentBackgroundString[i] == "/" && !found)
-			{
-				firstSlash = i;
-				found = true;
-			}
-		}
-			
-		var fileName = "";
-		
-		for(var i = firstSlash+1; i < currentBackgroundString.length-2; i++)
-		{
-			fileName += currentBackgroundString[i];
-		}
 		
 		if(fileName == "menuBackground.png")
 			localStorage.setItem("mainMenu", document.getElementById("content").innerHTML);
