@@ -3,7 +3,7 @@ function saveGame()
 {
 	alert("saving...");
 	$.jStorage.flush()
-	var background = getFileName(getInventoryBackgroundFile("content"));	
+	var background = getFileName(getInventoryBackgroundFile("content"));
 	if(background == "DoorwayBackground")
 	{
 		$.jStorage.set("doorway", document.getElementById('content').innerHTML);
@@ -13,28 +13,26 @@ function saveGame()
 	}
 	if(background == "ChemShelf")
 	{
-		$.jStorage.set("doorway", localStorage.getItem("Doorway"), 365);
-		$.jStorage.set("workdesk", localStorage.getItem("Workdesk"), 365);
-		$.jStorage.set("forge", localStorage.getItem("Forge"), 365);
-		$.jStorage.set("chemshelf", document.getElementById('content').innerHTML, 365);
+		$.jStorage.set("doorway", localStorage.getItem("Doorway"));
+		$.jStorage.set("workdesk", localStorage.getItem("Workdesk"));
+		$.jStorage.set("forge", localStorage.getItem("Forge"));
+		$.jStorage.set("chemshelf", document.getElementById('content').innerHTML);
 	}
 	if(background == "ForgeFireAnimation")
 	{
-		$.jStorage.set("doorway", localStorage.getItem("Doorway") , 365);
-		$.jStorage.set("workdesk", localStorage.getItem("Workdesk"), 365);
-		$.jStorage.set("forge", document.getElementById('content').innerHTML, 365);
-		$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"), 365);
+		$.jStorage.set("doorway", localStorage.getItem("Doorway") );
+		$.jStorage.set("workdesk", localStorage.getItem("Workdesk"));
+		$.jStorage.set("forge", document.getElementById('content').innerHTML);
+		$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"));
 	}
 	if(background == "WorkdeskRoomBackground")
 	{
-		$.jStorage.set("doorway", localStorage.getItem("Doorway"), 365);
-		$.jStorage.set("workdesk", document.getElementById('content').innerHTML, 365);
-		$.jStorage.set("forge", localStorage.getItem("Forge"), 365);
-		$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"), 365);
+		$.jStorage.set("doorway", localStorage.getItem("Doorway"));
+		$.jStorage.set("workdesk", document.getElementById('content').innerHTML);
+		$.jStorage.set("forge", localStorage.getItem("Forge"));
+		$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"));
 	}
 	
-	
-	alert(document.getElementById("userInterface").innerHTML);
 	$.jStorage.set("UI", document.getElementById("userInterface").innerHTML);
 	
 	setCookie("Hg2", Hg2, 365);
@@ -225,11 +223,6 @@ function loadGame()
 	}, 1);
 	
 }
-
-
-
-
-
 
 function setCookie(cname, cvalue, exdays)
 {
