@@ -78,7 +78,7 @@ function itemGrab(divId)
 		if(fileName != "" && fileName[0] != 'E')
 			document.getElementById("game").style.cursor = 'url("Inventory/' + fileName + '") 32 32, auto';
 		else
-			document.getElementById("game").style.cursor = 'url("Inventory/' + fileName + '") 64 64, auto';
+			document.getElementById("game").style.cursor = 'url("Inventory/' + fileName + '") 63 63, auto';
 		
 	}
 }
@@ -176,7 +176,7 @@ function selectItem(divId)
 		{
 			if(fileName == droppers[i])
 			{
-				document.getElementById("game").style.cursor = 'url("Inventory/' + fileName + '") 64 64, auto';
+				document.getElementById("game").style.cursor = 'url("Inventory/' + fileName + '") 63 63, auto';
 				break;
 			}
 			else if(fileName != "CasseroleCupHot.png")
@@ -275,7 +275,7 @@ function wash()
 	var index5 = beakerCass.indexOf(stripCursorImage(document.getElementById("game").style.cursor));
 
 	if(index != -1)
-		document.getElementById("game").style.cursor ="url(Inventory/" + droppers[0] + ") 64 64, auto";	
+		document.getElementById("game").style.cursor ="url(Inventory/" + droppers[0] + ") 63 63, auto";	
 	if(index2 != -1)
 		document.getElementById("game").style.cursor ="url(Inventory/" + testTubes[0] + ") 32 32, auto";
 	if(index3 != -1)

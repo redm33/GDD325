@@ -94,6 +94,7 @@ function saveGame()
 	}
 	
 	setCookie("step", startSearch, 365);
+	setCookie("revert", currentStep, 365);
 	
 	var pages = new Array("para1", "para2", "para3", "para4", "para5", "para6", "para7", "para8", "para9", "para10", "para11", "para12");
 	

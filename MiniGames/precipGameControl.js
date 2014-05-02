@@ -259,6 +259,6 @@ function backoutPrecip()
 	setEndGame(true);
 	document.getElementById("precipGame").innerHTML = "";
 	document.getElementById("precipGame").style.display = "none";
-	document.getElementById("game").style.cursor = "url(Inventory/"+cursorPub + ") 64 64, auto";
+	document.getElementById("game").style.cursor = "url(Inventory/"+cursorPub + ") 63 63, auto";
 	lockTurn = false;
 }

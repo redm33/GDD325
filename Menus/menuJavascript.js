@@ -95,7 +95,6 @@ function clicky(loc,background)
 		selectedItem = document.getElementById("content");
 		fileName = getInventoryBackgroundFile("content");
 		var inventory = document.getElementById("userInterface").style;
-		
 		if(fileName == "menuBackground.png")
 			localStorage.setItem("mainMenu", document.getElementById("content").innerHTML);
 		else if(fileName == "creditsBackground.png")
@@ -106,7 +105,7 @@ function clicky(loc,background)
 			localStorage.setItem("UIContent", document.getElementById("content").innerHTML);
 		else if(fileName == "DoorwayBackground.png")
 			localStorage.setItem("Doorway", document.getElementById("content").innerHTML);
-		else if(fileName == "ForgeFireAnimation.gif")
+		else if(fileName == "ForgeFireAnimation.gif"||fileName == "ForgeFireAnimation.gi")
 			localStorage.setItem("Forge", document.getElementById("content").innerHTML);
 		else if(fileName == "WorkdeskRoomBackground.png")
 			localStorage.setItem("Workdesk", document.getElementById("content").innerHTML);

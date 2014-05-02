@@ -177,7 +177,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 		if(imageSwitch != null)
 		{
 			if (imageSwitch.length == 1)
-				document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[0] + ") 64 64, auto";
+				document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[0] + ") 63 63, auto";
 			
 			else if(imageSwitch.length == 2)
 			{
@@ -210,7 +210,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 				else
 				{
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
-					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 64 64, auto";	
+					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 63 63, auto";	
 				}
 				var text = checkTheObject(imageSwitch[0]);
 				workarea.onmouseover = function() {displayMessage(text);}
@@ -511,7 +511,7 @@ function interactCentrifuge()
 					lockTurn = false;
 					removeMessage();
 					document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeIdle.png)";
-				}, 5000);
+				}, 7000);
 			}
 		}
 		correctItem = false;
