@@ -233,15 +233,17 @@ function coords(e)
 	startW = (Math.floor(mouse.x/64))*64;
 }
 
-function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
+function getOffset(elem)
+{
+    var tempX = 0;
+    var tempY = 0;
+    while(elem && !isNaN(elem.offsetLeft) && !isNaN(elem.offsetTop))
+	{
+        tempX += elem.offsetLeft - elem.scrollLeft;
+        tempY += elem.offsetTop - elem.scrollTop;
+        elem = elem.offsetParent;
     }
-    return { top: _y, left: _x };
+    return {top: tempY, left: tempX};
 }
 
 function selectPiece(e)
