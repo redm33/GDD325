@@ -99,9 +99,8 @@ function saveGame()
 	var pages = new Array("para1", "para2", "para3", "para4", "para5", "para6", "para7", "para8", "para9", "para10", "para11", "para12");
 	
 	var k = 0;
-	while(document.getElementsByClassName(pages[k])[0].style.visibility != "hidden")
+	while(document.getElementsByClassName(pages[k])[0].style.opacity != "0")
 	{
-			
 		$.jStorage.set("page", pages[k]);	
 		k++;
 	}
@@ -189,7 +188,6 @@ function loadGame()
 		if($.jStorage.get("page") == pages[k])
 		{
 			visiblePage = k;
-			alert(k);
 		}
 	}
 	for(var k = 0; k <= visiblePage; k++)
@@ -198,6 +196,7 @@ function loadGame()
 		for(var j = 0; j < classLen; j++)
 		{
 			document.getElementsByClassName(pages[k])[j].style.visibility = "visible";
+			document.getElementsByClassName(pages[k])[j].style.opacity = "1";
 		}
 	}
 	startSearch = getCookie("step");
@@ -210,15 +209,10 @@ function loadGame()
 	
 	window.setTimeout( function(){
 	$('#content').load(localStorage.getItem("Forge"));
-	document.getElementById("userInterface").style.display = "block";
 	document.getElementById("userInterface").innerHTML = localStorage.getItem("UIContent");
+	document.getElementById("userInterface").style.display = "block";
 	document.getElementById('content').innerHTML = localStorage.getItem("Forge");
 	document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
-	if(localStorage.getItem("journalOpen"))
-	{
-		localStorage.removeItem("journalOpen");
-		document.getElementById("journal").style.display = "block";
-	}
 	backgroundMusic.play();
 	fire.play();
 	snore.play();

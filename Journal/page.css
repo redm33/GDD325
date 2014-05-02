@@ -44,6 +44,8 @@
 	font-size:12px;
 	font-weight:normal;
 	position:absolute;
+	
+
 }
 
 .para2
@@ -56,6 +58,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para3
@@ -68,6 +71,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para4
@@ -80,6 +84,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para5
@@ -92,6 +97,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para6
@@ -104,6 +110,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para7
@@ -116,6 +123,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para8
@@ -128,6 +136,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para9
@@ -140,6 +149,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para10
@@ -152,6 +162,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para11
@@ -164,6 +175,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .para12
@@ -176,6 +188,7 @@
 	font-weight:normal;
 	visibility:hidden;
 	position:absolute;
+	opacity: 0;
 }
 
 .pulse {

@@ -1,9 +1,4 @@
-// JavaScript Document
-if(window.localStorage!==undefined){
-    //Do something
-}else{
-    alert('Your browser is outdated!');
-}
+
 function getNameOfFile(image)
 {	
 	var fileName = "";

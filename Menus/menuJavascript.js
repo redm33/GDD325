@@ -3,7 +3,7 @@ var chemSave = true;
 var workdeskSave = true;
 var doorwaySave = true;
 var RisDown = false;
-
+var loaded = false;
 var fire = new Audio("Rooms/Sounds/fire.wav");
 if (typeof fire.loop == 'boolean')
 {
@@ -55,31 +55,13 @@ window.onload = function() {
 	localStorage.removeItem("Doorway");	
 	localStorage.removeItem("LoadPage");
 	
-	/*
-	localStorage.setItem("UI", document.getElementById("userInterface").innerHTML);
-	$('#content').load("Rooms/Doorway.html");
-	window.setTimeout(
-	function(){localStorage.setItem("ProcessDoorway", document.getElementById("content").innerHTML);
-	$('#content').load("Rooms/Forge.html");
-	window.setTimeout(
-	function(){localStorage.setItem("ProcessForge", document.getElementById("content").innerHTML);
-	$('#content').load("Rooms/Workdesk.html");
-	window.setTimeout(
-	function(){localStorage.setItem("ProcessWorkdesk", document.getElementById("content").innerHTML);
-	$('#content').load("Rooms/ChemShelf.html");
-	window.setTimeout(
-	function(){localStorage.setItem("ProcessChemShelf", document.getElementById("content").innerHTML);
-	$('#content').load("Menus/mainMenu.html");},100);
-	},100);},100);},100);
-	*/
-	
 	preLoadProcessOne();
 	
 	window.setTimeout(
 	function(){
 	$('#content').load("Menus/mainMenu.html");},10);
 	document.body.onselectstart = function() { return false; }
-	
+	loaded = true;
 
 }
 
@@ -88,7 +70,7 @@ window.onload = function() {
 function clicky(loc,background) 
 {
 	
-	if(!lockTurn)
+	if(!lockTurn && loaded)
 	{
 		fire.pause();
 		snore.pause();
@@ -289,97 +271,98 @@ function clicky(loc,background)
 			inventory.display = "block";
 			backgroundMusic.play();
 			localStorage.setItem("LoadPage","ChemShelf");
-
-	
 		}
 	}
 }
 function play()
 {
-	var loadBack = localStorage.getItem("LoadPage");
-	selectedItem = document.getElementById("content");
-	if(loadBack != null)
-	{
-		if(loadBack == "Doorway" && localStorage.getItem("Doorway") != null)
+	
+	if(loaded){
+		var loadBack = localStorage.getItem("LoadPage");
+		selectedItem = document.getElementById("content");
+		if(loadBack != null)
 		{
-			window.setTimeout( function(){
-			$('#content').load(localStorage.getItem("Doorway"));
-			document.getElementById("userInterface").style.display = "block";
-			selectedItem.innerHTML = localStorage.getItem("Doorway");
-			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/DoorwayBackground.png')";
-			if(localStorage.getItem("journalOpen"))
+			if(loadBack == "Doorway" && localStorage.getItem("Doorway") != null)
 			{
-				localStorage.removeItem("journalOpen");
-				document.getElementById("journal").style.display = "block";
+				window.setTimeout( function(){
+				$('#content').load(localStorage.getItem("Doorway"));
+				document.getElementById("userInterface").style.display = "block";
+				selectedItem.innerHTML = localStorage.getItem("Doorway");
+				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/DoorwayBackground.png')";
+				if(localStorage.getItem("journalOpen"))
+				{
+					localStorage.removeItem("journalOpen");
+					document.getElementById("journal").style.display = "block";
+				}
+				backgroundMusic.play();
+				}, 1);
 			}
-			backgroundMusic.play();
-			}, 1);
-		}
-		else if(loadBack == "Workdesk" && localStorage.getItem("Workdesk") != null)
-		{
-			window.setTimeout( function(){
-			$('#content').load(localStorage.getItem("Workdesk"));
-			document.getElementById("userInterface").style.display = "block";
-			selectedItem.innerHTML = localStorage.getItem("Workdesk");
-			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/WorkdeskRoomBackground.png')";
-			if(localStorage.getItem("journalOpen"))
+			else if(loadBack == "Workdesk" && localStorage.getItem("Workdesk") != null)
 			{
-				localStorage.removeItem("journalOpen");
-				document.getElementById("journal").style.display = "block";
+				window.setTimeout( function(){
+				$('#content').load(localStorage.getItem("Workdesk"));
+				document.getElementById("userInterface").style.display = "block";
+				selectedItem.innerHTML = localStorage.getItem("Workdesk");
+				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/WorkdeskRoomBackground.png')";
+				if(localStorage.getItem("journalOpen"))
+				{
+					localStorage.removeItem("journalOpen");
+					document.getElementById("journal").style.display = "block";
+				}
+				backgroundMusic.play();
+				}, 1);
 			}
-			backgroundMusic.play();
-			}, 1);
-		}
-		else if(loadBack == "Forge" && localStorage.getItem("Forge") != null)
-		{
-			window.setTimeout( function(){
-			$('#content').load(localStorage.getItem("Forge"));
-			document.getElementById("userInterface").style.display = "block";
-			selectedItem.innerHTML = localStorage.getItem("Forge");
-			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
-			if(localStorage.getItem("journalOpen"))
+			else if(loadBack == "Forge" && localStorage.getItem("Forge") != null)
 			{
-				localStorage.removeItem("journalOpen");
-				document.getElementById("journal").style.display = "block";
+				window.setTimeout( function(){
+				$('#content').load(localStorage.getItem("Forge"));
+				document.getElementById("userInterface").style.display = "block";
+				selectedItem.innerHTML = localStorage.getItem("Forge");
+				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
+				if(localStorage.getItem("journalOpen"))
+				{
+					localStorage.removeItem("journalOpen");
+					document.getElementById("journal").style.display = "block";
+				}
+				backgroundMusic.play();
+				fire.play();
+				snore.play();
+				}, 1);
 			}
-			backgroundMusic.play();
-			fire.play();
-			snore.play();
-			}, 1);
-		}
-		else if(loadBack == "ChemShelf" && localStorage.getItem("ChemShelf") != null)
-		{
-			window.setTimeout( function(){
-			$('#content').load(localStorage.getItem("ChemShelf"));
-			document.getElementById("userInterface").style.display = "block";
-			selectedItem.innerHTML = localStorage.getItem("ChemShelf");
-			document.getElementById('content').style.backgroundImage = "url('Rooms/ChemShelf.png')";
-			if(localStorage.getItem("journalOpen"))
+			else if(loadBack == "ChemShelf" && localStorage.getItem("ChemShelf") != null)
 			{
-				localStorage.removeItem("journalOpen");
-				document.getElementById("journal").style.display = "block";
+				window.setTimeout( function(){
+				$('#content').load(localStorage.getItem("ChemShelf"));
+				document.getElementById("userInterface").style.display = "block";
+				selectedItem.innerHTML = localStorage.getItem("ChemShelf");
+				document.getElementById('content').style.backgroundImage = "url('Rooms/ChemShelf.png')";
+				if(localStorage.getItem("journalOpen"))
+				{
+					localStorage.removeItem("journalOpen");
+					document.getElementById("journal").style.display = "block";
+				}
+				backgroundMusic.play()
+				}, 1);
 			}
-			backgroundMusic.play()
-			}, 1);
+			else
+			{
+				$('#content').load("Rooms/Forge.html");
+				document.getElementById("userInterface").style.display = "block";
+				backgroundMusic.play();
+				fire.play();
+				snore.play();
+				localStorage.setItem("LoadBack", "Forge");
+				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
+				}
 		}
 		else
 		{
-			$('#content').load("Rooms/Forge.html");
-			document.getElementById("userInterface").style.display = "block";
-			backgroundMusic.play();
-			fire.play();
-			snore.play();
-			localStorage.setItem("LoadBack", "Forge");
-			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
-			}
-	}
-	else
-	{
-		document.getElementById('content').style.backgroundImage = "none";
-		$('#content').load("Cutscenes/firstCutscene.html");
-		processOne = true;
-
-
+			document.getElementById('content').style.backgroundImage = "none";
+			$('#content').load("Cutscenes/firstCutscene.html");
+			processOne = true;
+	
+	
+		}
 	}
 	
 	

@@ -233,31 +233,33 @@ function coords(e)
 	startW = (Math.floor(mouse.x/64))*64;
 }
 
-function getOffset(elem)
-{
-    var tempX = 0;
-    var tempY = 0;
-    while(elem && !isNaN(elem.offsetLeft) && !isNaN(elem.offsetTop))
-	{
-        tempX += elem.offsetLeft - elem.scrollLeft;
-        tempY += elem.offsetTop - elem.scrollTop;
-        elem = elem.offsetParent;
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
     }
-    return {top: tempY, left: tempX};
+    return { top: _y, left: _x };
 }
 
 function selectPiece(e)
 {
-	var divW = getOffset( document.getElementById('rotateGame') ).left;
-	var divH = getOffset( document.getElementById('rotateGame') ).top;
+	var testW = getOffset( document.getElementById('rotateGame') ).left;
+	var testH = getOffset( document.getElementById('rotateGame') ).top;
 	
 	if(e.layerX || e.layerX == 0){
-		mouse.x = e.pageX - divW-406;
-		mouse.y = e.pageY - divH-70;
+		mouse.x = e.pageX - testW-406;
+		mouse.y = e.pageY - testH-70;
 	};
 	
 	startH = (Math.floor(mouse.y/64)+.5)*64;
 	startW = (Math.floor(mouse.x/64)+.5)*64;
+	
+	
+	console.log(testW+", "+testH);
+	console.log(mouse.x+", "+mouse.y);
 			
 	offsetW = startW+400;
 	offsetH = startH+45;

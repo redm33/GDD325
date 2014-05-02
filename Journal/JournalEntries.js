@@ -11,6 +11,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p3")
@@ -19,6 +20,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p4")
@@ -27,6 +29,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p5")
@@ -35,6 +38,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p6")
@@ -43,6 +47,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p7")
@@ -51,6 +56,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p8")
@@ -59,6 +65,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p9")
@@ -67,6 +74,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p10")
@@ -75,6 +83,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p11")
@@ -83,6 +92,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 	if(name == "p12")
@@ -91,6 +101,7 @@ function AddEntry(name)
 		for (var i = 0; i < para.length; i++)
 		{
 			para[i].style.visibility="visible";
+			para[i].style.opacity="1";
 		}
 	}
 
