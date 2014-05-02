@@ -10,6 +10,7 @@
 
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src = "AllAroundFunctions.js"></script>
+<script src = "saveLoad.js"> </script>
 <script src = "Menus/menuJavascript.js"></script>
 <script src = "Menus/UIJavascript.js"></script>
 <script src = "turn.js"></script>
@@ -22,6 +23,8 @@
 <script src = "Rooms/DoorwayControl.js"></script>
 <script src = "Inventory/objectLabels.js"></script>
 <script src = "Dialog/dialogControl.js"> </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+<script src="https://raw.github.com/andris9/jStorage/master/jstorage.js"></script>
 
 <link rel="stylesheet" href="Menus/menuStyling.css">
 <link rel = "stylesheet" href = "Menus/UIStyling.css">
@@ -47,6 +50,7 @@
 <a href = "#" onclick = "clicky('Menus/instructionsMenu.html','Menus/Images/instructionBackground.png')"><div id = "instructionIdle">Instructions</div></a>
 <a href = "#" onclick = "play()"><div id = "playIdle">Play</div></a>
 <a href = "#" onclick = "clicky('Menus/creditsMenu.html','Menus/Images/creditsBackground.png')"><div id = "creditsIdle">Credits</div></a>
+<a href = "#" onclick = "loadGame();"><div id = "creditsIdle">Load</div></a>
 </div>	
 </div>
 
@@ -72,7 +76,7 @@
 <div id = "journalButton" onclick = "showHideJournal()"></div>
 <div id = "menuButtons">
 <a href = "#" onclick = "clicky('Menus/mainMenu.html','Menus/Images/menuBackground.png')"><div id = "menuUIButton"> Menu </div></a>
-<a href = "#" onclick = "clicky('Menus/instructionsMenu.html','Menus/Images/instructionBackground.png')"><div id = "instructionsUIButton">Help</div></a>
+<a href = "#" onclick = "saveGame();"><div id = "instructionsUIButton">Save</div></a>
 </div>
 
 </div>

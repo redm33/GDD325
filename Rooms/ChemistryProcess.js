@@ -18,7 +18,7 @@ var currentStep = 1;
 var ions2A = new Array(false, false, false, false, false)
 var ions2B = new Array(false, false, false);
 
-var processOne = true;
+var processOne = false;
 var processStep1Clear = new Array(false,0,"",false, 0, "", false, false, 0, "",  false, false);
 var processStep1 = new Array(false,0,"",false, 0, "", false, false, 0, "",  false, false);
 var processStep1Correct = new Array(true,10,"Unknown", true, 10, "6MHCL", true, true, 12, "1MHCL", true, false);

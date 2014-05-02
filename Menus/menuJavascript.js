@@ -398,6 +398,7 @@ function play()
 	{
 		document.getElementById('content').style.backgroundImage = "none";
 		$('#content').load("Cutscenes/firstCutscene.html");
+		processOne = true;
 
 
 	}
