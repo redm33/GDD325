@@ -233,15 +233,33 @@ function coords(e)
 	startW = (Math.floor(mouse.x/64))*64;
 }
 
+function getOffset( el ) {
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+
 function selectPiece(e)
 {
+	var testW = getOffset( document.getElementById('rotateGame') ).left;
+	var testH = getOffset( document.getElementById('rotateGame') ).top;
+	
 	if(e.layerX || e.layerX == 0){
-		mouse.x = e.pageX - canvas.offsetLeft-432;
-		mouse.y = e.pageY - canvas.offsetTop-77;
+		mouse.x = e.pageX - testW-406;
+		mouse.y = e.pageY - testH-70;
 	};
 	
 	startH = (Math.floor(mouse.y/64)+.5)*64;
 	startW = (Math.floor(mouse.x/64)+.5)*64;
+	
+	
+	console.log(testW+", "+testH);
+	console.log(mouse.x+", "+mouse.y);
 			
 	offsetW = startW+400;
 	offsetH = startH+45;

@@ -4,10 +4,11 @@
 #rotateGame
 {
 	float: right;
-	width: 1000px;
+	width: 890px;
 	height: 600px;
 	z-index: 2;
-	
+	position: absolute;
+	margin-left: 55px;
 }
 
 #rotateDirections
@@ -15,7 +16,7 @@
 	z-index: 4;
 	font-size:16px;
 	position: absolute;
-	left: 433px;
+	left: 30px;
 	top: 315px;
 	width: 184px;
 	color: white;
@@ -25,7 +26,7 @@
 {
 	z-index: 3;	
 	position: absolute;
-	left: 170px;
+	left: -82px;
 	top: -8px;
-	margin-left: 150px;
+	margin-left: false;
 }
