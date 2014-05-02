@@ -9,7 +9,9 @@ function getNameOfFile(image)
 		fileName +=image[i];
 	}
 	
+	//alert("getNameOfFile"+fileName);
 	return fileName;
+	
 }
 
 function displayMessage(messageToBeShown)
@@ -54,6 +56,13 @@ function getInventoryBackgroundFile(divId)
 		{
 			fileName += background[i];
 		}	
+		
+		if(fileName[fileName.length-1] != 'g'){
+			alert("getInventoryBackgroundFile" + fileName);
+			return fileName + 'g';
+			
+		}
+		alert("getInventoryBackgroundFile" + fileName);	
 		return fileName;	
 }
 
@@ -71,7 +80,8 @@ function getFileName(file)
 	{		
 		justName += file[i];
 	}
-	
+	//alert("getFileName"+justName);
+
 	return justName;
 }
 function stripCursorImage(image)
