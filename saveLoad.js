@@ -189,6 +189,7 @@ function loadGame()
 		if($.jStorage.get("page") == pages[k])
 		{
 			visiblePage = k;
+			alert(k);
 		}
 	}
 	for(var k = 0; k <= visiblePage; k++)

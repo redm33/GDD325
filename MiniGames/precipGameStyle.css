@@ -10,7 +10,7 @@
 	background-image:url(Images/precipitateGame.png);
 	
 }
-canvas
+#precipCanvas
 {
 	z-index: 1000;	
 	position:relative;
