@@ -246,20 +246,16 @@ function getOffset( el ) {
 
 function selectPiece(e)
 {
-	var testW = getOffset( document.getElementById('rotateGame') ).left;
-	var testH = getOffset( document.getElementById('rotateGame') ).top;
+	var divW = getOffset( document.getElementById('rotateGame') ).left;
+	var divH = getOffset( document.getElementById('rotateGame') ).top;
 	
 	if(e.layerX || e.layerX == 0){
-		mouse.x = e.pageX - testW-406;
-		mouse.y = e.pageY - testH-70;
+		mouse.x = e.pageX - divW-406;
+		mouse.y = e.pageY - divH-70;
 	};
 	
 	startH = (Math.floor(mouse.y/64)+.5)*64;
 	startW = (Math.floor(mouse.x/64)+.5)*64;
-	
-	
-	console.log(testW+", "+testH);
-	console.log(mouse.x+", "+mouse.y);
 			
 	offsetW = startW+400;
 	offsetH = startH+45;
