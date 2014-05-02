@@ -1,7 +1,7 @@
 // JavaScript Document
 
 
-var canvas = document.getElementById("canvas"); 
+var canvas = document.getElementById("precipCanvas"); 
 var drawingSurface = canvas.getContext("2d");
 
 var particles = [];
