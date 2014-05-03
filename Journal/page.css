@@ -44,7 +44,8 @@
 	font-size:12px;
 	font-weight:normal;
 	position:absolute;
-	
+	opacity: 1;
+	visibility:visible;
 
 }
 

@@ -303,7 +303,7 @@
     <div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
     </div>
 	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
-        <div class="para1">
+        <div class="para1" style = "opacity: 1">
             All these steps must be followed in the order they appear.<br/> <br/>
             
             <b> Prepare the Unknown </b><br/>
@@ -399,7 +399,7 @@
             <div id = "ifBis"> </div>
             <script> 
             	if(Bi3)
-					document.getElementById("ifBis").innerHTML = 'Step 8 - Decant the solution.</div><div id = "step48">Step 9 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div><div id = "step49">Step 10 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>';
+					document.getElementById("ifBis").innerHTML = '<div id = "step48">Step 8 - Decant the solution.</div><div id = "step49">Step 9 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div><div id = "step50">Step 10 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>';
             </script>  
             <br/>
 
@@ -409,9 +409,9 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
     	<div class="para7">
         	<b> CONFIRMATION TEST FOR COPPER (Cu2+) ION </b><br/>
-             <div id = "step50">Step 1 - Take the solution from Step 5 of the last Process. <br/>
+             <div id = "step51">Step 1 - Take the solution from Step 5 of the last Process. <br/>
              Step 2 - Add 0.50mL (10 drops) 6M  C2H4O2. </div> 
-			<div id = "step51">Step 3 - Add 0.15mL (3 drops) of 0.2M FeK4C6N6. </div> <br/> 
+			<div id = "step52">Step 3 - Add 0.15mL (3 drops) of 0.2M FeK4C6N6. </div> <br/> 
 
 			<div id = "pSeven" onclick = "finishProcess('Seven');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -419,13 +419,13 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
     	<div class="para8">
         	<b> CONFIRMATION TEST FOR CADMIUM (Cd2+) ION </b><br/>
-            <div id = "step52">Step 1 - Add 0.50mL (10 drops) of the solution from the previous process to a new test tube. </div> 
+            <div id = "step53">Step 1 - Add 0.50mL (10 drops) of the solution from the previous process to a new test tube. </div> 
             <div id = "copperOrNoCopper"></div>
             <script> 
             	if(!Cu2)
-					document.getElementById("copperOrNoCopper").innerHTML = '<div id = "step53">Step 2 - Add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step54">Step 3 - Stir.</div>';
+					document.getElementById("copperOrNoCopper").innerHTML = '<div id = "step54">Step 2 - Add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step55">Step 3 - Stir.</div>';
 				else
-					document.getElementById("copperOrNoCopper").innerHTML = ' <div id = "step53">Step 2 - Add .20mL (4 drops) of Na2S2O4. </div><div id = "step54">Step 3 - Heat in water bath. </div> <div id = "step55">Step 4 - Centrifuge.. </div><div id = "step56">Step 5 - Decant. </div><div id = "step57">Step 6 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step58">Step 7 - Stir. </div>';
+					document.getElementById("copperOrNoCopper").innerHTML = ' <div id = "step54">Step 2 - Add .20mL (4 drops) of Na2S2O4. </div><div id = "step55">Step 3 - Heat in water bath. </div> <div id = "step56">Step 4 - Centrifuge.. </div><div id = "step57">Step 5 - Decant. </div><div id = "step58">Step 6 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step59">Step 7 - Stir. </div>';
             </script>               
             <br/>
 
@@ -435,30 +435,30 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
     	<div class="para9">
         	<b> Prepare Group 2B </b><br/>
-            <div id = "step59">Step 1 - Add 0.20mL (4 drop) of 6M C2H4O2.</div>  
-            <div id = "step60">Step 2 - Add 0.10mL (2 drops) of 1M C2H5NS. </div> 
-			<div id = "step61">Step 3 - Stir.</div> 
-            <div id = "step62">Step 4 - Heat in water bath.</div>  
-            <div id = "step63">Step 5 - Centrifuge.</div>   
-            <div id = "step64">Step 6 - Decant and discard the solution.</div> 
-            <div id = "step65">Step 7 - Add 2.0mL (40 drops) of 2M NH4CL to the precipitate. </div> 
-            <div id = "step66">Step 8 - Stir.</div> 
-            <div id = "step67">Step 9 - Heat in water bath.</div>   
-            <div id = "step68">Step 10 - Decant and discard the solution.</div>  
-            <div id = "step69">Step 11 - Add 0.35mL (7 drops) H2O to the precipitate.</div>  
-            <div id = "step70">Step 12 - Add 1.0 mL (20 drops) of 12M HCL. </div> 
-            <div id = "step71">Step 13 - Heat in water bath.</div>   
-            <div id = "step72">Step 14 - Stir.</div> 
+            <div id = "step60">Step 1 - Add 0.20mL (4 drop) of 6M C2H4O2.</div>  
+            <div id = "step61">Step 2 - Add 0.10mL (2 drops) of 1M C2H5NS. </div> 
+			<div id = "step62">Step 3 - Stir.</div> 
+            <div id = "step63">Step 4 - Heat in water bath.</div>  
+            <div id = "step64">Step 5 - Centrifuge.</div>   
+            <div id = "step65">Step 6 - Decant and discard the solution.</div> 
+            <div id = "step66">Step 7 - Add 2.0mL (40 drops) of 2M NH4CL to the precipitate. </div> 
+            <div id = "step67">Step 8 - Stir.</div> 
+            <div id = "step68">Step 9 - Heat in water bath.</div>   
+            <div id = "step69">Step 10 - Decant and discard the solution.</div>  
+            <div id = "step70">Step 11 - Add 0.35mL (7 drops) H2O to the precipitate.</div>  
+            <div id = "step71">Step 12 - Add 1.0 mL (20 drops) of 12M HCL. </div> 
+            <div id = "step72">Step 13 - Heat in water bath.</div>   
+            <div id = "step73">Step 14 - Stir.</div> 
 
 		</div>
     </div>
 	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
     	<div class="para9">
-            <div id = "step73">Step 15 - Centrifuge. </div>
-            <div id = "step74">Step 16 - Decant solution and precipitate into separate test tubes. </div>
-            <div id = "step75">Step 17 - To precipitate, add 1.4mL (28 drops) of 6M HCL.</div>  
-            <div id = "step76">Step 18 - Centrifuge. </div>
-            <div id = "step77">Step 19 - Decand and add solution to solution from Step 16. </div> <br/>
+            <div id = "step74">Step 15 - Centrifuge. </div>
+            <div id = "step75">Step 16 - Decant solution and precipitate into separate test tubes. </div>
+            <div id = "step76">Step 17 - To precipitate, add 1.4mL (28 drops) of 6M HCL.</div>  
+            <div id = "step77">Step 18 - Centrifuge. </div>
+            <div id = "step78">Step 19 - Decand and add solution to solution from Step 16. </div> <br/>
 
 			<div id = "pNine" onclick = "finishProcess('Nine');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -466,36 +466,36 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
     	<div class="para10">
         	<b> CONFIRMATION TEST FOR ARSENIC (As) IONS </b><br/>
-			<div id = "step78">Step 1 - Add 0.30mL (6 drops) of H2O to the precipitate from the previous process. </div> 
-            <div id = "step79"> Step 2 - Add 0.50mL (10 drops) of 1M NH4C2H3O2. </div> 
-			<div id = "step80">Step 3 - Heat in water bath. </div>
-            <div id = "step81">Step 4 - Centrifuge. </div>  
-            <div id = "step82">Step 5 - Decant and discard the solution. </div>  
-            <div id = "step83">Step 6 - Add 1.5mL (30 drops) of 6M NH3 to the precipitate.</div> 
-            <div id = "step84">Step 7 - Stir until yellow has disolved.</div> 
-            <div id = "step85">Step 8 - Centrifuge. </div> 
-            <div id = "step86">Step 9 - Decant and discard the precipitate.</div> 
-            <div id = "step87">Step 10 - Add 1.5mL (30 drops) of H2O2 to the solution. </div> 
-            <div id = "step88">Step 11 - Stir. </div> 
-            <div id = "step89">Step 11 - Heat in water bath. </div> 
-            <div id = "step90">Step 13 - Add 0.50mL (10 drops) of 2M NH4NO3 to the solution.</div> 
-            <div id = "step91">Step 14 - Stir.</div>   
+			<div id = "step79">Step 1 - Add 0.30mL (6 drops) of H2O to the precipitate from the previous process. </div> 
+            <div id = "step80"> Step 2 - Add 0.50mL (10 drops) of 1M NH4C2H3O2. </div> 
+			<div id = "step81">Step 3 - Heat in water bath. </div>
+            <div id = "step82">Step 4 - Centrifuge. </div>  
+            <div id = "step83">Step 5 - Decant and discard the solution. </div>  
+            <div id = "step84">Step 6 - Add 1.5mL (30 drops) of 6M NH3 to the precipitate.</div> 
+            <div id = "step85">Step 7 - Stir until yellow has disolved.</div> 
+            <div id = "step86">Step 8 - Centrifuge. </div> 
+            <div id = "step87">Step 9 - Decant and discard the precipitate.</div> 
+            <div id = "step88">Step 10 - Add 1.5mL (30 drops) of H2O2 to the solution. </div> 
+            <div id = "step89">Step 11 - Stir. </div> 
+            <div id = "step90">Step 11 - Heat in water bath. </div> 
+            <div id = "step91">Step 13 - Add 0.50mL (10 drops) of 2M NH4NO3 to the solution.</div> 
+            <div id = "step92">Step 14 - Stir.</div>   
 		</div>
     </div>
 	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
     	<div class="para10">
-           <div id = "step92"> Step 15 - Add 0.50mL (10 drops) Mg(NO3)2. </div> 
-            <div id = "step93">Step 16 - Put in ice cold bath. </div> 
-            <div id = "step94">Step 17 - Centrifuge. </div>
-            <div id = "step95">Step 18 - Decant and discard the solution. </div>  
-            <div id = "step96">Step 19 - Add 0.50 mL (10 drops) of water to the precipitate. </div> 
-            <div id = "step97">Step 20 - Add 0.05 mL (1 drop) of 6M NH3.</div>  
-            <div id = "step98">Step 21 - Centrifuge. </div>
-            <div id = "step99">Step 22 - Decant and discard the solution. </div>  
-            <div id = "step100">Step 23 - Add 0.20 mL (4 drops) of 6M HC2H3O2 to the precipitate.</div>  
-            <div id = "step101">Step 24 - Add 0.50 mL (10 drops) water.</div>  
-            <div id = "step102">Step 25 - Add 0.50 ml (10 drops) of 0.2M AgNO3 and stir.</div>  
-            <div id = "step103">Step 26 - Add .20mL (4 drops) of 6M NH3.</div>  <br/> 
+           <div id = "step93"> Step 15 - Add 0.50mL (10 drops) Mg(NO3)2. </div> 
+            <div id = "step94">Step 16 - Put in ice cold bath. </div> 
+            <div id = "step95">Step 17 - Centrifuge. </div>
+            <div id = "step96">Step 18 - Decant and discard the solution. </div>  
+            <div id = "step97">Step 19 - Add 0.50 mL (10 drops) of water to the precipitate. </div> 
+            <div id = "step98">Step 20 - Add 0.05 mL (1 drop) of 6M NH3.</div>  
+            <div id = "step99">Step 21 - Centrifuge. </div>
+            <div id = "step100">Step 22 - Decant and discard the solution. </div>  
+            <div id = "step101">Step 23 - Add 0.20 mL (4 drops) of 6M HC2H3O2 to the precipitate.</div>  
+            <div id = "step102">Step 24 - Add 0.50 mL (10 drops) water.</div>  
+            <div id = "step103">Step 25 - Add 0.50 ml (10 drops) of 0.2M AgNO3 and stir.</div>  
+            <div id = "step104">Step 26 - Add .20mL (4 drops) of 6M NH3.</div>  <br/> 
 
 			<div id = "pTen" onclick = "finishProcess('Ten');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -503,14 +503,14 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageLeftRegSize.png')">
     	<div class="para11">
         	<b> CONFIRMATION TEST FOR ANTIMONY (Sb3+) IONS </b><br/>
-            <div id = "step104">Step 1 - Heat solution.</div>  
-            <div id = "step105">Step 2 - Cool .50mL (10 drops) of cold H2O.</div> 
-            <div id = "step106">Step 3 - Add cold H2O to the solution.</div>  
-            <div id = "step107">Step 4 - Divide solution in half into 2 separate test tubes. Save 1 for later.</div>  
-            <div id = "step108">Step 5 - Add 2.0mL (40 drops) of 1M C2H2O4.</div>
-            <div id = "step109">Step 6 - Stir.</div>   
-            <div id = "step110">Step 7 - Add 0.50ml (10 drops) of 1M C2H5NS.</div>  
-            <div id = "step111">Step 8 - Heat in water bath.</div>  <br/> 
+            <div id = "step105">Step 1 - Heat solution.</div>  
+            <div id = "step106">Step 2 - Cool .50mL (10 drops) of cold H2O.</div> 
+            <div id = "step107">Step 3 - Add cold H2O to the solution.</div>  
+            <div id = "step108">Step 4 - Divide solution in half into 2 separate test tubes. Save 1 for later.</div>  
+            <div id = "step109">Step 5 - Add 2.0mL (40 drops) of 1M C2H2O4.</div>
+            <div id = "step110">Step 6 - Stir.</div>   
+            <div id = "step111">Step 7 - Add 0.50ml (10 drops) of 1M C2H5NS.</div>  
+            <div id = "step112">Step 8 - Heat in water bath.</div>  <br/> 
 
 			<div id = "pEleven" onclick = "finishProcess('Eleven');"> On Completion, Click Here to Progress. </div>
 		</div>
@@ -518,13 +518,13 @@
 	<div class="page" style = "background-image:url('Journal/Resources/pageRightRegSize.png')">
     	<div class="para12">
         	<b> CONFIRMATION TEST FOR TIN (Sn4+) IONS </b><br/>
-            <div id = "step112">Step 1 - Take second test tube from Step 4 in Process 11.</div>  
-            <div id = "step113">Step 2 - Add 2 small iron nails to the solution.</div>  
-            <div id = "step114">Step 3 - Heat in water bath.</div>  
-            <div id = "step115">Step 4 - Remove iron nails.</div>
-            <div id = "step116">Step 5 - Pour solution into a new test tube.</div>    
-            <div id = "step117">Step 6 - Add 1.0 mL (20 drops) of 0.10M HgCl2.</div>  
-            <div id = "step118">Step 7 - Stir solution.</div>    <br/>
+            <div id = "step113">Step 1 - Take second test tube from Step 4 in Process 11.</div>  
+            <div id = "step114">Step 2 - Add 2 small iron nails to the solution.</div>  
+            <div id = "step115">Step 3 - Heat in water bath.</div>  
+            <div id = "step116">Step 4 - Remove iron nails.</div>
+            <div id = "step117">Step 5 - Pour solution into a new test tube.</div>    
+            <div id = "step118">Step 6 - Add 1.0 mL (20 drops) of 0.10M HgCl2.</div>  
+            <div id = "step119">Step 7 - Stir solution.</div>    <br/>
 
 			<div id = "pTwelve" onclick = "finishProcess('Twelve');"> On Completion, Click Here to Progress. </div>
 		</div>

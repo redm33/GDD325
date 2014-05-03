@@ -43,12 +43,14 @@
   src: url("AlmendraSC-Regular.otf");	
 }
 
+#menuContent
+{
+	margin-top: 40px;
+	position: absolute;	
+}
 #mainButtons
 {
-	position: absolute;
-	width: 250px;
-	margin-top: 330px;
-	margin-left: 380px;
+	margin-left: 10px;
 }
 #instructions
 {
@@ -101,9 +103,10 @@ a:visited{text-decoration: none; color: #000;}
 	text-align: center;
 	line-height: 55px;
 	background-image: url(../newButtons/buttonDraftLarge.png);
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	width: 250px;
 	height: 60px;
+	margin-top: 350px;
+	margin-left: 200px;
 }
 
 #playIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
@@ -120,7 +123,6 @@ a:visited{text-decoration: none; color: #000;}
 	font-size: 40px;
 	text-align: center;
 	line-height: 55px;
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	background-image: url(../newButtons/buttonDraft.png);
 	width: 120px;
 	height: 60px;
@@ -139,10 +141,11 @@ a:visited{text-decoration: none; color: #000;}
 	font-size: 40px;
 	text-align: center;
 	line-height: 55px;
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	background-image: url(../newButtons/buttonDraftLarge.png);
 	width: 250px;
 	height: 60px;
+	margin-top: 430px;
+	margin-left: 525px;
 
 }
 #creditsIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
@@ -157,13 +160,32 @@ a:visited{text-decoration: none; color: #000;}
 	font-size: 40px;
 	text-align: center;
 	line-height: 55px;
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	background-image: url(../newButtons/buttonDraftLarge.png);
 	width: 250px;
 	height: 60px;	
+	margin-top: 430px;
+	margin-left: 200px;
 }
 #instructionIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
 #instructionIdle:active{background-image: url(../newButtons/buttonDraftActionLarge.png);}
+
+#loadIdle
+{
+	margin-top: 160px;
+	position: absolute;
+	font-family: almendra;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	line-height: 55px;
+	background-image: url(../newButtons/buttonDraftLarge.png);
+	width: 250px;
+	height: 60px;
+	margin-top: 350px;
+	margin-left: 520px;	
+}
+#loadIdle:hover{background-image: url(../newButtons/buttonDraftHoverLarge.png);}
+#loadIdle:active{background-image: url(../newButtons/buttonDraftActionLarge.png);}
 
 #backToMainIdle1
 {
@@ -176,7 +198,6 @@ a:visited{text-decoration: none; color: #000;}
 	font-size: 40px;
 	text-align: center;
 	line-height: 55px;
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	background-image: url(../newButtons/buttonDraft.png);
 	width: 120px;
 	height: 60px;
@@ -195,7 +216,6 @@ a:visited{text-decoration: none; color: #000;}
 	font-size: 40px;
 	text-align: center;
 	line-height: 55px;
-	cursor:url(UISourceImages/PNGFiles/sea_serpent.png), auto;
 	background-image: url(../newButtons/buttonDraft.png);
 	width: 120px;
 	height: 60px;
@@ -206,6 +226,5 @@ a:visited{text-decoration: none; color: #000;}
 #logo
 {
 	position: absolute;
-	margin-top: -330px;	
-	margin-left: -120px;
+	margin-left: 240px;
 }

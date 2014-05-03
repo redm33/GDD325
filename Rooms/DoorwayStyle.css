@@ -32,10 +32,7 @@
 	z-index: 2;
 }
 
-#picture:hover
-{
-	margin-top: 100px;	
-}
+#picture:hover{margin-top: 100px;}
 
 #stirStick
 {
@@ -47,7 +44,25 @@
 	margin-top: 350px;
 	z-index: 2;
 }
-#stirStick:hover
+#stirStick:hover{background-image:url(../Inventory/MixingRodHorizGlow.png);}
+
+#magazine
 {
-	background-image:url(../Inventory/MixingRodHorizGlow.png);	
+	background-image:url(Images/Magazine.png);
+	width: 150px;
+	height: 82px;
+	margin-top: 350px;
+	margin-left: 320px;
+	position: absolute;		
+}
+#magazine:hover{background-image:url(Images/MagazineGlow.png);}
+
+#magazineOpen
+{
+	background-image:url(Images/MagazineOpen.png);
+	width: 800px;
+	height: 601px;
+	z-index: 3;
+	position: absolute;
+	margin-left: 200px;
 }
