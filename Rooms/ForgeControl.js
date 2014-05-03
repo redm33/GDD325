@@ -80,7 +80,7 @@ function placeBeakerCass()
 
 function alchemistTalk()
 {
-	var alchemistTalk = '<object width="189" height="450" id = "alchemist"><param name="movie" value="Rooms/Images/AlchemistAnimTalk.swf"><param name="wmode" value="transparent" /><embed wmode="transparent"src= "Rooms/Images/AlchemistAnimTalk.swf" width="189" height="450"> </embed></object>';
+	var alchemistTalk = '<object width="189" height="450" id = "alchemist" ><param name="movie" value="Rooms/Images/AlchemistAnimTalk.swf"><param name="wmode" value="transparent" /><embed wmode="transparent"src= "Rooms/Images/AlchemistAnimTalk.swf" width="189" height="450"> </embed></object>';
 	document.getElementById("alchemistWrapper").innerHTML = alchemistTalk;
 	document.getElementById("speechBubble").style.display = "block";
 	var wakeUp = new Audio("Rooms/Sounds/alchemistWakeUp.wav");
@@ -91,7 +91,7 @@ function alchemistTalk()
 
 function alchemistGoodbye()
 {
-	var alchemistIdle = '<object width="189" height="450" id = "alchemist"><param name="movie" value="Rooms/Images/AlchemistAnimFLASHTest.swf"><param name="wmode" value="transparent" /><embed wmode="transparent"src= "Rooms/Images/AlchemistAnimFLASHTest.swf" width="189" height="450"> </embed></object>';
+	var alchemistIdle = '<object width="189" height="450" id = "alchemist"  onmousedown="alchemistTalk();"><param name="movie" value="Rooms/Images/AlchemistAnimFLASHTest.swf"><param name="wmode" value="transparent" /><embed wmode="transparent"src= "Rooms/Images/AlchemistAnimFLASHTest.swf" width="189" height="450"> </embed></object>';
 	document.getElementById("alchemistWrapper").innerHTML = alchemistIdle;
 	document.getElementById("speechBubble").style.display = "none";
 	snore.play();

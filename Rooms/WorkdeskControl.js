@@ -511,7 +511,7 @@ function interactCentrifuge()
 					lockTurn = false;
 					removeMessage();
 					document.getElementById("centrifuge").style.backgroundImage = "url(Rooms/Images/centrifugeIdle.png)";
-				}, 7000);
+				}, 8000);
 			}
 		}
 		correctItem = false;
