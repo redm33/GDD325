@@ -263,6 +263,7 @@ function getFile(divId)
 	var newBackground = background.replace("\"", "");
 	var newBackground = newBackground.replace("\"", "");
 	var newBackground = newBackground.replace("http://localhost/GDD325/", "");
+	var newBackground = newBackground.replace("http://epolseaninnovations.com/GDD325/", "");
 	return newBackground;
 }
 

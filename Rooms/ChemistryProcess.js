@@ -1164,7 +1164,7 @@ function finishProcess(theProcess)
 			AddEntry("p7");
 			processSix = false;	
 			processSeven = true;
-			currentStep += 10;
+			currentStep += 9;
 			saveProcess();
 		}
 	}

@@ -145,7 +145,7 @@ function loadGame()
 		Sb3 = $.jStorage.get("Sb3");
 		Sn4 = $.jStorage.get("Sn4");
 		As = $.jStorage.get("As");
-				
+		
 		if(Bi3)
 			document.getElementById("ifBis").innerHTML = '<div id = "step48">Step 8 - Decant the solution.</div><div id = "step49">Step 9 - To the precipitate, add 0.50 (10 drops) of 6M NaOH. </div><div id = "step50">Step 10 - Then add 0.30mL (6 drops) of 0.2M SNCl2.</div>';
 		else
@@ -218,6 +218,7 @@ function loadGame()
 				visiblePage = k;
 			}
 		}
+		visiblePage = 8;
 		for(var k = 0; k <= visiblePage; k++)
 		{
 			var classLen = document.getElementsByClassName(pages[k]).length;
@@ -229,6 +230,10 @@ function loadGame()
 		}
 		startSearch = $.jStorage.get("step");
 		currentStep = $.jStorage.get("revert");
+		if(startSearch == 48 && !Bi3){
+			startSearch = 51;}
+		if(startSearch == 56 && !Cu2){
+			startSearch = 60;}
 		for(var n = 1; n < startSearch; n++)
 		{
 			if(document.getElementById("step"+	n) != null)

@@ -120,9 +120,9 @@ function updateStep()
 		{
 			startSearch++;
 			if(startSearch == 48 && !Bi3){
-				startSearch = 50;}
-			if(startSearch == 55 && !Cu2){
-				startSearch = 59;}
+				startSearch = 51;}
+			if(startSearch == 56 && !Cu2){
+				startSearch = 60;}
 			
 			add = document.getElementById(allSteps[startSearch]);
 		}

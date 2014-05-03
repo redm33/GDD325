@@ -1,4 +1,5 @@
 // JavaScript Document
+goChemGame = false;
 function playFindChem()
 {
 	$('#chemGame').load("MiniGames/chemicalGame.html");
@@ -6,10 +7,12 @@ function playFindChem()
 }
 function playChemGame()
 {
+	if(goChemGame){
 	theChem = document.getElementById("chemicalList").value;
 	window.setTimeout( function() {
 	setup(theChem);
 	lockTurn = true} ,100);
+	}
 }
 
 function playPrecipGame(color)
