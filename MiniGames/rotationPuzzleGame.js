@@ -211,7 +211,6 @@ function loadHandler()
 	drawingSurface.drawImage(img, 400, 45, 448, 448);
 	shuffleBoard();
 	timer();
-	//document.onmousemove = coords;
 	document.onmousedown = selectPiece;
 }
 
@@ -222,44 +221,31 @@ function timer()
 	drawingSurface.fillText(displayTime(), 177.5, 170);
 }
 
-function coords(e)
+function getOffset(elem)
 {
-	if(e.pageX || e.pageX == 0){
-		mouse.x = e.pageX - canvas.offsetLeft;
-		mouse.y = e.pageY - canvas.offsetTop;
-	}
-	
-	startH = (Math.floor(mouse.y/64))*64;
-	startW = (Math.floor(mouse.x/64))*64;
-}
-
-function getOffset( el ) {
-    var _x = 0;
-    var _y = 0;
-    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-        _x += el.offsetLeft - el.scrollLeft;
-        _y += el.offsetTop - el.scrollTop;
-        el = el.offsetParent;
+    var tempX = 0;
+    var tempY = 0;
+    while(elem && !isNaN(elem.offsetLeft) && !isNaN(elem.offsetTop))
+	{
+        tempX += elem.offsetLeft - elem.scrollLeft;
+        tempY += elem.offsetTop - elem.scrollTop;
+        elem = elem.offsetParent;
     }
-    return { top: _y, left: _x };
+    return {top: tempY, left: tempX};
 }
 
 function selectPiece(e)
 {
-	var testW = getOffset( document.getElementById('rotateGame') ).left;
-	var testH = getOffset( document.getElementById('rotateGame') ).top;
+	var divW = getOffset(document.getElementById('rotateGame')).left;
+	var divH = getOffset(document.getElementById('rotateGame')).top;
 	
 	if(e.layerX || e.layerX == 0){
-		mouse.x = e.pageX - testW-406;
-		mouse.y = e.pageY - testH-70;
+		mouse.x = e.pageX - divW-406;
+		mouse.y = e.pageY - divH-70;
 	};
 	
 	startH = (Math.floor(mouse.y/64)+.5)*64;
 	startW = (Math.floor(mouse.x/64)+.5)*64;
-	
-	
-	console.log(testW+", "+testH);
-	console.log(mouse.x+", "+mouse.y);
 			
 	offsetW = startW+400;
 	offsetH = startH+45;
