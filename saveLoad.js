@@ -76,7 +76,10 @@ function saveGame(){
 		}
 		if(processEight){
 			$.jStorage.set("process", "processEight");
-			$.jStorage.set("processArray", processStep8);
+			if(!Cu2)
+				$.jStorage.set("processArray", processStep8PartOne);
+			else
+				$.jStorage.set("processArray", processStep8PartTwo);
 		}
 		if(processNine){
 			$.jStorage.set("process", "processNine");
@@ -143,9 +146,9 @@ function loadGame()
 			document.getElementById("ifBis").innerHTML = '';
 			
 		if(!Cu2)
-			document.getElementById("copperOrNoCopper").innerHTML = '<div id = "step54">Step 2 - Add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step55">Step 3 - Stir.</div>';
+			document.getElementById("copperOrNoCopper").innerHTML = '<div id = "step54">Step 2 - Add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step55">Step 3 - Step 3 - Mix the solution and wait a moment.</div>';
 		else
-			document.getElementById("copperOrNoCopper").innerHTML = ' <div id = "step54">Step 2 - Add .20mL (4 drops) of Na2S2O4. </div><div id = "step55">Step 3 - Heat in water bath. </div> <div id = "step56">Step 4 - Centrifuge.. </div><div id = "step57">Step 5 - Decant. </div><div id = "step58">Step 6 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step59">Step 7 - Stir. </div>';
+			document.getElementById("copperOrNoCopper").innerHTML = ' <div id = "step54">Step 2 - Add .20mL (4 drops) of Na2S2O4. </div><div id = "step55">Step 3 - Heat the solution. </div> <div id = "step56">Step 4 - Centrifuge the solution. </div><div id = "step57">Step 5 - Decant. </div><div id = "step58">Step 6 - To solution, add 0.20 mL (4 drops) of (NH4)2S. </div><div id = "step59">Step 7 - Mix the solution and wait a moment. </div>';
 		
 		var setupProcess = $.jStorage.get("process");
 		var setupProcessArray = $.jStorage.get("processArray");
@@ -180,7 +183,10 @@ function loadGame()
 		}
 		if(setupProcess == "processEight"){
 			processEight = true;
-			processStep8 = setupProcessArray;
+			if(!Cu2)
+				processStep8PartOne = setupProcessArray;
+			else
+				processStep8PartTwo = setupProcessArray;
 		}
 		if(setupProcess == "processNine"){
 			processNine = true;

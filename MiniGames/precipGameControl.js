@@ -16,7 +16,7 @@ var image = new Image();
 image.src = "MiniGames/testTubeLarge.png";
 
 var percip = new Image();
-percip.src = "MiniGames/precWhite.png";
+percip.src = "MiniGames/Images/precWhite.png";
 
 //Directions
 var moveRight = false;
