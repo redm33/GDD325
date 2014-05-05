@@ -1,12 +1,10 @@
 // JavaScript Document
 goChemGame = false;
-function playFindChem()
-{
+function playFindChem(){
 	$('#chemGame').load("MiniGames/chemicalGame.html");
 	lockTurn = true;	
 }
-function playChemGame()
-{
+function playChemGame(){
 	if(goChemGame){
 	theChem = document.getElementById("chemicalList").value;
 	window.setTimeout( function() {
@@ -15,14 +13,12 @@ function playChemGame()
 	}
 }
 
-function playPrecipGame(color)
-{
+function playPrecipGame(color){
 	$('#precipGame').load("MiniGames/precipGame.html");
 	document.getElementById("precipGame").style.display = "block";
 
 	window.setTimeout(function(){
-	switch (color)
-	{
+	switch (color){
 		case "TTPrecGrayLiqClear.png":
 			percip.src = "MiniGames/Images/precGray.png";
 			break;
@@ -53,16 +49,14 @@ function playPrecipGame(color)
 		case "TTPrecBlueLiqClear.png":
 			percip.src = "MiniGames/Images/precBlue.png";
 			break;
-	}
-	},10);
+	}},10);
 	//window.setTimeout(function(){
 	//percip.src = "MiniGames/chemRed.png";},1);
 	document.getElementById("game").style.cursor = "";
 	lockTurn = true;
 }
 
-function playRotateGame()
-{
+function playRotateGame(){
 	$('#rotateGame').load("MiniGames/rotationPuzzleGame.html");
 	lockTurn = true;
 }

@@ -6,11 +6,8 @@ var RisDown = false;
 var loaded = false;
 var fire = new Audio("Rooms/Sounds/fire.wav");
 if (typeof fire.loop == 'boolean')
-{
     fire.loop = true;
-}
-else
-{
+else{
     fire.addEventListener('ended', function() {
         this.currentTime = 0;
         this.play();
@@ -19,11 +16,8 @@ else
 var snore = new Audio("Rooms/Sounds/snore.wav");
 snore.volume = ".7";
 if (typeof snore.loop == 'boolean')
-{
     snore.loop = true;
-}
-else
-{
+else{
     snore.addEventListener('ended', function() {
         this.currentTime = 0;
         this.play();
@@ -33,11 +27,8 @@ else
 var backgroundMusic = new Audio("Rooms/Sounds/medieval.mp3");
 backgroundMusic.volume = ".006";
 if (typeof backgroundMusic.loop == 'boolean')
-{
     backgroundMusic.loop = true;
-}
-else
-{
+else{
     backgroundMusic.addEventListener('ended', function() {
         this.currentTime = 0;
         this.play();
@@ -65,13 +56,8 @@ window.onload = function() {
 
 }
 
-
-
-function clicky(loc,background) 
-{
-	
-	if(!lockTurn && loaded)
-	{
+function clicky(loc,background) {
+	if(!lockTurn && loaded){
 		fire.pause();
 		snore.pause();
 		selectedItem = document.getElementById("content");
@@ -95,90 +81,76 @@ function clicky(loc,background)
 			localStorage.setItem("ChemShelf", document.getElementById("content").innerHTML);	
 	
 		document.getElementById('content').style.backgroundImage = "url('" + background + "')";
-		if(loc == "Menus/mainMenu.html" && localStorage.getItem("mainMenu") != null)
-		{
+		if(loc == "Menus/mainMenu.html" && localStorage.getItem("mainMenu") != null){
 			window.setTimeout( function(){
 			selectedItem.innerHTML = localStorage.getItem("mainMenu");
 			inventory.display = "none";
 			$('#content').load(localStorage.getItem("mainMenu"));
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 			backgroundMusic.pause();
 			},1);
 		}
-		else if(loc == "Menus/mainMenu.html")
-		{
+		else if(loc == "Menus/mainMenu.html"){
 			backgroundMusic.pause();
 			inventory.display = "none";
 			$('#content').load(loc);
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 		}
-		if(loc == "Menus/instructionsMenu.html" && localStorage.getItem("instructions") != null)
-		{
+		if(loc == "Menus/instructionsMenu.html" && localStorage.getItem("instructions") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("instructions"));
 			inventory.display = "none";
 			selectedItem.innerHTML = localStorage.getItem("instructions");
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 			backgroundMusic.pause();
 			},1);
 		}
-		else if(loc == "Menus/instructionsMenu.html")
-		{
+		else if(loc == "Menus/instructionsMenu.html"){
 			$('#content').load(loc);
 			inventory.display = "none";
 			backgroundMusic.pause();
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 		}
-		if(loc == "Menus/creditsMenu.html" && localStorage.getItem("credits") != null)
-		{
+		if(loc == "Menus/creditsMenu.html" && localStorage.getItem("credits") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("credits"));
 			inventory.display = "none";
 			selectedItem.innerHTML = localStorage.getItem("credits")
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 			backgroundMusic.pause();
 			}, 1);
 		}
-		else if(loc == "Menus/creditsMenu.html")
-		{
+		else if(loc == "Menus/creditsMenu.html"){
 			$('#content').load(loc);
 			inventory.display = "none";
 			backgroundMusic.pause();
-			if(document.getElementById("journal").style.display == "block")
-			{
+			if(document.getElementById("journal").style.display == "block"){
 				document.getElementById("journal").style.display = "";
 				localStorage.setItem("journalOpen", true);
 			}
 		}	
-		if(loc == "Rooms/Doorway.html" && localStorage.getItem("Doorway") != null)
-		{
+		if(loc == "Rooms/Doorway.html" && localStorage.getItem("Doorway") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("Doorway"));
 			inventory.display = "block";
 			selectedItem.innerHTML = localStorage.getItem("Doorway");
 			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/DoorwayBackground.png')";
-			if(localStorage.getItem("journalOpen"))
-			{
+			if(localStorage.getItem("journalOpen")){
 				localStorage.removeItem("journalOpen");
 				document.getElementById("journal").style.display = "block";
 			}
@@ -187,22 +159,19 @@ function clicky(loc,background)
 		
 			}, 1);
 		}
-		else if(loc == "Rooms/Doorway.html")
-		{
+		else if(loc == "Rooms/Doorway.html"){
 			$('#content').load(loc);	
 			inventory.display = "block";
 			backgroundMusic.play();
 			localStorage.setItem("LoadPage","Doorway");
 		}
-		if(loc == "Rooms/Workdesk.html" && localStorage.getItem("Workdesk") != null)
-		{
+		if(loc == "Rooms/Workdesk.html" && localStorage.getItem("Workdesk") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("Workdesk"));
 			selectedItem.innerHTML = localStorage.getItem("Workdesk");
 			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/WorkdeskRoomBackground.png')";
 			inventory.display = "block";
-			if(localStorage.getItem("journalOpen"))
-			{
+			if(localStorage.getItem("journalOpen")){
 				localStorage.removeItem("journalOpen");
 				document.getElementById("journal").style.display = "block";
 			}
@@ -211,23 +180,20 @@ function clicky(loc,background)
 			recoverHovers();
 			}, 1);
 		}
-		else if(loc == "Rooms/Workdesk.html")
-		{
+		else if(loc == "Rooms/Workdesk.html"){
 			$('#content').load(loc);
 			inventory.display = "block";
 			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/WorkdeskRoomBackground.png')";
 			backgroundMusic.play();
 			localStorage.setItem("LoadPage","Workdesk");
 		}
-		if(loc == "Rooms/Forge.html"  && localStorage.getItem("Forge") != null)
-		{
+		if(loc == "Rooms/Forge.html"  && localStorage.getItem("Forge") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("Forge"));
 			inventory.display = "block";
 			selectedItem.innerHTML = localStorage.getItem("Forge");
 			document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
-			if(localStorage.getItem("journalOpen"))
-			{
+			if(localStorage.getItem("journalOpen")){
 				localStorage.removeItem("journalOpen");
 				document.getElementById("journal").style.display = "block";
 			}
@@ -238,8 +204,7 @@ function clicky(loc,background)
 			
 			}, 1);
 		}
-		else if(loc == "Rooms/Forge.html")
-		{
+		else if(loc == "Rooms/Forge.html"){
 			$('#content').load(loc);
 			inventory.display = "block";
 			var thissound=document.getElementById("audio1");
@@ -248,25 +213,21 @@ function clicky(loc,background)
 			fire.play();
 			snore.play();
 		}
-		if(loc == "Rooms/ChemShelf.html"  && localStorage.getItem("ChemShelf") != null)
-		{
+		if(loc == "Rooms/ChemShelf.html"  && localStorage.getItem("ChemShelf") != null){
 			window.setTimeout( function(){
 			$('#content').load(localStorage.getItem("ChemShelf"));
 			inventory.display = "block";
 			selectedItem.innerHTML = localStorage.getItem("ChemShelf");
 			document.getElementById('content').style.backgroundImage = "url('Rooms/ChemShelf.png')";
-			if(localStorage.getItem("journalOpen"))
-			{
+			if(localStorage.getItem("journalOpen")){
 				localStorage.removeItem("journalOpen");
 				document.getElementById("journal").style.display = "block";
 			}
 			localStorage.setItem("LoadPage","ChemShelf");
 			backgroundMusic.play();
 			}, 1);
-		
 		}
-		else if(loc == "Rooms/ChemShelf.html")
-		{
+		else if(loc == "Rooms/ChemShelf.html"){
 			$('#content').load(loc);
 			inventory.display = "block";
 			backgroundMusic.play();
@@ -274,53 +235,45 @@ function clicky(loc,background)
 		}
 	}
 }
-function play()
-{
-	
+function play(){
+	var dropCount = 0;
 	if(loaded){
 		var loadBack = localStorage.getItem("LoadPage");
 		selectedItem = document.getElementById("content");
-		if(loadBack != null)
-		{
-			if(loadBack == "Doorway" && localStorage.getItem("Doorway") != null)
-			{
+		if(loadBack != null){
+			if(loadBack == "Doorway" && localStorage.getItem("Doorway") != null){
 				window.setTimeout( function(){
 				$('#content').load(localStorage.getItem("Doorway"));
 				document.getElementById("userInterface").style.display = "block";
 				selectedItem.innerHTML = localStorage.getItem("Doorway");
 				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/DoorwayBackground.png')";
-				if(localStorage.getItem("journalOpen"))
-				{
+				if(localStorage.getItem("journalOpen")){
 					localStorage.removeItem("journalOpen");
 					document.getElementById("journal").style.display = "block";
 				}
 				backgroundMusic.play();
 				}, 1);
 			}
-			else if(loadBack == "Workdesk" && localStorage.getItem("Workdesk") != null)
-			{
+			else if(loadBack == "Workdesk" && localStorage.getItem("Workdesk") != null){
 				window.setTimeout( function(){
 				$('#content').load(localStorage.getItem("Workdesk"));
 				document.getElementById("userInterface").style.display = "block";
 				selectedItem.innerHTML = localStorage.getItem("Workdesk");
 				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/WorkdeskRoomBackground.png')";
-				if(localStorage.getItem("journalOpen"))
-				{
+				if(localStorage.getItem("journalOpen")){
 					localStorage.removeItem("journalOpen");
 					document.getElementById("journal").style.display = "block";
 				}
 				backgroundMusic.play();
 				}, 1);
 			}
-			else if(loadBack == "Forge" && localStorage.getItem("Forge") != null)
-			{
+			else if(loadBack == "Forge" && localStorage.getItem("Forge") != null){
 				window.setTimeout( function(){
 				$('#content').load(localStorage.getItem("Forge"));
 				document.getElementById("userInterface").style.display = "block";
 				selectedItem.innerHTML = localStorage.getItem("Forge");
 				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
-				if(localStorage.getItem("journalOpen"))
-				{
+				if(localStorage.getItem("journalOpen")){
 					localStorage.removeItem("journalOpen");
 					document.getElementById("journal").style.display = "block";
 				}
@@ -329,23 +282,20 @@ function play()
 				snore.play();
 				}, 1);
 			}
-			else if(loadBack == "ChemShelf" && localStorage.getItem("ChemShelf") != null)
-			{
+			else if(loadBack == "ChemShelf" && localStorage.getItem("ChemShelf") != null){
 				window.setTimeout( function(){
 				$('#content').load(localStorage.getItem("ChemShelf"));
 				document.getElementById("userInterface").style.display = "block";
 				selectedItem.innerHTML = localStorage.getItem("ChemShelf");
 				document.getElementById('content').style.backgroundImage = "url('Rooms/ChemShelf.png')";
-				if(localStorage.getItem("journalOpen"))
-				{
+				if(localStorage.getItem("journalOpen")){
 					localStorage.removeItem("journalOpen");
 					document.getElementById("journal").style.display = "block";
 				}
 				backgroundMusic.play()
 				}, 1);
 			}
-			else
-			{
+			else{
 				$('#content').load("Rooms/Forge.html");
 				document.getElementById("userInterface").style.display = "block";
 				backgroundMusic.play();
@@ -355,21 +305,15 @@ function play()
 				document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
 				}
 		}
-		else
-		{
+		else{
 			document.getElementById('content').style.backgroundImage = "none";
 			$('#content').load("Cutscenes/firstCutscene.html");
-			processOne = true;
-	
-	
+			processOne = true;	
 		}
-	}
-	
-	
+	}	
 }
 
-function preLoadProcessOne()
-{
+function preLoadProcessOne(){
 
 	localStorage.setItem("UI", "<div id = \"inventory\" onclick = \"placeInInventory()\"><div id = \"itemOne\" onclick = \"selectItem('itemOne')\"> </div><div id = \"itemTwo\" onclick = \"selectItem('itemTwo')\"> </div><div id = \"itemThree\" onclick = \"selectItem('itemThree')\"> </div><div id = \"itemFour\" onclick = \"selectItem('itemFour')\"> </div><div id = \"itemFive\" onclick = \"selectItem('itemFive')\"> </div><div id = \"itemSix\" onclick = \"selectItem('itemSix')\"> </div><div id = \"itemSeven\" onclick = \"selectItem('itemSeven')\"> </div></div><div id = \"trash\" onclick = \"trash()\"></div><div id = \"washing\" onclick = \"wash()\"> </div><div id = \"journalButton\" onclick = \"showHideJournal()\"></div><div id =\"menuButtons\"><a href = \"#\" onclick = \"clicky('Menus/mainMenu.html','Menus/Images/menuBackground.png')\"><div id = \"menuUIButton\"> Menu </div></a><a href = \"#\" onclick = \"clicky('Menus/instructionsMenu.html','Menus/Images/instructionBackground.png')\"><div id = \"instructionsUIButton\">Help</div></a></div>");
 	

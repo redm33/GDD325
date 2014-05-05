@@ -35,6 +35,53 @@
 	position:absolute;
 }
 
+.identification
+{
+	margin-top:20px;
+	margin-left:100px;
+	font-family: nycs;
+	letter-spacing:1px;
+	font-size:12px;
+	font-weight:normal;
+	position:absolute;
+	width: 250px;
+}
+#identTitle
+{
+	margin-top:20px;
+	margin-left:20px;
+	font-family: nycs;
+	letter-spacing:1px;
+	font-size:14px;
+	font-weight:normal;
+	position:absolute;
+	width: 250px;
+}
+
+#merc {margin-top: 30px;margin-left: 20px;position: absolute;}
+#lead{margin-top: 140px;margin-left: 20px;position: absolute;}
+#bis {margin-top: 240px;position: absolute;margin-left: 20px;}
+#copper1{margin-top: 340px;margin-left: 30px;position: absolute;}
+#copper2{margin-top: 340;margin-left: 10px;position: absolute;}
+#cad {margin-top: 20px;margin-left: 20px;position: absolute;}
+#ars{margin-top: 110px;margin-left: 20px;position: absolute;}
+#ant {margin-top: 200px;position: absolute;margin-left: 20px;}
+#tin{margin-top: 310px;margin-left: 20;position: absolute;}
+
+
+.completeProc:hover
+{
+	cursor: pointer;
+	-webkit-animation-name: color_change_green;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+    -moz-animation-name: color_change_green;
+   -moz-animation-duration: 3s;
+	  -moz-animation-iteration-count: infinite;
+	  animation-name: color_change_green;
+	  animation-duration: 3s;
+	  animation-iteration-count: infinite;
+}
 .para1
 {
 	margin-top:20px;
@@ -193,35 +240,57 @@
 }
 
 .pulse {
-  -webkit-animation-name: color_change;
+  -webkit-animation-name: color_change_red;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation-name: color_change;
+  -moz-animation-name: color_change_red;
   -moz-animation-duration: 3s;
   -moz-animation-iteration-count: infinite;
-  animation-name: color_change;
+  animation-name: color_change_red;
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes color_change {
+@-webkit-keyframes color_change_red {
   from { color: #000;}
   50% {color:#900;}
   to { color: #000;}
 }
-@-moz-keyframes color_change {
+@-moz-keyframes color_change_red {
   from { color: #000;}
   50% {color:#900;}
   to { color: #000;}
 }
-@-ms-keyframes color_change {
+@-ms-keyframes color_change_red {
   from { color: #000;}
   50% {color:#900;}
   to { color: #000;}
 }
 }
-@keyframes color_change {
+@keyframes color_change_red {
    from { color: #000;}
   50% {color:#900;}
+  to { color: #000;}
+}
+
+@-webkit-keyframes color_change_green {
+  from { color: #000;}
+  50% {color:#090;}
+  to { color: #000;}
+}
+@-moz-keyframes color_change_green {
+  from { color: #000;}
+  50% {color:#090;}
+  to { color: #000;}
+}
+@-ms-keyframes color_change_green {
+  from { color: #000;}
+  50% {color:#090;}
+  to { color: #000;}
+}
+}
+@keyframes color_change_green {
+   from { color: #000;}
+  50% {color:#090;}
   to { color: #000;}
 }

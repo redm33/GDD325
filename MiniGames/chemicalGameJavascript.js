@@ -17,22 +17,17 @@ var idSlots=[["zeroZero", "zeroOne", "zeroTwo", "zeroThree", "zeroFour", "zeroFi
 	["fourZero", "fourOne", "fourTwo", "fourThree", "fourFour", "fourFive", "fourSix"],
 	["fiveZero", "fiveOne", "fiveTwo", "fiveThree", "fiveFour", "fiveFive", "fiveSix"]];
 	
-function switchChem(divId)
-{
+function switchChem(divId){
 	var isOneSelected = false;
 
 	var selectedI = 0;
 	var selectedJ = 0;
-	for(var i = 0; i < idSlots.length; i++)
-	{
-		for(var k = 0; k < idSlots[i].length; k++)
-		{
-			for(var j = 0; j< chemsOnShelf.length; j++)
-			{
+	for(var i = 0; i < idSlots.length; i++){
+		for(var k = 0; k < idSlots[i].length; k++){
+			for(var j = 0; j< chemsOnShelf.length; j++){
 				background =getFile(idSlots[i][k]);
 
-				if(background == chemsOnShelf[j])
-				{
+				if(background == chemsOnShelf[j]){
 					isOneSelected = true;
 					selectedI = i;
 					selectedJ = k;
@@ -40,19 +35,14 @@ function switchChem(divId)
 			}
 		}		
 	}
-	
-	if(isOneSelected)
-	{
+	if(isOneSelected){
 		var currentI = 0;
 		var currentJ = 0;
 		var selected = document.getElementById(divId);
 	
-		for(var i = 0; i < idSlots.length; i++)
-		{
-			for(var j = 0; j<idSlots[i].length; j++)
-			{
-				if(idSlots[i][j] == divId)
-				{
+		for(var i = 0; i < idSlots.length; i++){
+			for(var j = 0; j<idSlots[i].length; j++){
+				if(idSlots[i][j] == divId){
 					currentI = i;
 					currentJ = j;
 				}
@@ -80,24 +70,21 @@ function switchChem(divId)
 		var checkThreeNormal = false;
 		var checkFourNormal = false;
 	
-		for(var k = 0; k < chemsOnShelf.length; k++)
-		{
+		for(var k = 0; k < chemsOnShelf.length; k++){
 			if(checkOne == chemsOnShelfHover[k]){checkOneNormal = true;}
 			if(checkTwo == chemsOnShelfHover[k]){checkTwoNormal = true;}
 			if(checkThree == chemsOnShelfHover[k]){checkThreeNormal = true;}
 			if(checkFour == chemsOnShelfHover[k]){checkFourNormal = true;}
 		}
 		
-		if(!checkOneNormal || !checkTwoNormal || !checkThreeNormal || !checkFourNormal)
-		{
+		if(!checkOneNormal || !checkTwoNormal || !checkThreeNormal || !checkFourNormal){
 			theSelected = document.getElementById(idSlots[selectedI][selectedJ]);
 			theSelectedBackground = getFile(idSlots[selectedI][selectedJ]);
 			thePressed = document.getElementById(divId);
 			thePressedBackground = getFile(divId);
 			
 			var backgroundIndex = 0;
-			for(var k = 0; k < chemsOnShelf.length; k++)
-			{
+			for(var k = 0; k < chemsOnShelf.length; k++){
 				if(theSelectedBackground == chemsOnShelf[k])
 					backgroundIndex = k;	
 			}
@@ -108,65 +95,44 @@ function switchChem(divId)
 			window.setTimeout( function() {
 			decrementMoves();}, 10);
 		}
-		else
-		{
+		else{
 			theSelected = getFile(idSlots[selectedI][selectedJ]);
 
 			var backgroundIndex = 0;
-			for(var k = 0; k < chemsOnShelf.length; k++)
-			{
+			for(var k = 0; k < chemsOnShelf.length; k++){
 				if(theSelected == chemsOnShelfHover[k])
 					backgroundIndex = k;	
 			}
 			theSelected.style.backgroundImage = chemsOnShelf[backgroundIndex];
 		}	
-		
-		
 	}
-	else
-	{
+	else{
 		backgroundFile = getFile(divId);	
-		for(var i = 0; i < chemsOnShelf.length; i++)
-		{
+		for(var i = 0; i < chemsOnShelf.length; i++){
 			if(backgroundFile == chemsOnShelfHover[i])
-			{
 				document.getElementById(divId).style.backgroundImage = chemsOnShelf[i];
-
-			}
-
 		}
 	}
-	
-	
-	
 }
-function setupWin()
-{
+function setupWin(){
 	
 	var count = 0;
 	var curBackground = null;
-	for(var i = 0; i < idSlots.length; i++)
-	{
-		for(var j = 0; j<idSlots[i].length; j++)
-		{
+	for(var i = 0; i < idSlots.length; i++){
+		for(var j = 0; j<idSlots[i].length; j++){
 			if(count == 0){curBackground = getFile(idSlots[i][j]);}
-			if(curBackground == getFile(idSlots[i][j]))
-			{
+			if(curBackground == getFile(idSlots[i][j])){
 				count++;
 				if(count == 3){return true;}
 			}
 			else{count = 0;}			
 		}		
 	}
-	
 	var transIdSlots = invertArray(idSlots, idSlots[0].length, idSlots.length);
-	for(var i = 0; i < transIdSlots.length; i++)
-	{
-		for(var j = 0; j< transIdSlots[i].length; j++)
-		{
+	for(var i = 0; i < transIdSlots.length; i++){
+		for(var j = 0; j< transIdSlots[i].length; j++){
 			if(count == 0){curBackground = getFile(transIdSlots[i][j]);}
-			if(curBackground == getFile(transIdSlots[i][j]))
-			{
+			if(curBackground == getFile(transIdSlots[i][j])){
 				count++;
 				if(count == 3){return true;}
 			}
@@ -176,16 +142,12 @@ function setupWin()
 	var shuffleChems = new Audio("Rooms/Sounds/glassShuffleShort.wav");
 	shuffleChems.play();
 }
-function checkWin()
-{
+function checkWin(){
 	var count = 0;
 	var curBackground = getFile(idSlots[0][0]);
-	for(var i = 0; i < idSlots.length; i++)
-	{
-		for(var j = 0; j < idSlots[i].length; j++)
-		{
-			if(curBackground == getFile(idSlots[i][j]))
-			{
+	for(var i = 0; i < idSlots.length; i++){
+		for(var j = 0; j < idSlots[i].length; j++){
+			if(curBackground == getFile(idSlots[i][j])){
 				count++;
 				if(count == 4){retrieveChemical("url(Inventory/"+getBackgroundFile(idSlots[i][j])+")");
 				return true; break;}
@@ -197,12 +159,9 @@ function checkWin()
 	var transIdSlots = invertArray(idSlots, idSlots[0].length, idSlots.length);
 	count = 0;
 	curBackground = getFile(transIdSlots[0][0]);
-	for(var i = 0; i < transIdSlots.length; i++)
-	{
-		for(var j = 0; j< transIdSlots[i].length; j++)
-		{
-			if(curBackground == getFile(transIdSlots[i][j]))
-			{
+	for(var i = 0; i < transIdSlots.length; i++){
+		for(var j = 0; j< transIdSlots[i].length; j++){
+			if(curBackground == getFile(transIdSlots[i][j])){
 				count++;
 				if(count == 4){retrieveChemical("url(Inventory/"+getBackgroundFile(transIdSlots[i][j])+")");
 				return true;break;}
@@ -210,12 +169,10 @@ function checkWin()
 			else{count = 1; curBackground = getFile(transIdSlots[i][j]);}	
 		}
 	}
-	return false;
-		
+	return false;	
 }
 
-function invertArray(array,arrayWidth,arrayHeight) 
-{
+function invertArray(array,arrayWidth,arrayHeight) {
   var newArray = [];
   for (x=0;x<arrayWidth;x++) {
     newArray[x] = [];
@@ -226,18 +183,15 @@ function invertArray(array,arrayWidth,arrayHeight)
   return newArray;
 }
 
-function getBackgroundFile(divId)
-{
+function getBackgroundFile(divId){
 		var selected = document.getElementById(divId);
 		var backgroundStyle = selected.currentStyle || window.getComputedStyle(selected, false),
 		background = backgroundStyle.backgroundImage;
 		
 		var firstSlash = 0;
 		var found = false;
-		for(var i = background.length-1; i > 0; i--)
-		{
-			if(background[i] == "/" && !found)
-			{
+		for(var i = background.length-1; i > 0; i--){
+			if(background[i] == "/" && !found){
 				firstSlash = i;
 				found = true;
 			}
@@ -245,20 +199,18 @@ function getBackgroundFile(divId)
 			
 		var fileName = "";
 		var length = 0;
-		if(background[background.length-3] == "n"){
-			length = background.length -1;}
-		else{
-			length = background.length -2;}
+		if(background[background.length-3] == "n")
+			length = background.length -1;
+		else
+			length = background.length -2;
 			
-		for(var i = firstSlash+1; i < length; i++)
-		{
+		for(var i = firstSlash+1; i < length; i++){
 			fileName += background[i];
 		}	
 		return fileName
 }
 
-function getFile(divId)
-{
+function getFile(divId){
 	var background = document.getElementById(divId).style.backgroundImage;
 	var newBackground = background.replace("\"", "");
 	var newBackground = newBackground.replace("\"", "");
@@ -267,17 +219,13 @@ function getFile(divId)
 	return newBackground;
 }
 
-function getFlatFileName(chemName)
-{
-	for(var k = 0; k < chemsOnShelf.length; k++)
-	{
+function getFlatFileName(chemName){
+	for(var k = 0; k < chemsOnShelf.length; k++){
 		var firstSlash = 0;
 		var found = false;
 		background = chemsOnShelfHover[k];
-		for(var i = background.length-1; i > 0; i--)
-		{
-			if(background[i] == "/" && !found)
-			{
+		for(var i = background.length-1; i > 0; i--){
+			if(background[i] == "/" && !found){
 				firstSlash = i;
 				found = true;
 			}
@@ -285,13 +233,12 @@ function getFlatFileName(chemName)
 			
 		var fileName = "";
 		var length = 0;
-		if(background[background.length-3] == "n"){
-			length = background.length -1;}
-		else{
-			length = background.length -2;}
+		if(background[background.length-3] == "n")
+			length = background.length -1;
+		else
+			length = background.length -2;
 			
-		for(var i = firstSlash+1; i < length-4; i++)
-		{
+		for(var i = firstSlash+1; i < length-4; i++){
 			fileName += background[i];
 		}
 		
@@ -300,36 +247,29 @@ function getFlatFileName(chemName)
 	}
 	return "";
 }
-function setup(chem)
-{			
+function setup(chem){			
 	document.getElementById("directions").innerHTML = "DIRECTIONS: <br/><br/>Switch two chemicals and get four in a row to collect the chemical. You only have so many moves!";
 	
-	if(!onePrompt)
-	{
+	if(!onePrompt){
 		theChem = getFlatFileName(chem);
 		onePrompt = true;
 	}
 	var chemGameArray = new Array();
-	if(theChem != "")
-	{
+	if(theChem != ""){
 		countMoves = 3;
 		var desiredChem = 0;
 		var switchIt = false;
 		var picIndex = 0;
-		for(var i = 0; i < idSlots.length; i++)
-		{
-			for(var j = 0; j<idSlots[i].length; j++)
-			{
+		for(var i = 0; i < idSlots.length; i++){
+			for(var j = 0; j<idSlots[i].length; j++){
 				var div = document.getElementById(idSlots[i][j]);
 				div.style.width = "64px";
 				div.style.height = "64px";
-				if(desiredChem < 10)
-				{
+				if(desiredChem < 10){
 					chemGameArray.push(theChem);
 					desiredChem++;
 				}
-				else
-				{
+				else{
 					var randomInt = getRandomInt(0,chemsOnShelf.length-1);
 					chemGameArray.push(chemsOnShelfHover[randomInt]);
 				}
@@ -338,10 +278,8 @@ function setup(chem)
 		
 		var newArray = shuffle(chemGameArray);
 		var index = 0;
-		for(var i = 0; i < idSlots.length; i++)
-		{
-			for(var j = 0; j<idSlots[i].length; j++)
-			{
+		for(var i = 0; i < idSlots.length; i++){
+			for(var j = 0; j<idSlots[i].length; j++){
 				var div = document.getElementById(idSlots[i][j]).style.backgroundImage = newArray[index];
 				index++;
 			}
@@ -354,40 +292,29 @@ function setup(chem)
 
 	}
 	else
-	{
 		backOut();
-	}
 }
 
-function backOut()
-{
+function backOut(){
 	document.getElementById("chemGame").innerHTML = "";
 	onePrompt = false;
 	lockTurn = false;
 }
 
-function retrieveChemical(chemImage)
-{
+function retrieveChemical(chemImage){
 	addItem(chemImage);
 }
 
-function decrementMoves()
-{
+function decrementMoves(){
 	countMoves--;
 	document.getElementById("moves").innerHTML = countMoves;
 	var win = checkWin();
-	if(countMoves == 0 || win)
-	{
+	if(countMoves == 0 || win){
 		if(!win)
-		{
 			setup(theChem);
-			alert("Try again...");
-		}
-		else
-		{
+		else{
 			backOut();
 			switchSound.play();
-
 		}
 	}
 }

@@ -3,121 +3,94 @@ allSteps = new Array("","step1","step2","step3","step4","step5","step6","step7",
 
 var startSearch = 1;
 
-function AddEntry(name)
-{
-	if(name == "p2")
-	{
+function AddEntry(name){
+	if(name == "p2"){
 		var para = document.getElementsByClassName("para2");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p3")
-	{
+	if(name == "p3"){
 		var para = document.getElementsByClassName("para3");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p4")
-	{
+	if(name == "p4"){
 		var para = document.getElementsByClassName("para4");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p5")
-	{
+	if(name == "p5"){
 		var para = document.getElementsByClassName("para5");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p6")
-	{
+	if(name == "p6"){
 		var para = document.getElementsByClassName("para6");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p7")
-	{
+	if(name == "p7"){
 		var para = document.getElementsByClassName("para7");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p8")
-	{
+	if(name == "p8"){
 		var para = document.getElementsByClassName("para8");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p9")
-	{
+	if(name == "p9"){
 		var para = document.getElementsByClassName("para9");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p10")
-	{
+	if(name == "p10"){
 		var para = document.getElementsByClassName("para10");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p11")
-	{
+	if(name == "p11"){
 		var para = document.getElementsByClassName("para11");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-	if(name == "p12")
-	{
+	if(name == "p12"){
 		var para = document.getElementsByClassName("para12");
-		for (var i = 0; i < para.length; i++)
-		{
+		for (var i = 0; i < para.length; i++){
 			para[i].style.visibility="visible";
 			para[i].style.opacity="1";
 		}
 	}
-
 }
 
-function updateStep()
-{
+function updateStep(){
 	var add = "";
 	var pulse = document.getElementsByClassName("pulse");
 	var thePulse = pulse[0];
 	pulse[0].style.textDecoration = "line-through";		
 	removeClass("pulse", pulse[0]);
-	for(var k = 0; k < allSteps.length; k++)
-	{
-		if(document.getElementById(allSteps[k]) == thePulse)
-		{
+	for(var k = 0; k < allSteps.length; k++){
+		if(document.getElementById(allSteps[k]) == thePulse){
 			startSearch++;
 			if(startSearch == 48 && !Bi3){
 				startSearch = 51;}
@@ -128,8 +101,6 @@ function updateStep()
 		}
 	}
 	addClass("pulse", add);	
-	
-	
 }
 
 function addClass( classname, element ) {

@@ -132,6 +132,8 @@
 	height: 140px;
 	margin-left: 8px;
 	z-index: 4;
+	font-family:almendra;
+
 }
 
 #menuUIButton
@@ -141,6 +143,7 @@
 	text-align: center;
 	background-image:url(../UI/Images/UIButton.png);
 	line-height: 33px;
+	font-size:20px;
 
 }
 
@@ -152,6 +155,7 @@
 	text-align: center;
 	line-height: 33px;
 	background-image:url(../UI/Images/UIButton.png);
+	font-size:20px;
 
 }
 #menuUIButton:hover{background-image:url(../UI/Images/UIButtonHover.png);}

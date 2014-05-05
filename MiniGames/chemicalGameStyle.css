@@ -18,6 +18,7 @@ table
 	background-image:url(Images/chemicalShelfUI.png);
 	width: 726px;
 	height: 498px;
+	
 }
 
 #directions
@@ -64,4 +65,6 @@ table
 	text-align: center;
 	background-image:url(../UI/Images/UIButton.png);
 	line-height: 33px;
+	font-size:20px;
+	font-family:almendra;
 }

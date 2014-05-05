@@ -1,34 +1,28 @@
 // JavaScript Document
-function saveGame()
-{
-	if(localStorage.getItem("Doorway") != null && localStorage.getItem("Workdesk") != null && localStorage.getItem("Forge") != null && localStorage.getItem("ChemShelf") != null)
-	{
+function saveGame(){
+	if(localStorage.getItem("Doorway") != null && localStorage.getItem("Workdesk") != null && localStorage.getItem("Forge") != null && localStorage.getItem("ChemShelf") != null){
 		displayMessage("Your game has been saved.");
 		$.jStorage.flush()
 		var background = getFileName(getInventoryBackgroundFile("content"));
-		if(background == "DoorwayBackground")
-		{
+		if(background == "DoorwayBackground"){
 			$.jStorage.set("doorway", document.getElementById('content').innerHTML);
 			$.jStorage.set("workdesk", localStorage.getItem("Workdesk"));
 			$.jStorage.set("forge", localStorage.getItem("Forge"));
 			$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"));
 		}
-		if(background == "ChemShelf")
-		{
+		if(background == "ChemShelf"){
 			$.jStorage.set("doorway", localStorage.getItem("Doorway"));
 			$.jStorage.set("workdesk", localStorage.getItem("Workdesk"));
 			$.jStorage.set("forge", localStorage.getItem("Forge"));
 			$.jStorage.set("chemshelf", document.getElementById('content').innerHTML);
 		}
-		if(background == "ForgeFireAnimation")
-		{
+		if(background == "ForgeFireAnimation"){
 			$.jStorage.set("doorway", localStorage.getItem("Doorway") );
 			$.jStorage.set("workdesk", localStorage.getItem("Workdesk"));
 			$.jStorage.set("forge", document.getElementById('content').innerHTML);
 			$.jStorage.set("chemshelf", localStorage.getItem("ChemShelf"));
 		}
-		if(background == "WorkdeskRoomBackground")
-		{
+		if(background == "WorkdeskRoomBackground"){
 			$.jStorage.set("doorway", localStorage.getItem("Doorway"));
 			$.jStorage.set("workdesk", document.getElementById('content').innerHTML);
 			$.jStorage.set("forge", localStorage.getItem("Forge"));
@@ -107,8 +101,7 @@ function saveGame()
 		var pages = new Array("para1", "para2", "para3", "para4", "para5", "para6", "para7", "para8", "para9", "para10", "para11", "para12");
 		
 		var k = 0;
-		while(document.getElementsByClassName(pages[k])[0].style.opacity != 0)
-		{
+		while(document.getElementsByClassName(pages[k])[0].style.opacity != 0){
 			$.jStorage.set("page", pages[k]);	
 			k++;
 		}
@@ -121,9 +114,7 @@ function saveGame()
 function loadGame()
 {
 	
-	if($.jStorage.get("doorway") != null && $.jStorage.get("workdesk") != null && $.jStorage.get("forge") != null &&$.jStorage.get("chemshelf"))
-	{
-		
+	if($.jStorage.get("doorway") != null && $.jStorage.get("workdesk") != null && $.jStorage.get("forge") != null &&$.jStorage.get("chemshelf")){
 		document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
 		
 		localStorage.setItem("Doorway",$.jStorage.get("doorway"));
@@ -211,19 +202,13 @@ function loadGame()
 		var pages = new Array("para1", "para2", "para3", "para4", "para5", "para6", "para7", "para8", "para9", "para10", "para11", "para12");
 		var visiblePage = "";
 		
-		for(var k = 0; k < pages.length; k++)
-		{
+		for(var k = 0; k < pages.length; k++){
 			if($.jStorage.get("page") == pages[k])
-			{
 				visiblePage = k;
-			}
 		}
-		visiblePage = 8;
-		for(var k = 0; k <= visiblePage; k++)
-		{
+		for(var k = 0; k <= visiblePage; k++){
 			var classLen = document.getElementsByClassName(pages[k]).length;
-			for(var j = 0; j < classLen; j++)
-			{
+			for(var j = 0; j < classLen; j++){
 				document.getElementsByClassName(pages[k])[j].style.visibility = "visible";
 				document.getElementsByClassName(pages[k])[j].style.opacity = "1";
 			}
@@ -234,8 +219,7 @@ function loadGame()
 			startSearch = 51;}
 		if(startSearch == 56 && !Cu2){
 			startSearch = 60;}
-		for(var n = 1; n < startSearch; n++)
-		{
+		for(var n = 1; n < startSearch; n++){
 			if(document.getElementById("step"+	n) != null)
 				document.getElementById("step"+	n).style.textDecoration = "line-through";
 		}

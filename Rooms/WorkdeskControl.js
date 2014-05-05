@@ -51,8 +51,7 @@ switchSound.volume = ".1";
 
 
 
-function placeItemOnDesk(divId)
-{
+function placeItemOnDesk(divId){
 	switchSound.play();
 	workarea = document.getElementById(divId);
 	backgroundStyle = workarea.currentStyle || window.getComputedStyle(workarea, false),
@@ -65,15 +64,13 @@ function placeItemOnDesk(divId)
 	var index = chemicals.indexOf(stripCursorImage(cursorImage));
 	if(index != -1)
 		chemHover(stripCursorImage(cursorImage), divId, false)
-	else
-	{
+	else{
 		workarea.onmouseover = function() {displayMessage(text);}
 		workarea.onmouseout = function() {removeMessage();}
 	}
 	
 	var index = droppers.indexOf(stripCursorImage(cursorImage),1);
-	if(index != -1 && dropCount != 0) 
-	{
+	if(index != -1 && dropCount != 0) {
 		if(processOne){processStepOne(chemInDropper, dropCount, false, false);}
 		if(processTwo){processStepTwo(chemInDropper, dropCount, false, false, false, false);}
 		if(processThree){processStepThree(chemInDropper, dropCount, false, false, false, false, "");}
@@ -90,23 +87,19 @@ function placeItemOnDesk(divId)
 	}
 	
 	var index = droppers.indexOf(stripCursorImage(cursorImage));
-	if(index != -1)
-	{
-		if(index == 0)
-		{
+	if(index != -1){
+		if(index == 0){
 			workarea.onmouseover = function() {displayMessage("Empty Dropper");}
 			workarea.onmouseout = function() {removeMessage();}
 		}
-		else
-		{
+		else{
 			workarea.onmouseover = function() {displayMessage("Dropper with " + chemInDropper);}
 			workarea.onmouseout = function() {removeMessage();}
 		}
 	}
 }
 
-function interactWithDesk(workareaDiv, chemDiv)
-{
+function interactWithDesk(workareaDiv, chemDiv){
 	
 	var workarea = document.getElementById(workareaDiv);
 	var selection = document.getElementById(chemDiv);
@@ -129,8 +122,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 	if(cursorImage != "" && (currentBackground == "" || currentBackground == "none") && !RisDown)
 		placeItemOnDesk(workareaDiv);
 		
-	else if((cursorImage == "" || cursorImage == "none") && currentBackground != "" && !RisDown && !lockCursor)
-	{
+	else if((cursorImage == "" || cursorImage == "none") && currentBackground != "" && !RisDown && !lockCursor){
 		var switchSound = new Audio("Rooms/Sounds/pickUpShort.wav");
 		switchSound.volume = ".1";
 		switchSound.play();
@@ -138,8 +130,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 		workarea.onmouseover = "";
 		workarea.onmouseout = "";	
 	}
-	else if(index != -1 && indexClicked != -1)
-	{
+	else if(index != -1 && indexClicked != -1){
 		if(indexClicked == 0)
 			workarea.style.backgroundImage = "url(Inventory/" + cursorStrip + ")";
 		document.getElementById("game").style.cursor = "url(Inventory/TestTubeEmpty.png) 32 32, auto";
@@ -148,8 +139,7 @@ function interactWithDesk(workareaDiv, chemDiv)
 		if(processTwelve) {processStepTwelve(chemInDropper, dropCount, false, false, false, true, "");}
 	}
 	
-	else
-	{	
+	else{	
 		previousClickedDiv = workareaDiv;
 
 		var indexCur = droppers.indexOf(cursorStrip,1)
@@ -174,16 +164,13 @@ function interactWithDesk(workareaDiv, chemDiv)
 		var imageSwitch = getResultingChem(stripCursorImage(cursorImage), getInventoryBackgroundFile
 		(workareaDiv), workareaDiv, dropperOn, chemOn, precipLiq, precip, beakerCassor, mixing);
 		
-		if(imageSwitch != null)
-		{
+		if(imageSwitch != null){
 			if (imageSwitch.length == 1)
 				document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[0] + ") 63 63, auto";
 			
-			else if(imageSwitch.length == 2)
-			{
+			else if(imageSwitch.length == 2){
 				cursorPub = imageSwitch[0];
-				if(cursorStrip != droppers[0])
-				{
+				if(cursorStrip != droppers[0]){
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[1] + ")";
 					dropCount++;
 					droplet.play();
@@ -197,18 +184,15 @@ function interactWithDesk(workareaDiv, chemDiv)
 				workarea.onmouseout = function() {removeMessage();}
 
 			}
-			else if(imageSwitch.length == 3)
-			{
-				if(cursorStrip != droppers[0])
-				{
+			else if(imageSwitch.length == 3){
+				if(cursorStrip != droppers[0]){
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
 					dropCount++;
 					droplet.play();
 					if(chemInDropper != "")
 						displayMessage("You've added " + dropCount + " drops of " + chemInDropper + ".");
 				}
-				else
-				{
+				else{
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
 					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 63 63, auto";	
 				}
@@ -216,18 +200,15 @@ function interactWithDesk(workareaDiv, chemDiv)
 				workarea.onmouseover = function() {displayMessage(text);}
 				workarea.onmouseout = function() {removeMessage();}
 			}
-			else if(imageSwitch.length == 4 )
-			{
-				if(cursorStrip != droppers[0])
-				{
+			else if(imageSwitch.length == 4 ){
+				if(cursorStrip != droppers[0]){
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
 					dropCount++;
 					droplet.play();
 					if(chemInDropper != "")
 						displayMessage("You've added " + dropCount + " drops of " + chemInDropper + ".");
 				}
-				else
-				{
+				else{
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
 					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 64 64, auto";	
 				}	
@@ -239,17 +220,12 @@ function interactWithDesk(workareaDiv, chemDiv)
 	}
 }
 
-function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq, precip, beakerCassor, mix)
-{
-
-	if(cursor == droppers[0] && clicked == "TTLiqCloudy.png")
-	{
+function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq, precip, beakerCassor, mix){
+	if(cursor == droppers[0] && clicked == "TTLiqCloudy.png"){
 		chemInDropper = "Solution";		
 		return new Array(clicked, "EyedropperCloudy.png", dropAmount[index], colors[index]);
 	}
-	
-	if(cursor == "Nails.png" && clicked == "TTLiqCloudy.png")
-	{
+	if(cursor == "Nails.png" && clicked == "TTLiqCloudy.png"){
 		document.getElementById("game").style.cursor = "";
 		document.getElementById(clickedDiv).style.backgroundImage = "url(Inventory/TTLiqCloudyNails.png)";
 		var text = checkTheObject("TTLiqCloudyNails");
@@ -258,19 +234,16 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 		if(processTwelve){processStepTwelve("", 0, false, false, true, false, "");}
 		return null;
 	}
-	if(clicked == "TTLiqCloudyNails.png" && RisDown)
-	{
+	if(clicked == "TTLiqCloudyNails.png" && RisDown){
 		document.getElementById("game").style.cursor = "url(Inventory/Nails.png) 32 32, auto";
 		if(processTwelve){processStepTwelve("", 0, false, false, true, false, "");}
 		return new Array("TTLiqCloudy.png", "Nails.png", 0, "");	
 	}
-	if(dropper && !precip && !chem && !beakerCassor)
-	{
+	if(dropper && !precip && !chem && !beakerCassor){
 		var index = droppers.indexOf(cursor);
 		var index2 = beakerCass.indexOf(clicked);
 		var index3 = testTubes.indexOf(clicked);
-		if(index != -1 && clicked != "" && (index2 != -1 || index3 != -1))
-		{
+		if(index != -1 && clicked != "" && (index2 != -1 || index3 != -1)){
 			if(processSeven){return new Array("TTLiqCloudy.png", droppers[0], dropAmount[index], colors[index]);}	
 			
 			if(index < 13 && index3 > 13)
@@ -281,12 +254,10 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 				return new Array(testTubes[index], droppers[0], dropAmount[index], colors[index]);
 		}
 	}
-	if(beakerCassor && dropper || beakerCassor && chem || beakerCassor && cursor == droppers[0])
-	{
+	if(beakerCassor && dropper || beakerCassor && chem || beakerCassor && cursor == droppers[0]){
 		if(cursor != droppers[0] && clicked == beakerCass[0] && chemInDropper == "H2O")
 			return new Array(beakerCass[1], droppers[0], 0);
-		else if(cursor == droppers[0] && (clicked == beakerCass[1] || clicked == beakerCass[8]))
-		{
+		else if(cursor == droppers[0] && (clicked == beakerCass[1] || clicked == beakerCass[8])){
 			if(clicked == beakerCass[1])
 				chemInDropper = "H2O";
 			if(clicked == beakerCass[8])
@@ -298,17 +269,14 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 		
 		if(cursor != droppers[0] && clicked == beakerCass[9])
 			return new Array(beakerCass[10], droppers[1], 0);
-		else if(cursor == droppers[0] && clicked == beakerCass[10])
-		{
+		else if(cursor == droppers[0] && clicked == beakerCass[10]){
 			chemInDropper = "Solution";
 			return new Array(beakerCass[9], droppers[1], 0);
 		}
 		else if(clicked == beakerCass[10])
 			return new Array(beakerCass[10], droppers[1], 0);		
 	}
-	
-	if(mix)
-	{
+	if(mix){
 		displayMessage("Solution has been mixed.");
 		if (processOne){processStepOne("", 0, false, true);}
 		if (processTwo){processStepTwo("", 0, false, true, false, false);}
@@ -324,31 +292,25 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 	}
 	var index = testTubes.indexOf(cursor);
 	var index2 = precipsLiq.indexOf(cursor);
-	if(beakerCassor && (index != -1 || index2 != -1))
-	{
-		if(beakerCass[1] == clicked)
-		{
+	if(beakerCassor && (index != -1 || index2 != -1)){
+		if(beakerCass[1] == clicked){
 			setCursorSetBackground("", beakerCass[2], clickedDiv, 32);
 			chemInBeaker = cursor;
 		}
-		else if(beakerCass[2] == clicked)
-		{
+		else if(beakerCass[2] == clicked){
 			setCursorSetBackground("", beakerCass[3], clickedDiv, 32);
 			chem2InBeaker = cursor;
 		}
-		else if(beakerCass[8] == clicked)
-		{
+		else if(beakerCass[8] == clicked){
 			setCursorSetBackground("", beakerCass[6], clickedDiv, 32);
 			chemInBeaker = cursor;	
 		}
-		else if(beakerCass[6] == clicked)
-		{
+		else if(beakerCass[6] == clicked){
 			setCursorSetBackground("", beakerCass[7], clickedDiv, 32);
 			chem2InBeaker = cursor;
 		}
 	}
-	if(beakerCassor && (cursor == "undefined" || cursor == "none" || cursor == ""))
-	{
+	if(beakerCassor && (cursor == "undefined" || cursor == "none" || cursor == "")){
 		if(beakerCass[2] == clicked && RisDown)
 			setCursorSetBackground(chemInBeaker, beakerCass[1], clickedDiv, 32);
 		else if(beakerCass[3] == clicked && RisDown)
@@ -358,30 +320,24 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 		else if(beakerCass[7] == clicked && RisDown)
 			setCursorSetBackground(chem2InBeaker, beakerCass[6], clickedDiv, 32);			
 	}
-	if(chem && !beakerCassor)
-	{
+	if(chem && !beakerCassor){
 		var index = chemicals.indexOf(clicked);
-		if(index != -1 && cursor == droppers[0])
-		{
-			if(chemInDropper != "")
-			{
+		if(index != -1 && cursor == droppers[0]){
+			if(chemInDropper != ""){
 				chemInDropper = getFileName(chemicals[index]);
 				return new Array(droppers[index]);
 			}
-			else
-			{
+			else{
 				chemInDropper = getFileName(chemicals[index]);
 				return new Array(droppers[index]);	
 			}		
 		}
 	}
-	if(precipLiq || precip)
-	{
+	if(precipLiq || precip){
 		var index = precips.indexOf(clicked);
 		var index2 = precipsLiq.indexOf(clicked);
 		var index3 = droppers.indexOf(cursor);
-		if(cursor == droppers[0])
-		{
+		if(cursor == droppers[0]){
 			 if(index2 != -1)
 			 	playPrecipGame(precipsLiq[index2]);
 			
@@ -427,8 +383,7 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 	return null;
 }
 
-function setCursorSetBackground(cursor, background, clickedDiv, diff)
-{
+function setCursorSetBackground(cursor, background, clickedDiv, diff){
 	document.getElementById(clickedDiv).style.backgroundImage = "url(Inventory/" + background + ")";
 	var text = checkTheObject(background);
 	document.getElementById(clickedDiv).onmouseover = function() {displayMessage(text);}
@@ -439,37 +394,28 @@ function setCursorSetBackground(cursor, background, clickedDiv, diff)
 		document.getElementById("game").style.cursor = "";
 }
 
-function interactCentrifuge()
-{
+function interactCentrifuge(){
 	cursorImage = document.getElementById("game").style.cursor;
 	var correctItem = false;
-	for(var i=0; i<testTubes.length; i++)
-	{
-		if(i!=0)
-		{
+	for(var i=0; i<testTubes.length; i++){
+		if(i!=0){
 			if(testTubes[i] == stripCursorImage(cursorImage))
-			{			
 				correctItem = true;
-			}
 		}
 	}
-	if(correctItem == true)
-	{
+	if(correctItem == true){
 		if(breakCounter == 0)
 			breakFlag = true;
 				
-		if(breakFlag == true)
-		{
+		if(breakFlag == true){
 			document.getElementById("rotateGame").style.display = "block";
 			playRotateGame();
 			document.getElementById("game").style.cursor = "";	
 		}
-		else
-		{	
+		else{	
 			var burner = document.getElementById("burner");
 			var index = testTubes.indexOf(stripCursorImage(cursorImage));
-			if(index != -1)
-			{
+			if(index != -1){
 				var spinningCent = new Audio("Rooms/Sounds/centrifuge.wav");
 				spinningCent.play();
 				thePrecip = "TTPrecWhiteLiqClear.png";
@@ -526,8 +472,7 @@ function interactIceBath()
 	var cursor = cursorImage;
 	
 	var index = testTubes.indexOf(stripCursorImage(cursorImage));
-	if(index != -1)
-	{
+	if(index != -1){
 		displayMessage(actions["cool"]);
 		if(processFive) {processStepFive(chemInDropper, dropCount, false, true, false, false, false, "");}
 		if(processTen) {processStepTen("", 0, false, false, false, false, true, "");}
@@ -548,11 +493,9 @@ function interactIceBath()
 	}
 }
 
-function chemHover(image, div, remove)
-{
+function chemHover(image, div, remove){
 	var text = checkTheObject(image);
-	if(!remove)
-	{
+	if(!remove){
 		var hover = document.getElementById(div).onmouseover = 
 		function() {displayMessage(text);
 		   document.getElementById(div).style.backgroundImage = "url(Inventory/chemicalBottlesHover/" + image + ")";}
@@ -568,8 +511,7 @@ function chemHover(image, div, remove)
 }
 
 
-function recoverHovers()
-{
+function recoverHovers(){
 	var workareas = new Array("workArea", "workArea2", "workArea3", "workArea4", "workArea5", "workArea6", "workArea7", "workArea8", "workArea9", "workArea10", "workArea11", "workArea12", "workArea13", "workArea14", "workArea15");
 	
 	workareaHover = checkTheObject(getInventoryBackgroundFile(workareas[0])); 
@@ -604,8 +546,7 @@ function recoverHovers()
 	document.getElementById(workareas[13]).onmouseover = function() {displayMessage(workareaHover14); }
 	document.getElementById(workareas[14]).onmouseover = function() {displayMessage(workareaHover15); }
 
-	for (var k = 0; k < workareas.length; k++)
-	{
+	for (var k = 0; k < workareas.length; k++){
 		workarea = document.getElementById(workareas[k]);
 		workarea.onmouseout = function(){removeMessage();}
 	}
