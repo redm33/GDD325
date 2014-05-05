@@ -2,6 +2,11 @@
 var time;
 var endTime;
 
+function displayTime()
+{
+	return endTime;
+}
+
 timerSetup();
 
 function timerSetup()
@@ -49,7 +54,3 @@ function addedZero(time)
 	return tempTime
 }
 
-function displayTime()
-{
-	return endTime;
-}

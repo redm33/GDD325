@@ -825,7 +825,7 @@ function processStepEleven(chemicalUsed, dropAmount, mix, heat, cool, pour, clic
 		processStep11[1] = true;
 		processStep11[2] = dropAmount;
 		processStep11[3] = chemicalUsed;
-		updateStep();
+		//updateStep();
 	}
 	else if(chemicalUsed == "Solution"  && stepD && !stepE){
 		processStep11[6] = true;
@@ -864,7 +864,7 @@ function processStepEleven(chemicalUsed, dropAmount, mix, heat, cool, pour, clic
 		processStep11[16] = true;
 }
 
-//CONFIRMATION TEST	 FOR Tin (Sb3+) IONS
+//CONFIRMATION TEST	 FOR Tin (Sn4+) IONS
 function processStepTwelve(chemicalUsed, dropAmount, mix, heat, nails, pour, clickedDiv){
 	stepA = processStep12[0];
 	stepB = processStep12[1];
@@ -890,9 +890,9 @@ function processStepTwelve(chemicalUsed, dropAmount, mix, heat, nails, pour, cli
 	else if(pour && stepC && !stepD){processStep12[3] = true; updateStep();}
 	else if(mix && stepE && !stepF){
 		processStep12[7] = true;
-		updateStep();
 		if(Sn4)
 			document.getElementById(clickedDiv).style.backgroundImage = "url(Inventory/TTPrecWhiteLiqCloudy.png)";
+		updateStep();		
 	}
 	else if (chemicalUsed != "" && dropAmount != 0 && chemicalUsed != "H2O" && chemicalUsed != "Hot H2O")
 		processStep12[8] = true;	
