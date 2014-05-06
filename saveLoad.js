@@ -117,9 +117,9 @@ function saveGame(){
 function loadGame()
 {
 	
-	if(loaded)
-	{
+	if(loaded){
 	if($.jStorage.get("doorway") != null && $.jStorage.get("workdesk") != null && $.jStorage.get("forge") != null &&$.jStorage.get("chemshelf")){
+		
 		document.getElementById('content').style.backgroundImage = "url('Rooms/Images/ForgeFireAnimation.gif')";
 		
 		localStorage.setItem("Doorway",$.jStorage.get("doorway"));

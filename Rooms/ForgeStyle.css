@@ -75,7 +75,7 @@
 }
 #nailsStart:hover
 {
-	background-image:url(../Inventory/nailsGlow.png);	
+	background-image:url(../Inventory/NailsGlow.png);	
 	z-index: 2;
 	position: absolute;
 	margin-top: 353px;

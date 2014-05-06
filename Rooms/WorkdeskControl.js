@@ -371,8 +371,9 @@ function getResultingChem(cursor, clicked, clickedDiv, dropper, chem, precipLiq,
 			
 			if(index2 == precips.length-1)
 				return new Array(droppers[droppers.length-5], precips[index2]);
-			else
+			else if(index2 != -1)
 				return new Array(droppers[1], precips[index2]);	
+			else{return null;}
 			
 		}
 		else if(index != -1 && index3 != -1)
