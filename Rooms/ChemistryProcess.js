@@ -129,27 +129,27 @@ function processStepOne(chemicalUsed, dropAmount, heat, mix){
 	stepD = processStep1[7];
 	stepE = processStep1[10];
 	
-	if(chemicalUsed == "bottleUnlabeled"){
+	if(chemicalUsed == "bottleUnlabeled" && !stepA){
 		processStep1[0] = true;
 		processStep1[1] = dropAmount;
 		processStep1[2] = "Unknown";
 		updateStep();
 	}
-	else if(chemicalUsed == "6MHCL"){
+	else if(chemicalUsed == "6MHCL" && stepA && !stepB){
 		processStep1[3] = true;
 		processStep1[4] = dropAmount;
 		processStep1[5] = "6MHCL";
 		updateStep();
 	}
-	else if(chemicalUsed == "1MHCL" && stepA && stepB && stepC){
+	else if(chemicalUsed == "1MHCL" && stepC && !stepD){
 		processStep1[7] = true;
 		processStep1[8] = dropAmount;
 		processStep1[9] = "1MHCL";
 		updateStep();
 	}
 	else if(chemicalUsed == "Solution" && stepE){updateStep();}
-	else if(heat && stepA && stepB){processStep1[6] = true; updateStep();}
-	else if(stepA && stepB && stepC && stepD && mix){processStep1[10] = true; updateStep();}
+	else if(heat && stepB && !stepC){processStep1[6] = true; updateStep();}
+	else if(stepD && !stepE && mix){processStep1[10] = true; updateStep();}
 	else if (chemicalUsed != "" && dropAmount != 0)
 		processStep1[11] = true;	
 }
