@@ -1136,8 +1136,6 @@ function finishProcess(theProcess){
 		}
 		else{
 			document.getElementById("pTwelve").innerHTML = "Fantastic! You have completed the chemistry experiment! Go talk to the alchemist and let him know what you found.";
-			processEleven = false;	
-			processTwelve = true;
 			checkIt = true;
 			currentStep += 6;
 			saveProcess();

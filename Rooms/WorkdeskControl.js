@@ -210,7 +210,7 @@ function interactWithDesk(workareaDiv, chemDiv){
 				}
 				else{
 					workarea.style.backgroundImage = "url(Inventory/" + imageSwitch[0] + ")";
-					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 64 64, auto";	
+					document.getElementById("game").style.cursor = "url(Inventory/" + imageSwitch[1] + ") 63 63, auto";	
 				}	
 				var text = checkTheObject(imageSwitch[0]);
 				workarea.onmouseover = function() {displayMessage(text);}
